@@ -1,0 +1,1825 @@
+/*
+! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
+*/
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+*/
+
+html {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+  font-family: Pretendard, sans-serif;
+  /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  font-weight: inherit;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
+}
+
+[type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  border-color: #6b7280;
+  border-width: 1px;
+  border-radius: 0px;
+  padding-top: 0.5rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-shadow: 0 0 #0000;
+}
+
+[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: #2563eb;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  border-color: #2563eb;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+
+input::placeholder,textarea::placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+
+::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+}
+
+::-webkit-date-and-time-value {
+  min-height: 1.5em;
+}
+
+::-webkit-datetime-edit,::-webkit-datetime-edit-year-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute-field,::-webkit-datetime-edit-second-field,::-webkit-datetime-edit-millisecond-field,::-webkit-datetime-edit-meridiem-field {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+}
+
+[multiple] {
+  background-image: initial;
+  background-position: initial;
+  background-repeat: unset;
+  background-size: initial;
+  padding-right: 0.75rem;
+  -webkit-print-color-adjust: unset;
+          print-color-adjust: unset;
+}
+
+[type='checkbox'],[type='radio'] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 0;
+  -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+  display: inline-block;
+  vertical-align: middle;
+  background-origin: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  flex-shrink: 0;
+  height: 1rem;
+  width: 1rem;
+  color: #2563eb;
+  background-color: #fff;
+  border-color: #6b7280;
+  border-width: 1px;
+  --tw-shadow: 0 0 #0000;
+}
+
+[type='checkbox'] {
+  border-radius: 0px;
+}
+
+[type='radio'] {
+  border-radius: 100%;
+}
+
+[type='checkbox']:focus,[type='radio']:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
+  --tw-ring-offset-width: 2px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: #2563eb;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
+
+[type='checkbox']:checked,[type='radio']:checked {
+  border-color: transparent;
+  background-color: currentColor;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+[type='checkbox']:checked {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+}
+
+[type='radio']:checked {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+}
+
+[type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus {
+  border-color: transparent;
+  background-color: currentColor;
+}
+
+[type='checkbox']:indeterminate {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");
+  border-color: transparent;
+  background-color: currentColor;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+[type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus {
+  border-color: transparent;
+  background-color: currentColor;
+}
+
+[type='file'] {
+  background: unset;
+  border-color: inherit;
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
+  font-size: unset;
+  line-height: inherit;
+}
+
+[type='file']:focus {
+  outline: 1px solid ButtonText;
+  outline: 1px auto -webkit-focus-ring-color;
+}
+
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+@media (min-width: 100%) {
+  .container {
+    max-width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+@media (min-width: 1216px) {
+  .container {
+    max-width: 1216px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+:root {
+  --headings-color: #1a77bd;
+  --background-color: #eee;
+  --link-color: #3d5a98;
+  --link-hover-color: #7596b9;
+  --nav-link-color: #777;
+  --nav-link-hover-color: #999;
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Set default font for text. Headings and menu items are overridden */
+
+body {
+  color: #222;
+  background: #f6f6f6;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* Remove the gray background color from active links in IE 10. */
+
+a {
+  background-color: transparent;
+}
+
+a:link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+/* Improve readability when focused and also mouse hovered in all browsers. */
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+a:visited {
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+h1 {
+  color: var(--headings-color);
+  font-size:26px;
+  font-weight: 400;
+  line-height: 1.2em;
+  margin: 0;
+}
+
+h2 {
+  color: var(--headings-color);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h1 a,
+h2 a {
+  text-decoration: none;
+}
+
+.simple-page h1 {
+  display: none;
+}
+
+/* Address differences between Firefox and other browsers. */
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/* Remove border when inside `a` element in IE 8/9/10. */
+
+img {
+  border: 0;
+}
+
+input
+{
+  margin: 0px;
+}
+
+input[type=submit],
+button,
+a.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: #29536b;
+  border: 1px solid #29536b;
+  border-radius: 0;
+  color:#fff;
+  cursor: pointer;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0;
+  padding: 3px 8px;
+}
+
+input[type=submit]:hover,
+button:hover,
+a.button:hover {
+  background-color: #5f5f5f;
+  border: 1px solid #5f5f5f;
+}
+
+/* Input button - submit only */
+
+input[type=submit] {
+  margin-top: 6px;
+  width: 150px;
+}
+
+input[type=text], input[type=password] {
+  border-color: #ddd;
+  border-width: 0.07143em;
+  border-style: solid;
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 28px;
+  line-height: 18px;
+  margin: 0;
+  max-width: 100%;
+  min-height: 1em;
+  padding: 0.30357em;
+}
+
+label,
+.label {
+  font-weight: bold;
+  vertical-align: top;
+}
+
+select {
+  border-radius: 0;
+  border: 1px solid #ccc;
+  display:inline-block;
+  font-size: 14px;
+  height: 28px;
+  line-height: 18px;
+  margin-bottom: 0px;
+  margin-right: 3px;
+  width:46%;
+  vertical-align: top;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th, td {
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Search Box in banner */
+
+#search-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 8px 12px;
+}
+
+#banner-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+#advanced-search-link-disabled {
+  color: #cccccc !important;
+  cursor: default;
+}
+
+#query {
+  width: 100%;
+}
+
+#search-container {
+  grid-area: search;
+  background-color: var(--background-color);
+  align-self: center;
+}
+
+#search-container a:link,
+#search-container a:visited {
+  text-decoration: underline;
+}
+
+#search-container button {
+  border: none;
+  box-shadow: none;
+  padding: 0.25em;
+  position: relative;
+  text-indent: -9999px;
+  /* move default text out of the way */
+  width: 32px;
+}
+
+#search-container button::after {
+  background-color: #29536b;
+  bottom: 0;
+  content: "\f002";
+  font-family: "FontAwesome";
+  left: 0;
+  line-height: 28px;
+  position: absolute;
+  text-indent: 0;
+  top: 0;
+  width: 32px;
+}
+
+#search-container button:hover::after {
+  background-color: #5f5f5f;
+}
+
+#search-container input {
+  vertical-align: top;
+  margin: 0;
+}
+
+#search-container input[type=text] {
+  font-size: 14px;
+  margin: 0;
+}
+
+#search-container input[type=checkbox] {
+  float: left;
+  margin-top: 3px;
+  margin-right: 4px;
+}
+
+#search-container a {
+  font-size: 14px;
+}
+
+#search-container div {
+  margin-top: 8px;
+}
+
+#search-container span {
+  float: left;
+  color: var(--nav-link-color);
+  font-size: 14px;
+}
+
+/* Default colors for Advanced Search link in banner */
+
+#search-container a {
+  color: var(--nav-link-color);
+}
+
+#search-container a:hover {
+  color: var(--nav-link-hover-color);
+}
+
+#advanced-search-link {
+  float:right;
+}
+
+/* ----- Layout classes ----- */
+
+.inputs {
+  min-height: 3em;
+  line-height: 42px;
+}
+
+.pagination-nav input {
+  display: inline;
+  margin: 0 5px 0 0;
+  text-align: center;
+  width: 4em;
+}
+
+.page-input {
+  padding-right: 10px;
+}
+
+/* === Banner CSS ===
+--------------------------------------------------------- */
+
+/*#branding {*/
+
+/*	border-bottom: 2px solid #fff;*/
+
+/*	clear: both;*/
+
+/*	display: block;*/
+
+/*	float: left;*/
+
+/*	line-height: 12px;*/
+
+/*	overflow: hidden;*/
+
+/*	padding-top:0;*/
+
+/*	position: relative;*/
+
+/*	width: 100%;*/
+
+/*}*/
+
+/*#branding, #bg_image {*/
+
+/*	height: auto;*/
+
+/*	max-width: 100%;*/
+
+/*	min-height: inherit !important;*/
+
+/*}*/
+
+#bg_image {
+  max-width: 600px;
+}
+
+#header {
+  grid-area: header;
+  background-color: var(--background-color);
+  align-self: center;
+  margin-top: 8px;
+}
+
+#header a {
+  font-size: 4.5vw;
+  padding-left: 12px;
+}
+
+#header > a > img
+{
+  max-width: 100%
+}
+
+/* === Main Menu CSS ===
+--------------------------------------------------------- */
+
+#menu {
+  grid-area: menu;
+  background-color: var(--background-color);
+  display:none;
+}
+
+.nav-menu {
+  background-color: #482102;
+  line-height: 14px;
+  margin: 2px 0 0 6px;
+  padding: 0;
+}
+
+.nav-menu a:link, .nav-menu a:visited {
+  color: var(--nav-link-color);
+}
+
+.nav-menu a:hover, .nav-menu a:focus {
+  color: var(--nav-link-hover-color);
+}
+
+.nav-item {
+  display: block;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.nav-item > a {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 4px 12px 12px 6px;
+}
+
+li.active.nav-item > a {
+  font-weight: bold;
+}
+
+/* Hide mobile menu toggle until screen sizes are smaller */
+
+#nav-toggle {
+  display: none;
+}
+
+/* Hide "Home > <page-name>" */
+
+#simple-pages-breadcrumbs {
+  display: none;
+}
+
+/* === General Content Area CSS ===
+--------------------------------------------------------- */
+
+/* Add padding around content area */
+
+#content {
+  grid-area: content;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  padding: 8px 12px 12px 12px;
+}
+
+#content > h1:first-child {
+  display: inline-block;
+  float: left;
+  width: 65%;
+}
+
+#content > h1:first-of-type {
+  margin-top:12px;
+  padding: 0;
+}
+
+/* Tighten space above and below title */
+
+#content > h1 {
+  margin-bottom: .25em;
+  padding: 0px;
+  width: 65%;
+}
+
+#content > #primary:not(:only-child) {
+  float: right;
+  margin-bottom: 0em;
+  padding: 1.5em 1.5em 1.5em 0;
+  width: 65%;
+}
+
+#secondary {
+  float: right;
+  width: 35%;
+  padding: 0 0 1.5em 1.5em;
+  word-wrap: break-word;
+}
+
+/* === CSS for the Items Show Page - Right Column ===
+--------------------------------------------------------- */
+
+.show #primary {
+  border-left: 1px dotted #ccc;
+  font-size: 14px;
+}
+
+.items.show #content h1 {
+  border-bottom: 4px solid;
+  color: #444444;
+  margin-bottom: 12px;
+  margin-left: 10px;
+  padding-bottom: 4px;
+  width: 98%;
+}
+
+/* Metadata elements */
+
+.element {
+  clear: both;
+  margin: 0 0 10px;
+}
+
+.element-set {
+  padding-left: 8px;
+}
+
+.item-element-metadata {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: min-content;
+  grid-gap: 8px;
+}
+
+.element-metadata-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  grid-gap: 8px;
+  grid-template-areas:
+		"elementcol	valuecol";
+}
+
+.element-metadata-element {
+  grid-area: elementcol;
+  text-align: right;
+  color: #333;
+  font-variant: small-caps;
+}
+
+.element-metadata-values {
+  grid-area: valuecol;
+  color: #000;
+  max-width: 520px;
+}
+
+/* Does not work on iOS (shows border on left, bottom, and top. */
+
+.element-metadata-value-multiple {
+  padding-top: 0px;
+  border-top: solid 1px #dedede;
+}
+
+/* Draw line between multiple Subject or Title elements */
+
+.element .element-text:after {
+  background-color: #dbdbdb;
+  content: "";
+  display: block;
+  height: 1px;
+  margin-bottom: 4px;
+  margin-top: 4px;
+  width: 20%;
+}
+
+.element .element-text:last-of-type:after {
+  height: 0px;
+  margin-bottom: 0;
+}
+
+.element-text {
+  font-size: 14px;
+}
+
+.element-set label {
+  font-size: 14px;
+  font-variant: small-caps;
+  font-weight: normal;
+  font-weight: 600;
+  color:#666;
+  line-height: 1.5em;
+}
+
+.element-text p {
+  font-size: 14px;
+  line-height: 1.5em;
+  word-wrap: break-word;
+  margin: 0 0 0em 0;
+}
+
+/* field is the metadata label element */
+
+.field {
+  clear: both;
+  margin-bottom: 0px;
+}
+
+/* Used for metadata field label */
+
+.field label, .field .label {
+  clear: left;
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+/* Set max height of primary image */
+
+.items #primary .item-file img,
+.files #primary .item-file img {
+  max-height: 450px;
+  max-width: 100%;
+  width: auto;
+}
+
+/* Reduce  padding between title and primary image */
+
+.items.show #content > #primary {
+  padding: 0px 24px 24px 24px;
+  width: 64%;
+}
+
+/* === Items Show - Left Column ===
+--------------------------------------------------------- */
+
+/* Tags */
+
+#item-tags {
+  margin-bottom:20px;
+}
+
+#item-tags h2 {
+  margin-bottom: 4px;
+}
+
+#item-citation {
+  padding-bottom: 6px;
+}
+
+#item-citation > .element-text {
+  line-height: 21px;
+  margin-top: 0;
+}
+
+.citation-identifier {
+  padding-left: 4px;
+  font-weight: bold;
+}
+
+#geolocation h2 {
+  margin-bottom: 2px;
+}
+
+#itemfiles {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+#itemfiles img,
+.files .item-file img {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.25);
+  margin: 0 0.375em 0.375em 0;
+  padding: 3px;
+}
+
+#itemfiles + * {
+  clear: left;
+}
+
+.items.show #content #secondary {
+  padding: 0 20px 0 12px;
+  width: 36%;
+}
+
+#secondary #itemfiles img {
+  border:none;
+  box-shadow: none;
+  margin: 0;
+  max-height: 80px;
+  max-width: 100%;
+}
+
+#secondary .item-file {
+  position: relative;
+  border: 1px solid #ddd;
+  box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.2);
+  display: inline-block;
+  height: 104px;
+  margin: 0 6px 6px 0;
+  max-height: 104px;
+  padding: 2px;
+  text-align: center;
+  vertical-align: top;
+  width: 94px;
+}
+
+.item-file-index {
+  position: absolute;
+  color: #ccc;
+  font-size: 18px;
+  font-weight: bold;
+  top: 82px;
+  left: 40px;
+}
+
+div.item {
+  clear: both;
+  overflow: hidden;
+  border-color: #ddd;
+  border-top-width: 0.07143em;
+  border-top-style: solid;
+  padding-top: 1.42857em;
+}
+
+div.item h2 {
+  margin-top: 0em;
+}
+
+.items #primary .item-file img,
+.files #primary .item-file img {
+  max-width: 98%;
+  width: auto;
+}
+
+/* === Galleries CSS ===
+--------------------------------------------------------- */
+
+/* Back links for container items on Gallery page */
+
+#container-item-links {
+  clear: both;
+  margin-left: 12px;
+  padding-top: 8px;
+}
+
+#container-item-links .element-text {
+  margin-bottom: 2px;
+  margin-top: 4px;
+  padding-left: 24px;
+}
+
+#container-item-links .single-container-item {
+  padding-left: 8px;
+}
+
+.container-item-links-label {
+  color: #777;
+  font-size: 20px;
+  padding-bottom: 8px;
+}
+
+.container-description {
+  color: #777;
+  padding-left: 12px;
+}
+
+.container-item-links-label .element-text a:link {
+  font-size: 20px;
+}
+
+#container-item-links a:link {
+  color: #c76941;
+  text-decoration: none;
+}
+
+#container-item-links a:visited {
+  color: #c76941;
+}
+
+#container-item-links a:hover {
+  color: #e57f52;
+}
+
+#container-item-links a:active {
+  color: #c76941;
+}
+
+/* === Citation CSS ===
+--------------------------------------------------------- */
+
+#item-citation h2 {
+  margin: 16px 0 0 0;
+  padding: 0;
+}
+
+#item-citation.gallery {
+  margin-left: 12px;
+}
+
+#item-citation.gallery > .element-text {
+  width: 36%;
+}
+
+#item-citation.gallery::before {
+  background-color: #ccc;
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: 12px;
+}
+
+#item-citation h2 {
+  color:#555;
+}
+
+/* === Footer ===
+--------------------------------------------------------- */
+
+#footer {
+  grid-area: footer;
+  background-color: var(--background-color);
+  color: var(--link-color);
+}
+
+#footer a {
+  transition: color 0.2s ease 0s;
+}
+
+#footer a:link {
+  color: var(--link-color);
+}
+
+#footer a:visited {
+  color: var(--link-color);
+}
+
+#footer a:hover {
+  color: var(--link-hover-color);
+}
+
+#footer-text {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 4px 6px 2px;
+  width:100%;
+  font-size: 12px;
+}
+
+#footer-loginout {
+  display: flex;
+  font-size: 12px;
+}
+
+#footer-loginout > span {
+  align-self: flex-end;
+}
+
+#login-form {
+  width: 300px;
+}
+
+form#login-form fieldset#fieldset-login {
+  padding-top: 24px;
+}
+
+/* Simple Pages list */
+
+.spl li {
+  padding-bottom: 8px;
+}
+
+.spl li a {
+  font-size: 16px;
+}
+
+/* Add a box shadow around the entire page area. */
+
+/* Set content width the same as WP website width */
+
+/* Remove padding so banner and menu are flush with left and right */
+
+#wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+			"header"
+			"search"
+			"menu"
+			"content"
+			"footer";
+  background: var(--background-color);
+  box-shadow: 0 4px 15px 5px #aaa;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  padding: 0 0;
+  max-width: 2400px;
+}
+
+@media screen and (min-width: 600px) {
+  #wrap {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+			"header	 header  search	 search  search"
+			"menu	 menu  	 menu	 menu  	 menu"
+			"content content content content content"
+			"footer  footer  footer  footer  footer";
+  }
+
+  .element-metadata-row {
+    grid-template-columns: 140px 1fr;
+  }
+
+  #header a {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  #header a {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  #wrap {
+    padding: 0 16px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+			"header	 header  header	 search  search"
+			"menu	 menu  	 menu	 menu  	 menu"
+			"content content content content content"
+			"footer  footer  footer  footer  footer";
+  }
+
+  #header {
+    margin-top: 0;
+  }
+
+  #header a {
+    font-size: 32px;
+    padding-left: 4px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #primary {
+    width: 70% !important;
+  }
+
+  #secondary {
+    width: 30% !important;
+  }
+
+  .docs-iframe-container {
+    width: 1120px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  #primary {
+    width: 75% !important;
+  }
+
+  #secondary {
+    width: 25% !important;
+  }
+}
+
+/* === CSS for Width less than 844px ===
+--------------------------------------------------------- */
+
+@media screen and (max-width: 844px) {
+  #primary,
+	#secondary,
+	#sidebar {
+    width: 100% !important;
+    border-right: 0 !important;
+    padding: 0 !important;
+  }
+
+  #content > #primary:not(:only-child) {
+    margin-bottom: 1.5em;
+  }
+
+  #secondary,
+	#sidebar {
+    border-left: 0;
+  }
+
+  body, #wrap {
+    margin: 0;
+    width: 100%;
+  }
+
+  #content > h1:first-of-type {
+    line-height: 24px;
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  #primary {
+    max-width: 844px;
+  }
+
+  .item-file.image-jpeg {
+    margin-left:8px;
+  }
+
+  #item-citation {
+    width: 320px;
+  }
+}
+
+/* === CSS for Width < 600px (Mobile Landscape) ===
+This is the break when the menu collapes to a burger icon.
+--------------------------------------------------------- */
+
+@media screen and (max-width: 600px) {
+  #admin-bar > ul > li {
+    box-shadow: none;
+    border-color: transparent;
+  }
+
+  #admin-bar .navigation li a {
+    width: inherit;
+  }
+
+  #nav-toggle {
+    cursor: pointer;
+    display: inline;
+  }
+
+  #nav-toggle span {
+    color: var(--nav-link-hover-color);
+    padding-left: 8px;
+  }
+
+  #nav-toggle span:before {
+    content: "\f0c9";
+    font-family: "FontAwesome";
+    font-size: 32px;
+    line-height: 44px;
+  }
+
+  .navigation {
+    position: relative;
+  }
+
+  .navigation li {
+    display: block;
+    width: 100%;
+    border-color: rgba(255, 255, 255, 0.15);
+    border-color: #2a0300;
+    border-bottom-width: 0.07143em;
+    border-bottom-style: solid;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    padding-bottom: -0.07143em;
+  }
+
+  .navigation li a {
+    width: 100%;
+  }
+
+  .navigation li:last-of-type {
+    border-color: transparent;
+  }
+
+  .nav-item > a {
+    border-style: solid;
+    border-width: 0 0 1px;
+    border-color: #2a0300;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+  }
+
+  #top-nav {
+    display: none;
+    margin-top: 0;
+    padding-bottom: 0px;
+  }
+
+  #top-nav .nav-menu ul, #top-nav .nav-menu ul li {
+    width: 100%;
+  }
+
+  #top-nav > .nav-menu li ul {
+    position: inherit;
+    margin-top: 0;
+  }
+
+  #top-nav > .nav-menu ul ul ul {
+    width: 95%;
+    left: 5%;
+  }
+
+  #top-nav > .nav-menu > ul > li > a {
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  #top-nav > .nav-menu ul li > a:not(:only-child) span:after {
+    content: '\f0c9';
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    z-index: 251;
+    transition: all .2s ease-in-out;
+  }
+
+  #top-nav > .nav-menu ul li:hover > a:not(:only-child) span:after {
+    top: 20px;
+    opacity: 0;
+  }
+
+  #top-nav > .nav-menu ul li > a:not(:only-child) span {
+    padding-right: 18px;
+  }
+
+  #top-nav > .nav-menu > ul ul > li a:not(:only-child) span:after {
+    transform: rotate(0);
+    -ms-transform: rotate(0);
+    -webkit-transform: rotate(0);
+  }
+
+  #top-nav li.nav-menu-main-search {
+    max-width: none;
+  }
+}
+
+/* === CSS for Width < 480px (Mobile Portrait )===
+--------------------------------------------------------- */
+
+@media screen and (max-width: 480px) {
+  #content {
+    padding: .5em .4em;
+  }
+
+  h1 {
+    line-height: 20px;
+    margin-bottom: .5em;
+  }
+}

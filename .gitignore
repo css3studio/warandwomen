@@ -1,0 +1,3 @@
+# Visual SourceSafe
+*.scc
+node_modules/
