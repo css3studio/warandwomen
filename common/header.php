@@ -109,4 +109,4 @@ if (!$dependentPluginsActive)
         <div id="search-container">
         </div>
 
-        <article id="content" role="main" tabindex="-1" class="bg-black">
+        <article id="content" role="main" tabindex="-1">
