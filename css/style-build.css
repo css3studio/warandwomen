@@ -703,9 +703,138 @@ select {
   }
 }
 
+.relative {
+  position: relative;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.top-\[72px\] {
+  top: 72px;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.-ml-4 {
+  margin-left: -1rem;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-6 {
+  height: 1.5rem;
+}
+
+.w-14 {
+  width: 3.5rem;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.break-keep {
+  word-break: keep-all;
+}
+
+.border-r {
+  border-right-width: 1px;
+}
+
+.border-b {
+  border-bottom-width: 1px;
+}
+
+.border-t {
+  border-top-width: 1px;
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.pt-12 {
+  padding-top: 3rem;
+}
+
+.pb-12 {
+  padding-bottom: 3rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.font-thin {
+  font-weight: 100;
+}
+
+.not-italic {
+  font-style: normal;
+}
+
+.leading-\[1\.7\] {
+  line-height: 1.7;
 }
 
 :root {
@@ -1821,5 +1950,68 @@ This is the break when the menu collapes to a burger icon.
   h1 {
     line-height: 20px;
     margin-bottom: .5em;
+  }
+}
+
+.hover\:text-warning:hover {
+  --tw-text-opacity: 1;
+  color: rgb(240 187 60 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1024px) {
+  .lg\:absolute {
+    position: absolute;
+  }
+
+  .lg\:-mr-4 {
+    margin-right: -1rem;
+  }
+
+  .lg\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .lg\:mb-2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .lg\:block {
+    display: block;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
+
+  .lg\:border-0 {
+    border-width: 0px;
+  }
+
+  .lg\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .lg\:py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .lg\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .lg\:pb-20 {
+    padding-bottom: 5rem;
+  }
+
+  .lg\:pt-0 {
+    padding-top: 0px;
+  }
+
+  .lg\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }

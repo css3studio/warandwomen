@@ -90,7 +90,8 @@ if ($zoomingEnabled)
 
     // Emit the item's fields.
     echo all_element_texts($item);
-
+	echo "111";
+    echo get_specific_plugin_hook_output('Cart', 'public_items_show', array('view' => $this, 'item' => $item));
     // If this item has a cover image, that image will appear in the sidebar, so pass it to
     // admin_items_show to indicate that the image should be excluded from the list of related items.
     $excludeItem = $coverImageEnabledOnShowPage ? ItemPreview::getCoverImageItem($item) : null;
