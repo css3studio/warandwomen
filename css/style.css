@@ -2,1086 +2,306 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-	--headings-color: #1a77bd;
-	--background-color: #eee;
-	--link-color: #3d5a98;
-	--link-hover-color: #7596b9;
-	--nav-link-color: #777;
-	--nav-link-hover-color: #999;
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+
+
+/* 헤더 */
+header{
+	max-height: 6rem;
+	overflow: hidden;
+	transition:max-height 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.5s;
+
+}
+header.open-menu{
+	max-height: 100rem;
 }
 
-html {
-	font-family: sans-serif;
-	font-size: 16px;
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
+header .brand .black{
+	display:block
+}
+header .brand .white{
+	display:none
 }
 
-* {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+/* 네비세이션 바 메뉴 */
+.navigation{
+	display:flex;
+}
+.navigation > li{
+	position:relative;
+}
+.navigation > li > ul{
+	position:absolute;
+	top:2.5rem;
+	left:50%;
+	transform: translateX(-50%);
+	padding:0.5rem 0;
+}
+.navigation > li > a{
+	display:block;
+	width:6.125rem;
+	text-align:center;
+}
+.navigation > li.active > a,
+.navigation > li > a:hover,
+.navigation > li.current > a{
+	color:#8C48C0;
 }
 
-/* Set default font for text. Headings and menu items are overridden */
-body {
-	color: #222;
-	background: #f6f6f6;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	line-height: 18px;
-	margin: 0;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-	  display: block;
-}
-
-/* Remove the gray background color from active links in IE 10. */
-a {
-	  background-color: transparent;
-}
-
-a:link {
-	color: var(--link-color);
-	text-decoration: none;
-}
-
-/* Improve readability when focused and also mouse hovered in all browsers. */
-a:active,
-a:hover {
-	outline: 0;
-}
-
-a:visited {
-	color: var(--link-color);
-}
-
-a:hover {
-	color: var(--link-hover-color);
-}
-
-h1 {
-    color: var(--headings-color);
-	font-size:26px;
-	font-weight: 400;
-	line-height: 1.2em;
-	margin: 0;
-}
-
-h2 {
-	color: var(--headings-color);
-	font-size: 16px;
-	line-height: 24px;
-}
-
-h1 a,
-h2 a {
-	text-decoration: none;
-}
-
-.simple-page h1 {
-    display: none;
-}
-
-/* Address differences between Firefox and other browsers. */
-hr {
-	-moz-box-sizing: content-box;
-	box-sizing: content-box;
-	height: 0;
-}
-
-/* Remove border when inside `a` element in IE 8/9/10. */
-img {
-	border: 0;
-}
-
-input
-{
-	margin: 0px;
-}
-
-input[type=submit],
-button,
-a.button {
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	background-color: #29536b;
-	border: 1px solid #29536b;
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
-	border-radius: 0;
-	color:#fff;
-	cursor: pointer;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	line-height: 21px;
-	margin: 0;
-	padding: 3px 8px;
-}
-
-input[type=submit]:hover,
-button:hover,
-a.button:hover {
-	background-color: #5f5f5f;
-	border: 1px solid #5f5f5f;
-}
-
-/* Input button - submit only */
-input[type=submit] {
-	margin-top: 6px;
-	width: 150px;
-}
-
-input[type=text], input[type=password] {
-	border-color: #ddd;
-	border-width: 0.07143em;
-	border-style: solid;
-	display: block;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	height: 28px;
-	line-height: 18px;
-	margin: 0;
-	max-width: 100%;
-	min-height: 1em;
-	padding: 0.30357em;
-}
-
-label,
-.label {
-	font-weight: bold;
-	vertical-align: top;
-}
-
-select {
-	-moz-border-radius: 0px;
-	-webkit-border-radius: 0px;
-	border-radius: 0;
-	border: 1px solid #ccc;
-	display:inline-block;
-	font-size: 14px;
-	height: 28px;
-	line-height: 18px;
-	margin-bottom: 0px;
-	margin-right: 3px;
-	width:46%;
-	vertical-align: top;
-}
-
-table {
-	width: 100%;
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-th, td {
-	margin: 0;
-	padding: 10px 0;
-	border-bottom: 1px solid #ddd;
-}
-
-/* Search Box in banner */
-#search-form {
-	display: grid;
-	grid-template-columns: 1fr auto;
-	padding: 8px 12px;
-}
-
-#banner-links {
-	display: flex;
-	justify-content: space-between;
-}
-
-#advanced-search-link-disabled {
-	color: #cccccc !important;
-	cursor: default;
-}
-
-#query {
-	width: 100%;
-}
-
-#search-container {
-	grid-area: search;
-	background-color: var(--background-color);
-	align-self: center;
-}
-
-#search-container a:link,
-#search-container a:visited {
-	text-decoration: underline;
-}
-
-#search-container button {
-	border: none;
-	box-shadow: none;
-	padding: 0.25em;
-	position: relative;
-	text-indent: -9999px; /* move default text out of the way */
-	width: 32px;
-}
-
-#search-container button::after {
-	background-color: #29536b;
-	bottom: 0;
-	content: "\f002";
-	font-family: "FontAwesome";
-	left: 0;
-	line-height: 28px;
-	position: absolute;
-	text-indent: 0;
-	top: 0;
-	width: 32px;
-}
-
-#search-container button:hover::after {
-	background-color: #5f5f5f;
-}
-
-#search-container input {
-	vertical-align: top;
-	margin: 0;
-}
-
-#search-container input[type=text] {
-	font-size: 14px;
-	margin: 0;
-}
-
-#search-container input[type=checkbox] {
-	float: left;
-	margin-top: 3px;
-	margin-right: 4px;
-}
-
-#search-container a {
-	font-size: 14px;
-}
-
-#search-container div {
-	margin-top: 8px;
-}
-
-#search-container span {
-	float: left;
-	color: var(--nav-link-color);
-	font-size: 14px;
-}
-
-/* Default colors for Advanced Search link in banner */
-#search-container a {
-	color: var(--nav-link-color);
-}
-
-#search-container a:hover {
-	color: var(--nav-link-hover-color);
-}
-
-#advanced-search-link {
-	float:right;
-}
-
-
-/* ----- Layout classes ----- */
-
-.inputs {
-	min-height: 3em;
-	line-height: 42px;
-}
-
-.pagination-nav input {
-	display: inline;
-	margin: 0 5px 0 0;
+.navigation > li > ul > li > a{
+	display:block;
+	padding:0.75rem;
+	white-space:nowrap;
+	word-break:keep-all;
 	text-align: center;
-	width: 4em;
+	color:#fff;
+}
+.navigation > li > ul > li > a:hover{
+	color:#8C48C0;
 }
 
-.page-input {
-	padding-right: 10px;
+header .bg-menu{
+	background: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(7px);
 }
 
-/* === Banner CSS ===
---------------------------------------------------------- */
-/*#branding {*/
-/*	border-bottom: 2px solid #fff;*/
-/*	clear: both;*/
-/*	display: block;*/
-/*	float: left;*/
-/*	line-height: 12px;*/
-/*	overflow: hidden;*/
-/*	padding-top:0;*/
-/*	position: relative;*/
-/*	width: 100%;*/
-/*}*/
-
-/*#branding, #bg_image {*/
-/*	height: auto;*/
-/*	max-width: 100%;*/
-/*	min-height: inherit !important;*/
-/*}*/
-
-#bg_image {
-	max-width: 600px;
+/* 메인화면 헤더 */
+.transparent-mode header{
+	background-color:transparent;
+}
+.transparent-mode header .brand .black{
+	display:none
+}
+.transparent-mode header .brand .white{
+	display:block
+}
+.transparent-mode header .navigation > li > a{
+	color:#fff;
 }
 
-#header {
-	grid-area: header;
-	background-color: var(--background-color);
-	align-self: center;
-	margin-top: 8px;
+.transparent-mode header .functions > li > a{
+	color:#fff;
 }
 
-#header a {
-	font-size: 4.5vw;
-	padding-left: 12px;
+/* 메인 */
+#fp-nav{
+	z-index:10 !important;
+	transition: opacity 0.3s;
 }
-
-#header > a > img
-{
-	max-width: 100%
+.footer-mode #fp-nav{
+	opacity:0;
 }
-
-/* === Main Menu CSS ===
---------------------------------------------------------- */
-#menu {
-	grid-area: menu;
-	background-color: var(--background-color);
+#fp-nav ul li{
+	height:24px !important;
+}
+#fp-nav ul li:last-child{
 	display:none;
 }
-
-.nav-menu {
-	background-color: #482102;
-	line-height: 14px;
-	margin: 2px 0 0 6px;
-	padding: 0;
-}
-
-.nav-menu a:link, .nav-menu a:visited {
- 	color: var(--nav-link-color);
-}
-
-.nav-menu a:hover, .nav-menu a:focus {
-	color: var(--nav-link-hover-color);
-}
-
-.nav-item {
-	display: block;
-	float: left;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	position: relative;
-}
-
-.nav-item > a {
-	display: inline-block;
-	font-size: 16px;
-	font-weight: normal;
-	padding: 4px 12px 12px 6px;
-}
-
-li.active.nav-item > a {
-    font-weight: bold;
-}
-
-/* Hide mobile menu toggle until screen sizes are smaller */
-#nav-toggle {
- 	display: none;
-}
-
-/* Hide "Home > <page-name>" */
-#simple-pages-breadcrumbs {
-	display: none;
-}
-
-
-/* === General Content Area CSS ===
---------------------------------------------------------- */
-
-/* Add padding around content area */
-#content {
-	grid-area: content;
-	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
-	background-color: #fff;
-	padding: 8px 12px 12px 12px;
-}
-
-#content > h1:first-child {
-	display: inline-block;
-	float: left;
-	width: 65%;
-}
-
-#content > h1:first-of-type {
-	margin-top:12px;
-	padding: 0;
-}
-
-/* Tighten space above and below title */
-#content > h1 {
-	margin-bottom: .25em;
-	padding: 0px;
-	width: 65%;
-}
-
-#content > #primary:not(:only-child) {
-	float: right;
-	margin-bottom: 0em;
-	padding: 1.5em 1.5em 1.5em 0;
-	width: 65%;
-}
-
-#secondary {
-	float: right;
-	width: 35%;
-	padding: 0 0 1.5em 1.5em;
-	word-wrap: break-word;
-}
-
-/* === CSS for the Items Show Page - Right Column ===
---------------------------------------------------------- */
-.show #primary {
-	border-left: 1px dotted #ccc;
-	font-size: 14px;
-}
-
-.items.show #content h1 {
-	border-bottom: 4px solid;
-	color: #444444;
-	margin-bottom: 12px;
-	margin-left: 10px;
-  	padding-bottom: 4px;
-	width: 98%;
-}
-
-/* Metadata elements */
-.element {
-	clear: both;
-	margin: 0 0 10px;
-}
-
-.element-set {
-	padding-left: 8px;
-}
-
-.item-element-metadata {
-	display: grid;
-	grid-template-columns: 100%;
-	grid-auto-rows: min-content;
-	grid-gap: 8px;
-}
-
-.element-metadata-row {
-	display: grid;
-	grid-template-columns: 90px 1fr;
-	grid-gap: 8px;
-	grid-template-areas:
-		"elementcol	valuecol";
-}
-
-.element-metadata-element {
-	grid-area: elementcol;
-	text-align: right;
-	color: #333;
-	font-variant: small-caps;
-}
-
-.element-metadata-values {
-	grid-area: valuecol;
-	color: #000;
-	max-width: 520px;
-}
-
-/* Does not work on iOS (shows border on left, bottom, and top. */
-.element-metadata-value-multiple {
-	padding-top: 0px;
-	border-top: solid 1px #dedede;
-}
-
-/* Draw line between multiple Subject or Title elements */
-.element .element-text:after {
-	background-color: #dbdbdb;
-	content: "";
-	display: block;
-	height: 1px;
-	margin-bottom: 4px;
-	margin-top: 4px;
-	width: 20%;
-}
-
-.element .element-text:last-of-type:after {
-	height: 0px;
-	margin-bottom: 0;
-}
-
-.element-text {
-	font-size: 14px;
-}
-
-.element-set label {
-	font-size: 18px;
-	font-size: 14px;
-	font-variant: small-caps;
-	font-weight: normal;
-	font-weight: 600;
-	color:#666;
-	line-height: 1.5em;
-}
-
-.element-text p {
-	font-size: 16px;
-	font-size: 14px;
-	line-height: 1.5em;
-	word-wrap: break-word;
-	margin: 0 0 0em 0;
-}
-/* field is the metadata label element */
-.field {
-	clear: both;
-	margin-bottom: 0px;
-}
-
-/* Used for metadata field label */
-.field label, .field .label {
-	clear: left;
-	float: left;
-	margin: 0 10px 10px 0;
-}
-
-/* Set max height of primary image */
-.items #primary .item-file img,
-.files #primary .item-file img {
-	max-height: 450px;
-	max-width: 100%;
-	width: auto;
-}
-
-/* Reduce  padding between title and primary image */
-.items.show #content > #primary {
-	padding: 0px 24px 24px 24px;
-	width: 64%;
-}
-
-/* === Items Show - Left Column ===
---------------------------------------------------------- */
-/* Tags */
-#item-tags {
- 	margin-bottom:20px;
-}
-
-#item-tags h2 {
- 	margin-bottom: 4px;
-}
-
-#item-citation {
- 	padding-bottom: 6px;
-}
-
-#item-citation > .element-text {
-	line-height: 21px;
-	margin-top: 0;
-}
-
-.citation-identifier {
-	padding-left: 4px;
-	font-weight: bold;
-}
-
-#geolocation h2 {
-	margin-bottom: 2px;
-}
-
-#itemfiles {
-	margin-bottom: 0;
-	overflow: hidden;
-}
-
-#itemfiles img,
-.files .item-file img {
-	background-color: #fff;
-	border: 1px solid #ddd;
-	-webkit-box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.25);
-	-moz-box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.25);
-	box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.25);
-	margin: 0 0.375em 0.375em 0;
-	padding: 3px;
-}
-
-#itemfiles + * {
- 	clear: left;
-}
-
-.items.show #content #secondary {
-	padding: 0 20px 0 12px;
-	width: 36%;
-}
-
-#secondary #itemfiles img {
-	border:none;
-	box-shadow: none;
-  	margin: 0;
-  	max-height: 80px;
-  	max-width: 100%;
-}
-
-#secondary .item-file {
-	position: relative;
-	border: 1px solid #ddd;
-  	box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.2);
-	display: inline-block;
-	height: 104px;
-	margin: 0 6px 6px 0;
-	max-height: 104px;
-	padding: 2px;
-	text-align: center;
-	vertical-align: top;
-  	width: 94px;
-}
-
-.item-file-index {
-	position: absolute;
-	color: #ccc;
-	font-size: 18px;
-	font-weight: bold;
-	top: 82px;
-	left: 40px;
-}
-
-div.item {
-	clear: both;
-	overflow: hidden;
-	border-color: #ddd;
-	border-top-width: 0.07143em;
-	border-top-style: solid;
-	padding-top: 1.42857em;
-}
-
-div.item h2 {
-  	margin-top: 0em;
-}
-
-.items #primary .item-file img,
-.files #primary .item-file img {
-	max-width: 98%;
-	width: auto;
-}
-
-/* === Galleries CSS ===
---------------------------------------------------------- */
-
-/* Back links for container items on Gallery page */
-#container-item-links {
-	clear: both;
-	margin-left: 12px;
-	padding-top: 8px;
-}
-
-#container-item-links .element-text {
-	margin-bottom: 2px;
-	margin-top: 4px;
-	padding-left: 24px;
-}
-
-#container-item-links .single-container-item {
-	padding-left: 8px;
-}
-
-.container-item-links-label {
-	color: #777;
-	font-size: 20px;
-	padding-bottom: 8px;
-}
-
-.container-description {
-	color: #777;
-	padding-left: 12px;
-}
-
-.container-item-links-label .element-text a:link {
-	font-size: 20px;
-}
-
-#container-item-links a:link {
-	color: #c76941;
-	text-decoration: none;
-}
-
-#container-item-links a:visited {
-	color: #c76941;
+#fp-nav ul li a{
+	opacity:0.5;
 }
-
-#container-item-links a:hover {
-	color: #e57f52;
-}
-
-#container-item-links a:active {
-	color: #c76941;
+#fp-nav ul li a + div{
+	opacity:0.5;
 }
-
-/* === Citation CSS ===
---------------------------------------------------------- */
-#item-citation h2 {
-	margin: 16px 0 0 0;
-	padding: 0;
+#fp-nav ul li a.active{
+	opacity:1;
 }
-
-#item-citation.gallery {
-	margin-left: 12px;
+#fp-nav ul li a.active + div{
+	opacity:1;
 }
-
-#item-citation.gallery > .element-text {
-	width: 36%;
+#fp-nav ul li a span{
+	width:12px !important;
+	height:12px !important;
+	margin: -6px 0 0 -6px !important;
+	background:#525252 !important;
 }
-
-#item-citation.gallery::before {
-	background-color: #ccc;
-	content: "";
-	display: block;
-	height: 1px;
-	margin-top: 12px;
+.transparent-mode #fp-nav ul li a span{
+	background:#fff !important;
 }
 
-#item-citation h2 {
-	color:#555;
+#fp-nav ul li a.active span{
+	background:#8C48C0 !important;
 }
-
-/* === Footer ===
---------------------------------------------------------- */
-#footer {
-	grid-area: footer;
-	background-color: var(--background-color);
-	color: var(--link-color);
+#fp-nav ul li .fp-tooltip{
+	opacity:0.5 !important;
+	width: auto !important;
+	top:1px !important;
+	font-size:16px !important;
+	color:#000 !important;
 }
-
-#footer a {
- 	transition: color 0.2s ease 0s;
+#fp-nav ul li .fp-tooltip.right {
+	right: 30px !important;
 }
+#fp-nav ul li a.active + .fp-tooltip{
+	font-weight:bold;
+	opacity:1 !important;
 
-#footer a:link {
- 	color: var(--link-color);
 }
 
-#footer a:visited {
- 	color: var(--link-color);
+.transparent-mode #fp-nav ul li .fp-tooltip{
+	color:#fff !important;
 }
 
-#footer a:hover {
- 	color: var(--link-hover-color);
-}
 
-#footer-text {
-	display: flex;
-	justify-content: space-between;
-	padding: 6px 4px 6px 2px;
-	width:100%;
-	font-size: 12px;
+/* 푸터 */
+ul.navigation-footer{
+	display:flex;
 }
-
-#footer-loginout {
-	display: flex;
-	font-size: 12px;
+ul.navigation-footer > li{
+	width:7.125rem;
 }
-
-#footer-loginout > span {
-	align-self: flex-end;
+ul.navigation-footer > li > a{
+	color:#404040;
+	font-weight:bold;
+	margin-bottom:1.5rem;
+	display:block;
 }
-
-#login-form {
-	width: 300px;
+ul.navigation-footer > li > a:hover{
+	color:#8C48C0;
 }
-
-form#login-form fieldset#fieldset-login {
-	padding-top: 24px;
+ul.navigation-footer > li > ul > li{
+	margin-bottom:1.5rem;
 }
-
-/* Simple Pages list */
-.spl li {
-	padding-bottom: 8px;
+ul.navigation-footer > li > ul > li > a{
+	color:#525252;
 }
-
-.spl li a {
-	font-size: 16px;
+ul.navigation-footer > li > ul > li > a:hover{
+	color:#8C48C0;
 }
 
-/* Add a box shadow around the entire page area. */
-/* Set content width the same as WP website width */
-/* Remove padding so banner and menu are flush with left and right */
-#wrap {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-areas:
-			"header"
-			"search"
-			"menu"
-			"content"
-			"footer";
-	background: var(--background-color);
-	-moz-box-shadow: 0 4px 15px 5px #aaa;
-	-webkit-box-shadow: 0 4px 15px 5px #aaa;
-	box-shadow: 0 4px 15px 5px #aaa;
-	margin-left: auto;
-	margin-right: auto;
-	overflow: hidden;
-	padding: 0 0;
-	max-width: 2400px;
-}
+/* 모바일모드 공통 */
+@media screen and (min-width: 320px) and (max-width: 1023px) {
 
-@media screen and (min-width: 600px) {
-	#wrap {
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		grid-template-areas:
-			"header	 header  search	 search  search"
-			"menu	 menu  	 menu	 menu  	 menu"
-			"content content content content content"
-			"footer  footer  footer  footer  footer";
+	/* 헤더 */
+	header .container:after{
+		content:"";
+		display:block;
+		border-bottom:1px solid #A3A3A3;
+		position:absolute;
+		left:16px;
+		right:16px;
+		bottom:0;
 	}
 
-	.element-metadata-row {
-		grid-template-columns: 140px 1fr;
+	header.open-mobile-menu .brand .black{
+		display:none
+	}
+	header.open-mobile-menu .brand .white{
+		display:block
 	}
 
-	#header a {
-		font-size: 2vw;
-	}
-}
 
-@media screen and (min-width: 760px) {
-	#header a {
-		font-size: 18px;
+	header .btn-menu-mobile .xi-bars{
+		display:inline
 	}
-}
-
-@media screen and (min-width: 960px) {
-	#wrap {
-		padding: 0 16px;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		grid-template-areas:
-			"header	 header  header	 search  search"
-			"menu	 menu  	 menu	 menu  	 menu"
-			"content content content content content"
-			"footer  footer  footer  footer  footer";
+	header .btn-menu-mobile .xi-close{
+		display:none
+	}
+	header.open-mobile-menu .btn-menu-mobile .xi-bars{
+		display:none;
+	}
+	header.open-mobile-menu .btn-menu-mobile .xi-close{
+		display:inline;
+		color: #fff;
 	}
 
-	#header {
-		margin-top: 0;
+	/* 네비세이션 바 메뉴 */
+	header{
+		position:relative;
+		overflow: visible;
+	}
+	header nav{
+		position:absolute;
+		width:100%;
+		top:44px;
+		left:0;
+		max-height:0;
+		overflow:hidden;
+		padding:16px 16px;
+		transition:max-height 0.3s, background 0.3s;
+		overflow: auto;
+	}
+	header.open-mobile-menu nav{
+		max-height:1000px;
+		background: rgba(0, 0, 0, 0.4);
+		backdrop-filter: blur(7px);
 	}
 
-	#header a {
-		font-size: 32px;
-		padding-left: 4px;
-	}
-}
-
-@media screen and (min-width: 1200px) {
-	#primary {
-		width: 70% !important;
-	}
-
-	#secondary {
-		width: 30% !important;
-	}
-
-	.docs-iframe-container {
-		width: 1120px;
-	}
-}
-
-@media screen and (min-width: 1600px) {
-	#primary {
-		width: 75% !important;
-	}
-
-	#secondary {
-		width: 25% !important;
-	}
-}
-
-/* === CSS for Width less than 844px ===
---------------------------------------------------------- */
-@media screen and (max-width: 844px) {
-	#primary,
-	#secondary,
-	#sidebar {
-		width: 100% !important;
-		border-right: 0 !important;
-		padding: 0 !important;
-	}
-
-	#content > #primary:not(:only-child) {
-		margin-bottom: 1.5em;
-	}
-
-	#secondary,
-	#sidebar {
-		border-left: 0;
-	}
-
-	body, #wrap {
-		margin: 0;
-		width: 100%;
-	}
-
-	#content > h1:first-of-type {
-		line-height: 24px;
-		margin-top: 8px;
-		width: 100%;
-	}
-
-	#primary {
-		max-width: 844px;
-	}
-
-	.item-file.image-jpeg {
-		margin-left:8px;
-	}
-
-	#item-citation {
-		width: 320px;
-	}
-}
-
-/* === CSS for Width < 600px (Mobile Landscape) ===
-This is the break when the menu collapes to a burger icon.
---------------------------------------------------------- */
-@media screen and (max-width: 600px) {
-	#admin-bar > ul > li {
-		box-shadow: none;
-		border-color: transparent;
-	}
-
-	#admin-bar .navigation li a {
-		width: inherit;
-	}
-
-	#nav-toggle {
-		cursor: pointer;
-		display: inline;
-	}
-
-	#nav-toggle span {
-		color: var(--nav-link-hover-color);
-		padding-left: 8px;
-	}
-
-	#nav-toggle span:before {
-		content: "\f0c9";
-		font-family: "FontAwesome";
-		font-size: 32px;
-		line-height: 44px;
-	}
-
-	.navigation {
-		position: relative;
-	}
-
-	.navigation li {
-		display: block;
-		width: 100%;
-		border-color: rgba(255, 255, 255, 0.15);
-		border-color: #2a0300;
-		border-bottom-width: 0.07143em;
-		border-bottom-style: solid;
-		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-		padding-bottom: -0.07143em;
-	}
-
-	.navigation li a {
-		width: 100%;
-	}
-
-	.navigation li:last-of-type {
-		border-color: transparent;
-	}
-
-	.nav-item > a {
-		border-style: solid;
-		border-width: 0 0 1px;
-		border-color: #2a0300;
-		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-		font-size: 16px;
-	}
-
-	#top-nav {
-		display: none;
-		margin-top: 0;
-		padding-bottom: 0px;
-	}
-
-	#top-nav .nav-menu ul, #top-nav .nav-menu ul li {
-		width: 100%;
-	}
-
-	#top-nav > .nav-menu li ul {
-		position: inherit;
-		margin-top: 0;
-	}
-
-	#top-nav > .nav-menu ul ul ul {
-		width: 95%;
-		left: 5%;
-	}
-
-	#top-nav > .nav-menu > ul > li > a {
-		border-width: 0 0 1px 0;
-		border-style: solid;
-		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-	}
-
-	#top-nav > .nav-menu ul li > a:not(:only-child) span:after {
-		content: '\f0c9';
+	header.open-mobile-menu:after{
+		content:"";
+		display:block;
 		position: absolute;
-		right: 5px;
-		top: 10px;
-		z-index: 251;
-		-moz-transition: all .2s ease-in-out;
-		-o-transition: all .2s ease-in-out;
-		-webkit-transition: all .2s ease-in-out;
-		transition: all .2s ease-in-out;
+		top:17px;
+		left:0;
+		right:0;
+		bottom:0;
+		background: rgba(0, 0, 0, 0.4);
+		backdrop-filter: blur(15px);
 	}
 
-	#top-nav > .nav-menu ul li:hover > a:not(:only-child) span:after {
-		top: 20px;
-		opacity: 0;
+	.navigation{
+		display:block;
+	}
+	.navigation > li{
+		position:relative;
+		border-bottom:1px solid #A3A3A3;
+	}
+	.navigation > li > a{
+		color:#fff;
+		font-size:18px;
+		padding:16px 0;
+		width:auto;
+		text-align:left;
+	}
+	.navigation > li > ul{
+		position:static;
+		transform: translateX(0);
+		padding:0;
+		max-height:0;
+		overflow: hidden;
 	}
 
-	#top-nav > .nav-menu ul li > a:not(:only-child) span {
-		padding-right: 18px;
+	.navigation > li > ul > li > a{
+		padding:0.75rem;
+		text-align: left;
+	}
+    /* 2depth toggle */
+    .navigation > li.expanded > a{
+        position:relative;
+    }
+    .navigation > li.expanded > a:after{
+        content:"\e941";
+        font-family:xeicon;
+        position:absolute;
+        right:0;
+        transition:transform 0.2s;
+    }
+
+    .navigation > li.expanded.active-trail > a:after{
+        transform: rotate(180deg);
+    }
+
+    .navigation > li.expanded > ul{
+        max-height:0px;
+        padding-bottom:0;
+        overflow:hidden;
+        transition: max-height 0.3s, padding-bottom 0.3s;
+    }
+    .navigation > li.expanded.active-trail > ul{
+        max-height:600px;
+        padding-bottom:16px;
+    }
+
+	header .bg-menu{
+		display:none;
 	}
 
-	#top-nav > .nav-menu > ul ul > li a:not(:only-child) span:after {
-		transform: rotate(0);
-		-ms-transform: rotate(0);
-		-webkit-transform: rotate(0);
-	}
 
-	#top-nav li.nav-menu-main-search {
-		max-width: none;
-	}
 }
 
-/* === CSS for Width < 480px (Mobile Portrait )===
---------------------------------------------------------- */
-@media screen and (max-width: 480px) {
-	#content {
-		padding: .5em .4em;
-	}
 
-	h1 {
-		line-height: 20px;
-		margin-bottom: .5em;
-	}
-}
+
+
+
+
+

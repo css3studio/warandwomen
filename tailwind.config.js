@@ -15,8 +15,8 @@ module.exports = {
       screens: {
         sm: "100%",
         md: "100%",
-        lg: "1216px",
-        xl: "1216px"
+        lg: "1280px",
+        xl: "1280px"
       },
       padding: {
         DEFAULT: "16px",
@@ -28,14 +28,13 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#004C97",
+        primary: "#8C48C0",
         secondary: "#FD5409",
         tertiary: "#008454",
         warning: "#F0BB3C"
       },
       fontFamily: {
-        sans: ["Pretendard", "sans-serif"],
-        mont: ["Montserrat", "serif"]
+        sans: ["Pretendard", "sans-serif"]
       }
     }
   },

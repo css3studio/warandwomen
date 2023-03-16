@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <link rel="shortcut icon" type="image/png" href="http://wowarko.alab.kr/favicon.png" />
+    <title>1 - 10 of 10 results &middot; 정의기억연대아카이브(프로덕션 서버)</title>
+
+
+    <link rel="alternate" type="application/rss+xml" title="Omeka RSS Feed" href="http://wowarko.alab.kr/items/browse?output=rss2" />
+    <link rel="alternate" type="application/atom+xml" title="Omeka Atom Feed" href="http://wowarko.alab.kr/items/browse?output=atom" />
+    <style>
+        .logged-in {
+            display: none;
+        }
+
+        .admin-user {
+            display: none;
+        }
+    </style>
+
+    <style>
+        #search-table-view th {
+            text-align: left;
+        }
+    </style>
+
+    <link href="http://wowarko.alab.kr/plugins/AvantCommon/views/shared/css/magnific-popup.css?v=3.0.3" media="all"
+        rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantCommon/views/shared/css/avantcommon.css?v=3.0.3.6" media="all"
+        rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantAdmin/views/shared/css/avantadmin-recent.css?v=3.0.3" media="all"
+        rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantElements/views/shared/css/avantelements.css?v=3.0.3" media="all"
+        rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantSearch/views/public/css/avantsearch.css?v=3.0.3" media="all"
+        rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantZoom/views/shared/css/avantzoom.css?v=3.0.3" media="all"
+        rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/GuestUser/views/public/css/guest-user.css?v=3.0.3" media="all"
+        rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/Cart/views/shared/css/cart.css?v=3.0.3" media="all" rel="stylesheet"
+        type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantRelationships/views/shared/css/cytoscape.js-panzoom.css?v=3.0.3"
+        media="all" rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantRelationships/views/shared/css/avantrelationships.css?v=3.0.3"
+        media="all" rel="stylesheet" type="text/css">
+    <link href="/application/views/scripts/css/jquery-ui.css?v=3.0.3" media="all" rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantElasticsearch/views/public/css/avantelasticsearch.css?v=3.0.3"
+        media="all" rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantVocabulary/views/shared/css/avantvocabulary-tree.css?v=3.0.3"
+        media="all" rel="stylesheet" type="text/css">
+    <link href="https//fonts.googleapis.com/css?family=Arvo:400" media="screen" rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/application/views/scripts/css/admin-bar.css?v=3.0.3" media="screen"
+        rel="stylesheet" type="text/css">
+    <link href="../css/iconfonts.css?v=3.0.3" media="all" rel="stylesheet"
+        type="text/css">
+    <link href="../css/style-build.css?v=3.0.3.3" media="all" rel="stylesheet"
+        type="text/css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        //<!--
+        window.jQuery || document.write("<script type=\"text\/javascript\" src=\"\/application\/views\/scripts\/javascripts\/vendor\/jquery.js?v=3.0.3\" charset=\"utf-8\"><\/script>")    //-->
+    </script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        //<!--
+        window.jQuery.ui || document.write("<script type=\"text\/javascript\" src=\"\/application\/views\/scripts\/javascripts\/vendor\/jquery-ui.js?v=3.0.3\" charset=\"utf-8\"><\/script>")    //-->
+    </script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/application/views/scripts/javascripts/vendor/jquery.ui.touch-punch.js"></script>
+    <script type="text/javascript">
+        //<!--
+        jQuery.noConflict();    //-->
+    </script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantSearch/views/public/javascripts/results-view-script.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantCommon/views/shared/javascripts/jquery.magnific-popup.min.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantCommon/views/shared/javascripts/js.cookie-2.2.1.min.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantCommon/views/shared/javascripts/avantcommon-script.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantAdmin/views/shared/javascripts/recent-items-script.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/GuestUser/views/public/javascripts/guest-user.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/Cart/views/shared/javascripts/cart.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantRelationships/views/shared/javascripts/cytoscape.min.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantRelationships/views/shared/javascripts/cytoscape-cose-bilkent.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantRelationships/views/shared/javascripts/dagre.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantRelationships/views/shared/javascripts/cytoscape-dagre.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantRelationships/views/shared/javascripts/cytoscape-panzoom.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantElasticsearch/views/public/javascripts/avantelasticsearch-script.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/themes/AvantTheme/javascripts/jquery-accessibleMegaMenu.js?v=3.0.3"></script>
+    <script type="text/javascript" src="http://wowarko.alab.kr/themes/AvantTheme/javascripts/avant.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/application/views/scripts/javascripts/globals.js?v=3.0.3"></script>
+
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/jquery.fullpage.css">
+    <script type="text/javascript" src="../javascripts/jquery.fullpage.min.js"></script>
+    <script type="text/javascript" src="../javascripts/script.js"></script>
+
+</head>
+
+
+<body>
+    <div id="wrap">
+
+        <header id="header" role="banner" class="fixed w-full lg:pt-10 pt-[34px] bg-white z-20">
+            <div class="container lg:h-14 h-11 flex justify-between items-center relative z-10">
+                <a class="brand" href="http://wowarko.alab.kr">
+                    <img class="black lg:h-14 h-10" src="../images/logo.png" alt="전쟁과여성인권 아카이브">
+                    <img class="white lg:h-14 h-10" src="../images/logo-white.png" alt="전쟁과여성인권 아카이브">
+                </a>
+                <a href="#" class="btn-menu-mobile  w-7 h-7 lg:hidden text-2xl flex items-center justify-center" title="모바일메뉴 열기/닫기">
+                    <i class="xi-bars"></i>
+                    <i class="xi-close"></i>
+                </a>
+                <nav id="top-nav" role="navigation" class="flex lg:items-center lg:flex-row flex-col lg:static absolute">
+                    <ul class="navigation">
+                        <li class="active">
+                            <a href="/items/#">기록</a>
+                            <ul>
+                                <li>
+                                    <a href="/items/intro">기록찾기</a>
+                                </li>
+                                <li class="active">
+                                    <a href="/find?query=&amp;site=1">일반검색</a>
+                                </li>
+                                <li>
+                                    <a href="/find/advanced">상세검색</a>
+                                </li>
+                                <li>
+                                    <a href="/items/googlesearch">웹검색</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/items/info">정보</a>
+                            <ul>
+                                <li>
+                                    <a href="/items/person">인물정보</a>
+                                </li>
+                                <li>
+                                    <a href="/items/group">단체정보</a>
+                                </li>
+                                <li>
+                                    <a href="/items/history">연표정보</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/collections/#">컬렉션</a>
+                            <ul>
+                                <li>
+                                    <a href="/collections/browse">전체보기</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/exhibits">콘텐츠</a>
+                            <ul>
+                                <li>
+                                    <a href="/exhibits/browse">전체보기</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/contribution">참여</a>
+                            <ul>
+                                <li>
+                                    <a href="/contribute">기록기증</a>
+                                </li>
+                                <li>
+                                    <a href="/event">이벤트</a>
+                                </li>
+                                <li>
+                                    <a href="/donate">후원</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/about">소개</a>
+                            <ul>
+                                <li>
+                                    <a href="/about-01">소개</a>
+                                </li>
+                                <li>
+                                    <a href="/about-02">구축과정</a>
+                                </li>
+                                <li>
+                                    <a href="/guide-01">이용방법</a>
+                                </li>
+                                <li>
+                                    <a href="/guide-02">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="/contact">문의하기</a>
+                                </li>
+                                <li>
+                                    <a href="/notice">공지사항</a>
+                                </li>
+                                <li>
+                                    <a href="/stat-01">소장정보</a>
+                                </li>
+                                <li>
+                                    <a href="/stat-02">이용현황</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="functions lg:ml-[12.5rem] flex gap-2 mt-4 lg:mt-0">
+                        <li class="w-1/2 lg:w-auto">
+                            <a href="#" class="lg:h-12 lg:w-12 h-10 flex justify-center items-center border border-white lg:border-0 hover:text-primary" title="검색">
+                                <span class="lg:hidden inline text-white">검색</span>
+                                <i class="xi-search text-2xl !hidden lg:!inline"></i>
+                            </a>
+                        </li>
+                        <li class="w-1/2 lg:w-auto">
+                            <a href="#" class="lg:h-12 lg:w-12 h-10 flex justify-center items-center border border-white lg:border-0 hover:text-primary"  title="마아페이지">
+                                <span class="lg:hidden inline text-white">마아페이지</span>
+                                <i class="xi-user-o text-2xl !hidden lg:!inline"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="bg-menu"></div>
+
+        </header>
+
+        <article id="content" role="main" tabindex="-1" class="pt-0"><!--pt-24-->
+
+            <div id="fullpage">
+                <!--아카이브 섹션-->
+                <div class="section relative bg-[url('../images/banner-main01.png')] bg-cover">
+                    <div class="container text-white">
+                        <h2 class="text-6xl font-bold mb-6">정의기억연대아카이브</h2>
+                        <p class="text-xl mb-11">일본군 성노예제 문제해결을 위한 기억투쟁</p>
+                        <ul class="flex gap-12 text-3xl font-bold">
+                            <li><a href="#" class="flex hover:text-primary">기록<i class="xi-angle-right-min ml-1 text-[2.2rem] relative -top-0.5"></i></a></li>
+                            <li><a href="#" class="flex hover:text-primary">시간<i class="xi-angle-right-min ml-1 text-[2.2rem] relative -top-0.5"></i></a></li>
+                            <li><a href="#" class="flex hover:text-primary">이야기<i class="xi-angle-right-min ml-1 text-[2.2rem] relative -top-0.5"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="absolute left-1/2 -translate-x-1/2 bottom-7 text-lg text-center text-white">
+                        <p>아래로 스크롤</p>
+                        <i class="xi-angle-down-min text-4xl animate-bounce"></i>
+                    </div>
+                </div>
+                <!--//아카이브 섹션-->
+                <!--컬렉션 섹션-->
+                <div class="section">
+                    <div class="container">
+                        <h2 class="text-5xl font-bold mb-10">컬렉션</h2>
+                        <div class="main-collection">
+                            <ul class="text-white grid grid-cols-2 gap-8 h-[624px]">
+                                <li class="relative row-span-2">
+                                    <img class="h-full object-cover" src="../images/bg-collection-main01.png" alt="">
+                                    <dl class="absolute top-0 left-0 py-10 px-8">
+                                        <dt class="text-4xl font-bold mb-8">아시아연대회의 컬렉션</dt>
+                                        <dd><a class="hover:underline" href="#">컬렉션 보기</a></dd>
+                                    </dl>
+                                </li>
+                                <li class="relative">
+                                    <img class="h-full object-cover" src="../images/bg-collection-main02.png" alt="">
+                                    <dl class="absolute top-0 left-0 py-10 px-8">
+                                        <dt class="text-4xl font-bold mb-8">아시아연대회의 컬렉션</dt>
+                                        <dd><a class="hover:underline" href="#">컬렉션 보기</a></dd>
+                                    </dl>
+                                </li>
+                                <li class="relative">
+                                    <img class="h-full object-cover" src="../images/bg-collection-main03.png" alt="">
+                                    <dl class="absolute top-0 left-0 py-10 px-8">
+                                        <dt class="text-4xl font-bold mb-8">아시아연대회의 컬렉션</dt>
+                                        <dd><a class="hover:underline" href="#">컬렉션 보기</a></dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--//컬렉션 섹션-->
+                <!--정보 섹션-->
+                <div class="section">
+                    <div class="container">
+                        <h2 class="text-5xl font-bold mb-10">정보</h2>
+                        <div class="main-info">
+                            <ul class="text-white grid grid-cols-3 gap-8 h-[624px]">
+                                <li class="relative">
+                                    <img class="h-full object-cover" src="../images/bg-collection-main01.png" alt="">
+                                    <a href="#" class="absolute bottom-0 left-0 py-8 px-6 w-full flex justify-between">
+                                        <span class="text-4xl font-bold">인물정보</span>
+                                        <i class="xi-angle-right-min ml-1 text-[2.2rem] relative -top-0.5"></i>
+                                    </a>
+                                </li>
+                                <li class="relative">
+                                    <img class="h-full object-cover" src="../images/bg-collection-main02.png" alt="">
+                                    <a href="#" class="absolute bottom-0 left-0 py-8 px-6 w-full flex justify-between">
+                                        <span class="text-4xl font-bold">단체정보</span>
+                                        <i class="xi-angle-right-min ml-1 text-[2.2rem] relative -top-0.5"></i>
+                                    </a>
+                                </li>
+                                <li class="relative">
+                                    <img class="h-full object-cover" src="../images/bg-collection-main03.png" alt="">
+                                    <a href="#" class="absolute bottom-0 left-0 py-8 px-6 w-full flex justify-between">
+                                        <span class="text-4xl font-bold">연표정보</span>
+                                        <i class="xi-angle-right-min ml-1 text-[2.2rem] relative -top-0.5"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--//정보 섹션-->
+
+                <!--콘텐츠 섹션-->
+                <div class="section">
+                    <div class="container">
+                        <h2 class="text-5xl font-bold mb-10">정보</h2>
+                        <div class="main-contents">
+                            <ul class="grid grid-cols-3 gap-8">
+                                <li>
+                                    <a href="#" class="block group">
+                                        <img class="w-full aspect-[405/241] object-cover mb-4" src="../images/bg-collection-main01.png" alt="">
+                                        <b class="block text-2xl font-bold mb-4 group-hover:underline">아시아연대회의 결의문 속 주요아젠다와 그 변화</b>
+                                        <span class="text-neutral-700 line-clamp-3">아시아연대회의는 일본군 '위안부' 문제 관련 사안을 아시아 피해국들이 공동으로 고민하고 해결하기 위해 1992년 설립됐다. 지난 30여년 간 진행된 시아연대회의에서는 일본군 '위안부'라는 용어 사용 문제부터 강제성 문제, 법적 배상 문제, 책임자 처벌 요구, 역사왜곡 대응, 군국주의 대응, 여성폭력 이슈로의 확대와 연대, 인권운동으로서의 자리매김, 전시(戰時) 성폭력 문제에 대한 국제적 관심 조성, 2000년 법정 등 아시아 여성들이 일본군 '위안부' 문제 해결을 위해 연대해왔던 활동들에 중대한 영향을 미치면서 전개되었다. 제1차(1992년)부터 제15차(2018년)까지의 결의문 속에 담긴 각 시기별 주요 아젠다를 확인하고, 이 아젠다가 각국 운동과 활동에 미친 구체적인 영향을 살펴보고자 한다</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block group">
+                                        <img class="w-full aspect-[405/241] object-cover mb-4" src="../images/bg-collection-main02.png" alt="">
+                                        <b class="block text-2xl font-bold mb-4 group-hover:underline">[기록 자세히 보기] 제3차 아시아연대회의 대자보</b>
+                                        <span class="text-neutral-700 line-clamp-3">제3차 아시아연대회의는 전후 50년을 맞이하면서 1995년 3월에 서울에서 ‘전후 50년, 일본군위안부 문제는 왜 해결되지 않았는가’라는 주제로 개최되었다. 일본 정부의 국민모금 구상안이 회의의 주요 쟁점으로 떠올랐고, 아시아 피해국 전체가 국민기금에 반대하는 입장으로 강하게 결속했다. 대회 장소 로비에 걸려있던 대자보 속에는 한국, 일본, 필리핀, 타이완 등에서 온 참석자들의 굳은 결속과 문제해결을 위한 의지가 담겨져 있다.</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block group">
+                                        <img class="w-full aspect-[405/241] object-cover mb-4" src="../images/bg-collection-main03.png" alt="">
+                                        <b class="block text-2xl font-bold mb-4 group-hover:underline">아시아연대회의와 증언자들</b>
+                                        <span class="text-neutral-700 line-clamp-3">아시아연대회의는 아시아 각국 피해생존자의 증언을 경청하고 이를 문제해결 운동의 의제설정과 향후 활동에 반영코자 하였다. 제1회 회의에서 한국의 노청자, 김복동의 증언 이후 제15차 회의까지 피해생존자의 증언과 발언은 꾸준히 이어오고 있다. 아시아연대회의에서 증언한 피해생존자들의 증언 내용이 다른 활동에서의 증언들과 다른 지점을 발견하고, 문서(텍스트)와 사진, 영상 등 다양한 매체에 담긴 증언을 일별할 수 있도록 한다</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--//콘텐츠 섹션-->
+
+                <div class="section fp-auto-height">
+                    <footer class="py-10 border-t border-neutral-400">
+                        <div class="container flex justify-between">
+                            <div>
+                                <a class="brand block mb-6" href="http://wowarko.alab.kr">
+                                    <img class="black lg:h-14 h-10" src="../images/logo.png" alt="전쟁과여성인권 아카이브">
+                                </a>
+                                <div class="text-xs text-neutral-400">
+                                    (재)일본군성노예제문제해결을위한정의기억연대<br>
+                                    고유번호 637-82-00114 | 대표자 이나영전화 02-365-4016 <span class="hidden lg:inline">|</span><br class="block lg:hidden"> 팩스 02-365-4017 <span class="lg:hidden inline">|</span><br class="lg:block hidden">
+                                    이메일 <a href="mailto:info@womenandwar.net">info@womenandwar.net</a>  <span class="hidden lg:inline">|</span><br class="block lg:hidden"> 주소 서울시 마포구 월드컵북로 11길12, 1층(03967)
+                                </div>
+                            </div>
+                            <nav class="hidden lg:block">
+                                <ul class="navigation-footer">
+                                    <li class="active">
+                                        <a href="/items/#">기록</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/items/intro">기록찾기</a>
+                                            </li>
+                                            <li class="active">
+                                                <a href="/find?query=&amp;site=1">일반검색</a>
+                                            </li>
+                                            <li>
+                                                <a href="/find/advanced">상세검색</a>
+                                            </li>
+                                            <li>
+                                                <a href="/items/googlesearch">웹검색</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/items/info">정보</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/items/person">인물정보</a>
+                                            </li>
+                                            <li>
+                                                <a href="/items/group">단체정보</a>
+                                            </li>
+                                            <li>
+                                                <a href="/items/history">연표정보</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/collections/#">컬렉션</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/collections/browse">전체보기</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/exhibits">콘텐츠</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/exhibits/browse">전체보기</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/contribution">참여</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/contribute">기록기증</a>
+                                            </li>
+                                            <li>
+                                                <a href="/event">이벤트</a>
+                                            </li>
+                                            <li>
+                                                <a href="/donate">후원</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/about">소개</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/about-01">소개</a>
+                                            </li>
+                                            <li>
+                                                <a href="/about-02">구축과정</a>
+                                            </li>
+                                            <li>
+                                                <a href="/guide-01">이용방법</a>
+                                            </li>
+                                            <li>
+                                                <a href="/guide-02">FAQ</a>
+                                            </li>
+                                            <li>
+                                                <a href="/contact">문의하기</a>
+                                            </li>
+                                            <li>
+                                                <a href="/notice">공지사항</a>
+                                            </li>
+                                            <li>
+                                                <a href="/stat-01">소장정보</a>
+                                            </li>
+                                            <li>
+                                                <a href="/stat-02">이용현황</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+
+        </article>
+
+    </div><!-- end wrap -->
+
+</body>
+
+</html>
