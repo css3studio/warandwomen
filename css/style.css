@@ -7,10 +7,13 @@
 
 /* 헤더 */
 header{
+	top:0;
 	max-height: 6rem;
 	overflow: hidden;
-	transition:max-height 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.5s;
-
+	transition:max-height 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.5s, top 0.3s;
+}
+.footer-mode header{
+	top:-96px;
 }
 header.open-menu{
 	max-height: 100rem;
@@ -82,8 +85,11 @@ header .bg-menu{
 .transparent-mode header .functions > li > a{
 	color:#fff;
 }
+.transparent-mode header .btn-menu-mobile{
+	color:#fff;
+}
 
-/* 메인 */
+/* 메인 인디게이터 */
 #fp-nav{
 	z-index:10 !important;
 	transition: opacity 0.3s;
@@ -224,7 +230,7 @@ ul.navigation-footer > li > ul > li > a:hover{
 	header.open-mobile-menu nav{
 		max-height:1000px;
 		background: rgba(0, 0, 0, 0.4);
-		backdrop-filter: blur(7px);
+		backdrop-filter: blur(15px);
 	}
 
 	header.open-mobile-menu:after{
@@ -294,6 +300,53 @@ ul.navigation-footer > li > ul > li > a:hover{
 
 	header .bg-menu{
 		display:none;
+	}
+
+	/* 메인 인디게이터 */
+	#fp-nav ul li{
+		height:20px !important;
+		margin:7px 0 !important;
+	}
+	#fp-nav ul li .fp-tooltip{
+		display:none !important;
+	}
+
+	/* 메인 슬라이더 */
+	.main-collection,
+	.main-contents,
+	.main-info{
+		margin:0 -16px;
+		padding:0 16px;
+	}
+	.main-collection .slick-list,
+	.main-contents .slick-list,
+	.main-info .slick-list{
+		overflow:visible;
+	}
+	.slick-dots{
+		position:absolute;
+		left:0;
+		bottom: -40px;
+		width:calc(100vw - 32px);
+		padding-top:16px;
+		display:flex;
+		justify-content: center;
+	}
+	.slick-dots li{
+		margin:0 4px;
+	}
+
+	.slick-dots li button{
+		width:8px;
+		height:8px;
+		border-radius:4px;
+		background:#D9D9D9;
+		text-indent:-9999px;
+		overflow:hidden;
+		transition:background 0.3s;
+	}
+	.slick-dots li.slick-active button{
+		background:#8C48C0;
 	}
 
 
