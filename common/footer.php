@@ -2,8 +2,8 @@
         <footer class="py-10 border-t border-neutral-400">
             <div class="container flex justify-between">
                 <div>
-                    <a class="brand block mb-6" href="http://wowarko.alab.kr">
-                        <img class="black lg:h-14 h-10" src="../images/logo.png" alt="전쟁과여성인권 아카이브">
+                    <a class="brand block mb-6" href="/">
+                        <img class="black lg:h-14 h-10" src="/themes/AvantTheme/images/logo.png" alt="전쟁과여성인권 아카이브">
                     </a>
                     <div class="text-xs text-neutral-400">
                         (재)일본군성노예제문제해결을위한정의기억연대<br>
@@ -14,7 +14,7 @@
                 <nav class="hidden lg:block">
                     <ul class="navigation-footer">
                         <li class="active">
-                            <a href="/items/#">기록</a>
+                            <a href="/items/intro">기록</a>
                             <ul>
                                 <li>
                                     <a href="/items/intro">기록찾기</a>
@@ -31,7 +31,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="/items/info">정보</a>
+                            <a href="/items/person">정보</a>
                             <ul>
                                 <li>
                                     <a href="/items/person">인물정보</a>
@@ -45,7 +45,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="/collections/#">컬렉션</a>
+                            <a href="/collections/browse">컬렉션</a>
                             <ul>
                                 <li>
                                     <a href="/collections/browse">전체보기</a>
@@ -53,7 +53,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="/exhibits">콘텐츠</a>
+                            <a href="/exhibits/browse">콘텐츠</a>
                             <ul>
                                 <li>
                                     <a href="/exhibits/browse">전체보기</a>
@@ -61,7 +61,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="/contribution">참여</a>
+                            <a href="/contribute">참여</a>
                             <ul>
                                 <li>
                                     <a href="/contribute">기록기증</a>
@@ -75,7 +75,19 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="/about">소개</a>
+                            <a href="/about-01">소개</a>
+                            <ul>
+                                <li>
+                                    <a href="/about-01">아카이브 소개</a>
+                                </li>
+                                <li>
+                                    <a href="/guide-01">아카이브 이용안내</a>
+                                </li>
+                                <li>
+                                    <a href="/stat-01">아카이브 현황</a>
+                                </li>
+                            </ul>
+							<!-- 
                             <ul>
                                 <li>
                                     <a href="/about-01">소개</a>
@@ -102,6 +114,7 @@
                                     <a href="/stat-02">이용현황</a>
                                 </li>
                             </ul>
+							// -->
                         </li>
                     </ul>
                 </nav>

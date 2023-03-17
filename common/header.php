@@ -105,8 +105,8 @@ if (!$dependentPluginsActive)
         <header id="header" role="banner" class="fixed w-full lg:pt-10 pt-[34px] bg-white z-20">
             <div class="container lg:h-14 h-11 flex justify-between items-center relative z-10">
                 <a class="brand" href="http://wowarko.alab.kr">
-                    <img class="black lg:h-14 h-10" src="../images/logo.png" alt="전쟁과여성인권 아카이브">
-                    <img class="white lg:h-14 h-10" src="../images/logo-white.png" alt="전쟁과여성인권 아카이브">
+                    <img class="black lg:h-14 h-10" src="/themes/AvantTheme/images/logo.png" alt="전쟁과여성인권 아카이브">
+                    <img class="white lg:h-14 h-10" src="/themes/AvantTheme/images/logo-white.png" alt="전쟁과여성인권 아카이브">
                 </a>
                 <a href="#" class="btn-menu-mobile  w-7 h-7 lg:hidden text-2xl flex items-center justify-center" title="모바일메뉴 열기/닫기">
                     <i class="xi-bars"></i>
