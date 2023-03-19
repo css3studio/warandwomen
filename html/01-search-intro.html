@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <link rel="shortcut icon" type="image/png" href="http://wowarko.alab.kr/favicon.png" />
+    <title>1 - 10 of 10 results &middot; 정의기억연대아카이브(프로덕션 서버)</title>
+
+
+    <link rel="alternate" type="application/rss+xml" title="Omeka RSS Feed" href="http://wowarko.alab.kr/items/browse?output=rss2" />
+    <link rel="alternate" type="application/atom+xml" title="Omeka Atom Feed" href="http://wowarko.alab.kr/items/browse?output=atom" />
+    <style>
+        .logged-in {
+            display: none;
+        }
+
+        .admin-user {
+            display: none;
+        }
+    </style>
+
+    <style>
+        #search-table-view th {
+            text-align: left;
+        }
+    </style>
+
+    <link href="http://wowarko.alab.kr/plugins/AvantCommon/views/shared/css/magnific-popup.css?v=3.0.3" media="all"
+        rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantCommon/views/shared/css/avantcommon.css?v=3.0.3.6" media="all"
+        rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantAdmin/views/shared/css/avantadmin-recent.css?v=3.0.3" media="all"
+        rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantElements/views/shared/css/avantelements.css?v=3.0.3" media="all"
+        rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantSearch/views/public/css/avantsearch.css?v=3.0.3" media="all"
+        rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantZoom/views/shared/css/avantzoom.css?v=3.0.3" media="all"
+        rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/GuestUser/views/public/css/guest-user.css?v=3.0.3" media="all"
+        rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/Cart/views/shared/css/cart.css?v=3.0.3" media="all" rel="stylesheet"
+        type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantRelationships/views/shared/css/cytoscape.js-panzoom.css?v=3.0.3"
+        media="all" rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantRelationships/views/shared/css/avantrelationships.css?v=3.0.3"
+        media="all" rel="stylesheet" type="text/css">
+    <link href="/application/views/scripts/css/jquery-ui.css?v=3.0.3" media="all" rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantElasticsearch/views/public/css/avantelasticsearch.css?v=3.0.3"
+        media="all" rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/plugins/AvantVocabulary/views/shared/css/avantvocabulary-tree.css?v=3.0.3"
+        media="all" rel="stylesheet" type="text/css">
+    <link href="https//fonts.googleapis.com/css?family=Arvo:400" media="screen" rel="stylesheet" type="text/css">
+    <link href="http://wowarko.alab.kr/application/views/scripts/css/admin-bar.css?v=3.0.3" media="screen"
+        rel="stylesheet" type="text/css">
+    <link href="../css/iconfonts.css?v=3.0.3" media="all" rel="stylesheet"
+        type="text/css">
+    <link href="../css/style-build.css?v=3.0.3.3" media="all" rel="stylesheet"
+        type="text/css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        //<!--
+        window.jQuery || document.write("<script type=\"text\/javascript\" src=\"\/application\/views\/scripts\/javascripts\/vendor\/jquery.js?v=3.0.3\" charset=\"utf-8\"><\/script>")    //-->
+    </script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        //<!--
+        window.jQuery.ui || document.write("<script type=\"text\/javascript\" src=\"\/application\/views\/scripts\/javascripts\/vendor\/jquery-ui.js?v=3.0.3\" charset=\"utf-8\"><\/script>")    //-->
+    </script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/application/views/scripts/javascripts/vendor/jquery.ui.touch-punch.js"></script>
+    <script type="text/javascript">
+        //<!--
+        jQuery.noConflict();    //-->
+    </script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantSearch/views/public/javascripts/results-view-script.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantCommon/views/shared/javascripts/jquery.magnific-popup.min.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantCommon/views/shared/javascripts/js.cookie-2.2.1.min.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantCommon/views/shared/javascripts/avantcommon-script.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantAdmin/views/shared/javascripts/recent-items-script.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/GuestUser/views/public/javascripts/guest-user.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/Cart/views/shared/javascripts/cart.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantRelationships/views/shared/javascripts/cytoscape.min.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantRelationships/views/shared/javascripts/cytoscape-cose-bilkent.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantRelationships/views/shared/javascripts/dagre.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantRelationships/views/shared/javascripts/cytoscape-dagre.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantRelationships/views/shared/javascripts/cytoscape-panzoom.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/plugins/AvantElasticsearch/views/public/javascripts/avantelasticsearch-script.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/themes/AvantTheme/javascripts/jquery-accessibleMegaMenu.js?v=3.0.3"></script>
+    <script type="text/javascript" src="http://wowarko.alab.kr/themes/AvantTheme/javascripts/avant.js?v=3.0.3"></script>
+    <script type="text/javascript"
+        src="http://wowarko.alab.kr/application/views/scripts/javascripts/globals.js?v=3.0.3"></script>
+
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="../css/jquery.fullpage.css">
+    <script type="text/javascript" src="../javascripts/jquery.fullpage.min.js"></script>
+    <script type="text/javascript" src="../javascripts/script.js"></script>
+
+</head>
+
+
+<body>
+    <div id="wrap">
+
+        <header id="header" role="banner" class="fixed w-full lg:pt-10 pt-[34px] bg-white z-20">
+            <div class="container lg:h-14 h-11 flex justify-between items-center relative z-10">
+                <a class="brand" href="http://wowarko.alab.kr">
+                    <img class="black lg:h-14 h-10" src="../images/logo.png" alt="전쟁과여성인권 아카이브">
+                    <img class="white lg:h-14 h-10" src="../images/logo-white.png" alt="전쟁과여성인권 아카이브">
+                </a>
+                <a href="#" class="btn-menu-mobile  w-7 h-7 lg:hidden text-2xl flex items-center justify-center" title="모바일메뉴 열기/닫기">
+                    <i class="xi-bars"></i>
+                    <i class="xi-close"></i>
+                </a>
+                <nav id="top-nav" role="navigation" class="flex lg:items-center lg:flex-row flex-col lg:static absolute">
+                    <ul class="navigation">
+                        <li class="active">
+                            <a href="/items/#">기록</a>
+                            <ul>
+                                <li>
+                                    <a href="/items/intro">기록찾기</a>
+                                </li>
+                                <li class="active">
+                                    <a href="/find?query=&amp;site=1">일반검색</a>
+                                </li>
+                                <li>
+                                    <a href="/find/advanced">상세검색</a>
+                                </li>
+                                <li>
+                                    <a href="/items/googlesearch">웹검색</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/items/info">정보</a>
+                            <ul>
+                                <li>
+                                    <a href="/items/person">인물정보</a>
+                                </li>
+                                <li>
+                                    <a href="/items/group">단체정보</a>
+                                </li>
+                                <li>
+                                    <a href="/items/history">연표정보</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/collections/#">컬렉션</a>
+                            <ul>
+                                <li>
+                                    <a href="/collections/browse">전체보기</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/exhibits">콘텐츠</a>
+                            <ul>
+                                <li>
+                                    <a href="/exhibits/browse">전체보기</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/contribution">참여</a>
+                            <ul>
+                                <li>
+                                    <a href="/contribute">기록기증</a>
+                                </li>
+                                <li>
+                                    <a href="/event">이벤트</a>
+                                </li>
+                                <li>
+                                    <a href="/donate">후원</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/about">소개</a>
+                            <ul>
+                                <li>
+                                    <a href="/about-01">소개</a>
+                                </li>
+                                <li>
+                                    <a href="/about-02">구축과정</a>
+                                </li>
+                                <li>
+                                    <a href="/guide-01">이용방법</a>
+                                </li>
+                                <li>
+                                    <a href="/guide-02">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="/contact">문의하기</a>
+                                </li>
+                                <li>
+                                    <a href="/notice">공지사항</a>
+                                </li>
+                                <li>
+                                    <a href="/stat-01">소장정보</a>
+                                </li>
+                                <li>
+                                    <a href="/stat-02">이용현황</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="functions lg:ml-[12.5rem] flex gap-2 mt-4 lg:mt-0">
+                        <li class="w-1/2 lg:w-auto">
+                            <a href="#" class="lg:h-12 lg:w-12 h-10 flex justify-center items-center border border-white lg:border-0 hover:text-primary" title="검색">
+                                <span class="lg:hidden inline text-white">검색</span>
+                                <i class="xi-search text-2xl !hidden lg:!inline"></i>
+                            </a>
+                        </li>
+                        <li class="w-1/2 lg:w-auto">
+                            <a href="#" class="lg:h-12 lg:w-12 h-10 flex justify-center items-center border border-white lg:border-0 hover:text-primary"  title="마아페이지">
+                                <span class="lg:hidden inline text-white">마아페이지</span>
+                                <i class="xi-user-o text-2xl !hidden lg:!inline"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="bg-menu"></div>
+
+        </header>
+
+        <article id="content" role="main" tabindex="-1" class="lg:pt-24 pt-[78px]">
+
+            <section class="bg-[url('../images/banner-main01.png')] bg-cover h-[440px] flex justify-center items-center">
+                <div class="text-center text-white lg:w-[600px] px-4 lg:px-0">
+                    <h1 class="lg:text-5xl text-4xl font-bold lg:mb-8 mb-6">지금, 여기, 우리의 기억</h1>
+                    <p class="lg:text-lg text-base lg:mb-8 mb-6">일본군성노예제 문제해결을 위한 과거, 현재, 미래의 기록을 검색할 수 있습니다</p>
+                    <form class="flex gap-2 h-[52px]" action="">
+                        <label for="search_keyword" class="absolute w-0 h-0 overflow-hidden">키워드</label>
+                        <input type="text" class="flex-1 text-black text-lg" id="search_keyword" name="search_keyword" placeholder="'인물'을 검색해 보세요" required>
+                        <button class="w-[84px] flex-shrink-0 bg-primary hover:bg-black">검색</button>
+                    </form>
+                </div>
+            </section>
+            <section class="pt-20 lg:pb-44 pb-32">
+                <div class="container lg:grid grid-cols-3">
+                    <div class="lg:border-r border-b lg:border-b-0 border-neutral-200 lg:pr-4 pb-8 lg:pb-0 mb-8 lg:mb-0">
+                        <h2 class="lg:text-3xl text-2xl font-bold lg:mb-6 mb-4">상세 검색</h2>
+                        <div class="bg-neutral-100 p-4">
+                            <p class="text-sm text-neutral-700 lg:h-[188px] mb-4">생생하며, 할지라도 내는 속잎나고, 때에, 튼튼하며, 새 사막이다. 풀밭에 이상을 가지에 듣기만 인간의 이상의 되려니와, 싸인 트고, 이것이다. 미묘한 들어 얼마나 못할 이상은 우리의 듣는다. 얼마나 못할 구할 구하지 우리 웅대한 같으며, 같은 힘차게 운다. 뭇 청춘의 바이며, 것이다. 소리다.이것은 뜨거운지라, 청춘이 긴지라 그리하였는가? </p>
+                            <a class="bg-primary text-white text-sm py-1.5 px-4 hover:bg-black" href="#">상세검색 바로가기</a>
+                        </div>
+                    </div>
+                    <div class="lg:border-r border-b lg:border-b-0 border-neutral-200 lg:px-4 pb-8 lg:pb-0 mb-8 lg:mb-0">
+                        <h2 class="lg:text-3xl text-2xl font-bold lg:mb-6 mb-4">정보유형 탐색</h2>
+                        <ul class="lg:text-xl text-lg text-neutral-700">
+                            <li class="mb-1">
+                                <a class="border border-neutral-200 bg-neutral-50 hover:text-primary py-[16px] px-4 flex justify-between items-center" href="#">기록<i class="xi-angle-right"></i></a>
+                            </li>
+                            <li class="mb-1">
+                                <a class="border border-neutral-200 bg-neutral-50 hover:text-primary py-[16px] px-4 flex justify-between items-center" href="#">단체/조직<i class="xi-angle-right"></i></a>
+                            </li>
+                            <li class="mb-1">
+                                <a class="border border-neutral-200 bg-neutral-50 hover:text-primary py-[16px] px-4 flex justify-between items-center" href="#">인물<i class="xi-angle-right"></i></a>
+                            </li>
+                            <li>
+                                <a class="border border-neutral-200 bg-neutral-50 hover:text-primary py-[16px] px-4 flex justify-between items-center" href="#">사건<i class="xi-angle-right"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lg:pl-4">
+                        <h2 class="lg:text-3xl text-2xl font-bold lg:mb-6 mb-4">웹 검색</h2>
+                        <div class="bg-neutral-100 p-4">
+                            <p class="text-sm text-neutral-700 lg:h-[188px] mb-4">생생하며, 할지라도 내는 속잎나고, 때에, 튼튼하며, 새 사막이다. 풀밭에 이상을 가지에 듣기만 인간의 이상의 되려니와, 싸인 트고, 이것이다. 미묘한 들어 얼마나 못할 이상은 우리의 듣는다. 얼마나 못할 구할 구하지 우리 웅대한 같으며, 같은 힘차게 운다. 뭇 청춘의 바이며, 것이다. 소리다.이것은 뜨거운지라, 청춘이 긴지라 그리하였는가? </p>
+                            <a class="bg-primary text-white text-sm py-1.5 px-4 hover:bg-black" href="#">웹검색 바로가기</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+
+
+
+        </article>
+
+        <footer class="py-10 border-t border-neutral-400">
+            <div class="container flex justify-between">
+                <div>
+                    <a class="brand block mb-6" href="http://wowarko.alab.kr">
+                        <img class="black lg:h-14 h-10" src="../images/logo.png" alt="전쟁과여성인권 아카이브">
+                    </a>
+                    <div class="text-xs text-neutral-400">
+                        (재)일본군성노예제문제해결을위한정의기억연대<br>
+                        고유번호 637-82-00114 | 대표자 이나영전화 02-365-4016 <span class="hidden lg:inline">|</span><br class="block lg:hidden"> 팩스 02-365-4017 <span class="lg:hidden inline">|</span><br class="lg:block hidden">
+                        이메일 <a href="mailto:info@womenandwar.net">info@womenandwar.net</a>  <span class="hidden lg:inline">|</span><br class="block lg:hidden"> 주소 서울시 마포구 월드컵북로 11길12, 1층(03967)
+                    </div>
+                </div>
+                <nav class="hidden lg:block">
+                    <ul class="navigation-footer">
+                        <li class="active">
+                            <a href="/items/#">기록</a>
+                            <ul>
+                                <li>
+                                    <a href="/items/intro">기록찾기</a>
+                                </li>
+                                <li class="active">
+                                    <a href="/find?query=&amp;site=1">일반검색</a>
+                                </li>
+                                <li>
+                                    <a href="/find/advanced">상세검색</a>
+                                </li>
+                                <li>
+                                    <a href="/items/googlesearch">웹검색</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/items/info">정보</a>
+                            <ul>
+                                <li>
+                                    <a href="/items/person">인물정보</a>
+                                </li>
+                                <li>
+                                    <a href="/items/group">단체정보</a>
+                                </li>
+                                <li>
+                                    <a href="/items/history">연표정보</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/collections/#">컬렉션</a>
+                            <ul>
+                                <li>
+                                    <a href="/collections/browse">전체보기</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/exhibits">콘텐츠</a>
+                            <ul>
+                                <li>
+                                    <a href="/exhibits/browse">전체보기</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/contribution">참여</a>
+                            <ul>
+                                <li>
+                                    <a href="/contribute">기록기증</a>
+                                </li>
+                                <li>
+                                    <a href="/event">이벤트</a>
+                                </li>
+                                <li>
+                                    <a href="/donate">후원</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/about">소개</a>
+                            <ul>
+                                <li>
+                                    <a href="/about-01">소개</a>
+                                </li>
+                                <li>
+                                    <a href="/about-02">구축과정</a>
+                                </li>
+                                <li>
+                                    <a href="/guide-01">이용방법</a>
+                                </li>
+                                <li>
+                                    <a href="/guide-02">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="/contact">문의하기</a>
+                                </li>
+                                <li>
+                                    <a href="/notice">공지사항</a>
+                                </li>
+                                <li>
+                                    <a href="/stat-01">소장정보</a>
+                                </li>
+                                <li>
+                                    <a href="/stat-02">이용현황</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+
+    </div><!-- end wrap -->
+
+</body>
+
+</html>
