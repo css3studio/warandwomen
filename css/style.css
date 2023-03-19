@@ -181,10 +181,64 @@ ul.navigation-footer > li > ul > li > a:hover{
 	color:#8C48C0;
 }
 
-/* 검색결과 화면 */
+/*** 검색결과 화면 ***/
 #elasticsearch-results-container{
 	max-width:1280px;
 	margin:0 auto;
+}
+/* 패식 */
+#search-facets {
+	border:none;
+	border-right:1px solid #E5E5E5;
+	padding-right:16px;
+  }
+#search-facet-sections .facet-section,
+#search-facet-sections .facet-section-applied{
+	color: #171717;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 16px 8px;
+	background-color: transparent;
+	margin-bottom: 0px;
+	display:flex;
+	justify-content: space-between;
+	cursor:pointer;
+}
+#search-facet-sections .facet-section:after,
+#search-facet-sections .facet-section-applied:after{
+	content:"\e941";
+	font-family:xeicon;
+	font-size:18px;
+	transition:transform 0.3s;
+}
+#search-facet-sections .facet-section.opened:after,
+#search-facet-sections .facet-section-applied.opened:after{
+	transform: rotate(180deg);
+}
+
+#search-facet-sections .facet-section + ul,
+#search-facet-sections .facet-section-applied + ul{
+	font-size: 16px;
+	margin-bottom:0;
+	max-height:0;
+	padding-bottom:0;
+	overflow:hidden;
+	transition:max-height 0.3s, padding-bottom 0.3s;
+}
+#search-facet-sections .facet-section.opened + ul,
+#search-facet-sections .facet-section-applied.opened + ul{
+	max-height:200px;
+	padding-bottom:16px;
+}
+#search-facet-sections .facet-section + ul > li,
+#search-facet-sections .facet-section-applied + ul > li{
+	padding:4px 8px;
+	font-size:16px !important;
+}
+
+/* 검색결과 */
+#elasticsearch-results{
+	padding-left:16px;
 }
 
 

@@ -80,6 +80,7 @@ $(document).ready(function() {
         }
     });
 
+    /*
     //슬라이더 메인
 	$('.slider-main .slider').on('init', function(event, slick) { //생성완료 후 보여줌
 		 $('.slider-main .slider').css('visibility','visible');
@@ -91,21 +92,7 @@ $(document).ready(function() {
       		return  '<b>' +numberPad((i + 1), 2) + '</b><em>/</em>' + numberPad(slider.slideCount, 2);
     	}
     });
-    //슬라이더 멀티 4개
-	$('.slider-multiple01 .slider').slick({
-		slidesToShow: 4,
-		slidesToScroll: 4,
-		dots: true,
-		responsive: [
-			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				}
-			}
-		]
-   	});
+    */
 
 	//메인 탭메뉴
     $('.menu-tab01 > li > a').on("click",function(event){
@@ -148,13 +135,26 @@ $(document).ready(function() {
     });
 
 
-    //자주묻는 질문
-    $('.list-arccordin01 li dt a').bind("click",function(event){
-		var li = $(this).parents("li");
-        li.siblings().removeClass("active");
-        li.addClass("active");
+    //자주묻는 질문
+    $('.list-arccordin01 li dt a').on("click",function(event){
+        var li = $(this).parents("li");
+        li.siblings().removeClass("active");
+        li.addClass("active");
         event.preventDefault();
-    });
+    });
+
+    /* 패싯 토글*/
+    $('#search-facet-sections .facet-section, #search-facet-sections .facet-section-applied').on("click",function(event){
+        if($(this).hasClass('opened')){
+            $(this).removeClass('opened')
+        }else{
+            $(this).addClass('opened')
+        }
+    });
+    $('#search-facet-sections .facet-section-applied').each(function(event){
+        $(this).addClass('opened')
+    });
+    
 
     //이미지 가로-세로 비율 - jquery
     $('img').each(function() {
