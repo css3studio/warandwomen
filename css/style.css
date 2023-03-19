@@ -4,6 +4,12 @@
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
 
+/**/
+#admin-bar {
+	z-index: 50;
+	position: fixed;
+}
+
 
 /* 헤더 */
 header{
@@ -174,6 +180,14 @@ ul.navigation-footer > li > ul > li > a{
 ul.navigation-footer > li > ul > li > a:hover{
 	color:#8C48C0;
 }
+
+/* 검색결과 화면 */
+#elasticsearch-results-container{
+	max-width:1280px;
+	margin:0 auto;
+}
+
+
 
 /* 모바일모드 공통 */
 @media screen and (min-width: 320px) and (max-width: 1023px) {
