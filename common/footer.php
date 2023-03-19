@@ -2,8 +2,8 @@
         <footer class="py-10 border-t border-neutral-400">
             <div class="container flex justify-between">
                 <div>
-                    <a class="brand block mb-6" href="/">
-                        <img class="black lg:h-14 h-10" src="/themes/AvantTheme/images/logo.png" alt="전쟁과여성인권 아카이브">
+                    <a class="brand block mb-6" href="<?php echo html_escape(url('/')); ?>">
+                        <img class="black lg:h-14 h-10" src="<?php echo img('logo.png'); ?>" alt="전쟁과여성인권 아카이브">
                     </a>
                     <div class="text-xs text-neutral-400">
                         (재)일본군성노예제문제해결을위한정의기억연대<br>
@@ -14,80 +14,67 @@
                 <nav class="hidden lg:block">
                     <ul class="navigation-footer">
                         <li class="active">
-                            <a href="/items/intro">기록</a>
+                            <a href="<?php echo html_escape(url('find/intro')); ?>">기록</a>
                             <ul>
                                 <li>
-                                    <a href="/items/intro">기록찾기</a>
+                                    <a href="<?php echo html_escape(url('find/intro')); ?>">기록찾기</a>
                                 </li>
                                 <li class="active">
-                                    <a href="/find?query=&amp;site=1">일반검색</a>
+                                    <a href="<?php echo html_escape(url('find?query=&amp;site=1')); ?>">일반검색</a>
                                 </li>
                                 <li>
-                                    <a href="/find/advanced">상세검색</a>
+                                    <a href="<?php echo html_escape(url('find/advanced')); ?>">상세검색</a>
                                 </li>
                                 <li>
-                                    <a href="/items/googlesearch">웹검색</a>
+                                   <a href="<?php echo html_escape(url('find/websearch')); ?>">웹검색</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="/items/person">정보</a>
+                            <a href="<?php echo html_escape(url('items/person')); ?>">정보</a>
                             <ul>
                                 <li>
-                                    <a href="/items/person">인물정보</a>
+                                    <a href="<?php echo html_escape(url('items/person')); ?>">인물정보</a>
                                 </li>
                                 <li>
-                                    <a href="/items/group">단체정보</a>
+                                    <a href="<?php echo html_escape(url('items/group')); ?>">단체정보</a>
                                 </li>
                                 <li>
-                                    <a href="/items/history">연표정보</a>
+                                    <a href="<?php echo html_escape(url('items/history')); ?>">연표정보</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="/collections/browse">컬렉션</a>
+                            <a href="<?php echo html_escape(url('collections/browse')); ?>">컬렉션</a>
                             <ul>
                                 <li>
-                                    <a href="/collections/browse">전체보기</a>
+                                    <a href="<?php echo html_escape(url('collections/browse')); ?>">전체보기</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="/exhibits/browse">콘텐츠</a>
+                            <a href="<?php echo html_escape(url('exhibits/browse')); ?>">콘텐츠</a>
                             <ul>
                                 <li>
-                                    <a href="/exhibits/browse">전체보기</a>
+                                    <a href="<?php echo html_escape(url('exhibits/browse')); ?>">전체보기</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="/contribute">참여</a>
+                            <a href="<?php echo html_escape(url('contribute')); ?>">참여</a>
                             <ul>
                                 <li>
-                                    <a href="/contribute">기록기증</a>
+                                    <a href="<?php echo html_escape(url('contribute')); ?>">기록기증</a>
                                 </li>
                                 <li>
-                                    <a href="/event">이벤트</a>
+                                    <a href="<?php echo html_escape(url('event')); ?>">이벤트</a>
                                 </li>
                                 <li>
-                                    <a href="/donate">후원</a>
+                                    <a href="<?php echo html_escape(url('donate')); ?>">후원</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="/about-01">소개</a>
-                            <ul>
-                                <li>
-                                    <a href="/about-01">아카이브 소개</a>
-                                </li>
-                                <li>
-                                    <a href="/guide-01">아카이브 이용안내</a>
-                                </li>
-                                <li>
-                                    <a href="/stat-01">아카이브 현황</a>
-                                </li>
-                            </ul>
-							<!-- 
                             <ul>
                                 <li>
                                     <a href="/about-01">소개</a>
@@ -112,6 +99,19 @@
                                 </li>
                                 <li>
                                     <a href="/stat-02">이용현황</a>
+                                </li>
+                            </ul>
+							<!-- 
+                            <a href="<?php //echo html_escape(url('about-01')); ?>">소개</a>
+                            <ul>
+                                <li>
+                                    <a href="<?php //echo html_escape(url('about-01')); ?>">아카이브 소개</a>
+                                </li>
+                                <li>
+                                    <a href="<?php //echo html_escape(url('guide-01')); ?>">아카이브 이용안내</a>
+                                </li>
+                                <li>
+                                    <a href="<?php //echo html_escape(url('stat-01')); ?>">아카이브 현황</a>
                                 </li>
                             </ul>
 							// -->
