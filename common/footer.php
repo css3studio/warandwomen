@@ -1,5 +1,5 @@
         </article>
-        <footer class="py-10 border-t border-neutral-400">
+        <footer class="py-10 bg-neutral-100">
             <div class="container flex justify-between">
                 <div>
                     <a class="brand block mb-6" href="<?php echo html_escape(url('/')); ?>">
@@ -26,21 +26,21 @@
                                     <a href="<?php echo html_escape(url('find/advanced')); ?>">상세검색</a>
                                 </li>
                                 <li>
-                                   <a href="<?php echo html_escape(url('find/websearch')); ?>">웹검색</a>
+                                   <a href="<?php echo html_escape(url('find/websearch#gsc.tab=0&gsc.q=일본군%20성노예%20피해자&gsc.sort=')); ?>">웹검색</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="<?php echo html_escape(url('items/person')); ?>">정보</a>
+                            <a href="<?php echo html_escape(url('items/person?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-인물')); ?>">정보</a>
                             <ul>
                                 <li>
-                                    <a href="<?php echo html_escape(url('items/person')); ?>">인물정보</a>
+                                    <a href="<?php echo html_escape(url('items/person?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-인물')); ?>">인물정보</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo html_escape(url('items/group')); ?>">단체정보</a>
+                                    <a href="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-조직')); ?>">단체정보</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo html_escape(url('items/history')); ?>">연표정보</a>
+                                    <a href="<?php echo html_escape(url('items/history?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-연표')); ?>">연표정보</a>
                                 </li>
                             </ul>
                         </li>
@@ -75,6 +75,8 @@
                             </ul>
                         </li>
                         <li>
+							<!-- 
+                            <a href="<?php //echo html_escape(url('items/person')); ?>">소개</a>
                             <ul>
                                 <li>
                                     <a href="/about-01">소개</a>
@@ -101,72 +103,27 @@
                                     <a href="/stat-02">이용현황</a>
                                 </li>
                             </ul>
-							<!-- 
-                            <a href="<?php //echo html_escape(url('about-01')); ?>">소개</a>
+							// -->							
+                            <a href="<?php echo html_escape(url('about-01')); ?>">소개</a>
                             <ul>
                                 <li>
-                                    <a href="<?php //echo html_escape(url('about-01')); ?>">아카이브 소개</a>
+                                    <a href="<?php echo html_escape(url('about-01')); ?>">소개</a>
                                 </li>
                                 <li>
-                                    <a href="<?php //echo html_escape(url('guide-01')); ?>">아카이브 이용안내</a>
+                                    <a href="<?php echo html_escape(url('guide-01')); ?>">이용안내</a>
                                 </li>
                                 <li>
-                                    <a href="<?php //echo html_escape(url('stat-01')); ?>">아카이브 현황</a>
+                                    <a href="<?php echo html_escape(url('stat-01')); ?>">현황</a>
                                 </li>
                             </ul>
-							// -->
                         </li>
                     </ul>
                 </nav>
             </div>
         </footer>
-        <!-- 이전 코드
-       <footer id="footer" role="contentinfo">
-            <div id="footer-text">
-                <?php
-                $avantLogicLink = "Created by <a href='https://avantlogic.com/' target='_blank' title='AvantLogic Corporation' rel='noreferrer noopener'>AvantLogic</a>";
-                $loginUrl = url('users/login');
-                $logoutUrl = url('users/logout');
-
-                // Emit both login and logout links, but only one will appear depending whether the 'logged-out'
-                // or the 'logged-in' class has been dynamically emitted by AvantAdmin::emitDynamicCss().
-                $loginLogoutLink = "<a class='logged-out' href='$loginUrl'>Login</a><a class='logged-in' href='$logoutUrl'>Logout</a>";
-
-                $copyright = "© " . date("Y");
-                $siteTitle = get_option('site_title');
-                $footer = "$copyright $siteTitle — $avantLogicLink — $loginLogoutLink";
-
-                $themeOptionFooterText = get_theme_option('Footer Text');
-                if ($themeOptionFooterText)
-                {
-                    $footer = "$themeOptionFooterText<br/>";
-                }
-                else
-                {
-                    $footer = "$copyright $siteTitle";
-                }
-                $footer = "<div>$footer</div><div id='footer-loginout'><span>$avantLogicLink — $loginLogoutLink</span></div>";
-                echo $footer;
-
-                fire_plugin_hook('public_footer', array('view'=>$this));
-                ?>
-			</div>
-        </footer>
-        -->
     </div><!-- end wrap -->
 
-    <script>
-    var state = false;
-    jQuery(document).ready(function() {
-        Omeka.showAdvancedForm();
-        Omeka.skipNav();
-        Avant.megaMenu();
-		jQuery("#nav-toggle").click(function(){
-			jQuery("#top-nav").slideToggle(function(){ if (state) {jQuery(this).removeAttr( 'style' )}; state = ! state; } );
-		});
-		jQuery("#menu").show();
-    });
-    </script>
+
 
 </body>
 </html>

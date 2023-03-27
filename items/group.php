@@ -1,5 +1,5 @@
 <?php
-$pageTitle = __('인물');
+$pageTitle = __('단체/조직');
 echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse'));
 ?>
 
@@ -22,7 +22,7 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse'));
 <?php //echo item_search_filters(); ?>
 
 	<div>
-		<form name="search-person" action="<?php echo html_escape(url('items/person')); ?>" method="get" role="search">
+		<form name="search-group" action="<?php echo html_escape(url('items/group')); ?>" method="get" role="search">
 		  <div style="display: none;">
 			<select name="advanced[0][joiner]" id="" title="Search Joiner" class="advanced-search-joiner">
 			  <option value="and" selected="selected">AND</option>
@@ -33,21 +33,21 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse'));
 			<select name="advanced[0][type]" id="" title="Search Type" class="advanced-search-type">
 			  <option value="contains" selected="selected">contains</option>
 			</select>
-			<input type="text" name="advanced[0][terms]" id="" value="정보사전-인물" size="20" title="Search Terms" class="advanced-search-terms">                
+			<input type="text" name="advanced[0][terms]" id="" value="정보사전-조직" size="20" title="Search Terms" class="advanced-search-terms">                
 			<button type="button" class="remove_search small red button" style="">Remove field</button>
 			<select name="advanced[1][joiner]" id="" title="Search Joiner" class="advanced-search-joiner">
 			  <option value="and" selected="selected">AND</option>
 			</select>
 			<select name="advanced[1][element_id]" id="" title="Search Field" class="advanced-search-element">
-			  <option value="165">인물명칭</option>
+			  <option value="167">조직명칭</option>
 			</select>
 			<select name="advanced[1][type]" id="" title="Search Type" class="advanced-search-type">
 			  <option value="contains" selected="selected">contains</option>
 			</select>
 		  </div>
-		  <input type="text" name="advanced[1][terms]" id="" value="" size="50" title="Search Terms" placeholder="인물명을 입력하세요" class="w-full rounded-lg border border-stroke bg-white py-3 pl-5 pr-12 text-body-color outline-none focus:border-primary focus:bg-white">                  
+		  <input type="text" name="advanced[1][terms]" id="" value="" size="50" title="Search Terms" placeholder="조직명을 입력하세요" class="w-full rounded-lg border border-stroke bg-white py-3 pl-5 pr-12 text-body-color outline-none focus:border-primary focus:bg-white">                  
   
-		  <span class="absolute top-4 right-5 -translate-y-1/2" onclick="document.forms['search-person'].submit();" style="cursor:pointer;">
+		  <span class="absolute top-4 right-5 -translate-y-1/2" onclick="document.forms['search-group'].submit();" style="cursor:pointer;">
 			<svg
 				width="20"
 				height="20"
@@ -99,16 +99,17 @@ $sortLinks[__('Date Added')] = 'added';
 	//기본정보 메타 출력용
 	$제목 = metadata($item, array('Dublin Core', 'Title'), array('delimiter' => '; '));
 	$목록구분 = metadata($item, array('Item Type Metadata', 'Classification of catalog'), array('delimiter' => '; '));	                   
-	//인물 정보
-	$인물명칭 = metadata($item, array('Item Type Metadata', 'Person Name'), array('delimiter' => '; '));	  
-	$인물한글명칭 = metadata($item, array('Item Type Metadata', 'Person First Name'), array('delimiter' => '; '));	
-	$인물외국어명칭 = metadata($item, array('Item Type Metadata', 'Person Foreign Language Name'), array('delimiter' => '; '));	
-	$출생일 = metadata($item, array('Item Type Metadata', 'Date of birth'), array('delimiter' => '; '));	
-	$사망일 = metadata($item, array('Item Type Metadata', 'Date of death'), array('delimiter' => '; '));	
-	$국적 = metadata($item, array('Item Type Metadata', 'Nationality'), array('delimiter' => '; '));       
-	$인물설명 = metadata($item, array('Item Type Metadata', 'Person Description'), array('delimiter' => '; ', 'snippet' => 50));	            
-	$인물상세설명 = metadata($item, array('Item Type Metadata', 'Person Details'), array('delimiter' => '; ', 'snippet' => 200));	
-	$정보출처 = metadata($item, array('Item Type Metadata', 'Sources of information'), array('delimiter' => '; '));                     
+	//조직 정보
+	$조직명칭 = metadata($item, array('Item Type Metadata', 'Organization Name'), array('delimiter' => '; '));	  
+	$조직외국어명칭 = metadata($item, array('Item Type Metadata', 'Organization Foreign Language Name'), array('delimiter' => '; '));	
+	$조직비대표명칭 = metadata($item, array('Item Type Metadata', 'Organization non-representative name'), array('delimiter' => '; '));	
+	$활동국가 = metadata($item, array('Item Type Metadata', 'Country of activity'), array('delimiter' => '; '));	
+	$조직구분 = metadata($item, array('Item Type Metadata', 'Classification of organization'), array('delimiter' => '; '));	
+	$조직유형 = metadata($item, array('Item Type Metadata', 'Type of organization'), array('delimiter' => '; '));       
+	$설립일 = metadata($item, array('Item Type Metadata', 'Founding date'), array('delimiter' => '; '));   
+	$해산일 = metadata($item, array('Item Type Metadata', 'Dissolution date'), array('delimiter' => '; '));   
+	$조직설명 = metadata($item, array('Item Type Metadata', 'Organization Description'), array('delimiter' => '; ', 'snippet' => 50));	            
+	$정보출처 = metadata($item, array('Item Type Metadata', 'Sources of information'), array('delimiter' => '; '));           
 ?>	
 	<div class="item hentry">
 		<?php if (metadata($item, 'has files')) {  ?>		
@@ -118,8 +119,9 @@ $sortLinks[__('Date Added')] = 'added';
 		<?php }	?> 
 
 		<?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?>
-        <p><?php if ($인물설명!= null) { ?><?php echo strip_formatting($인물설명); ?><?php } else {} ?></p>
-        <p><?php if ($출생일!= null) { ?><?php echo strip_formatting($출생일); ?><?php } else {} ?> &nbsp; <?php if ($사망일!= null) { ?><?php echo strip_formatting($사망일); ?><?php } else {} ?></p>
+        <p><?php if ($조직설명!= null) { ?><?php echo strip_formatting($조직설명); ?><?php } else {} ?></p>
+        <p><?php if ($설립일!= null) { ?><?php echo strip_formatting($설립일); ?><?php } else {} ?> </p>
+		<p><?php if ($해산일!= null) { ?><?php echo strip_formatting($해산일); ?><?php } else {} ?></p>
 		<?php //fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' => $item)); ?>
 	</div><!-- end class="item hentry" -->
 <?php endforeach; ?>

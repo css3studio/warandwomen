@@ -203,235 +203,155 @@ echo head(array('title' => $title, 'bodyclass' => 'items show'));
 		<span class="text-primary">기록찾기</span>
 	</div>
 </div>
-
-<!-- ====== 소장기록 Section Start ========  -->
-<?php if ($목록구분 == '소장기록') { ?>
-
 <div class="container pt-14">
 	<h1 class="text-3xl font-bold mb-6">기록 이름</h1>
 	<div class="flex gap-8 mb-24">
 		<!--left area -->
 		<div class="w-[48.75%] flex-shrink-0 aspect-[624/397] bg-slate-400">
-				<?php //일반 이미지 포맷인 경우 이미지 뷰어 출력. 단, pdf는 제외. ?>	
-				<?php if ($hasImages): ?>
-				  <div class="rounded-md" style="background: #F6F6F6;">      
-					  <div class="imageArea-d">
-						<div class="item">      
-						  <div class="clearfix" style="width: 100%;">		
-							<ul id="image-gallery-d" class="gallery list-unstyled cS-hidden">
-							  <?php foreach ($itemFiles as $itemFile): ?>							
-								<li data-thumb="<?php echo $itemFile->getWebPath('square_thumbnail'); ?>" class="rounded-md"> 
-									<div class="image-box-d">
-										<img class="image-thumbnail-d rounded-md" src="<?php echo $itemFile->getWebPath('fullsize'); ?>" />
-									</div>
-								</li>
-							  <?php endforeach; ?>								
-							</ul>														
-						  </div>
-						</div>
-					  </div>	
-				  </div>
-				<?php endif; ?>	
-
-				<?php //PDF 파일인 경우 pdfjs 뷰어 출력 ?>			
-				<?php if (!$item) $item = get_current_record('item'); 
-					$files = $item->Files; 
-					foreach($files as $file) 
-					if ($file->getExtension() =='pdf')	{
-						echo '<iframe width="100%;" height="650px;" src="/etc/vendor/pdfjs/web/viewer.html?file=/files/original/'.metadata($file,'filename').'"></iframe><div style="height: 10px;"></div>';
-					} 		
-					else if ($file->getExtension() =='PDF')	{
-						echo '<iframe width="100%;" height="650px;" src="/etc/vendor/pdfjs/web/viewer.html?file=/files/original/'.metadata($file,'filename').'"></iframe><div style="height: 10px;"></div>';
-					}
-				?> 
+			iframe 추가
 		</div>
 		<!--//left area -->
 		<!--right area -->
 		<div class="flex-grow relative">
 			<div class="menu-tab01">
 				<ul >
-					<li class="current"><a data-target="dataA01" href="#">기본정보</a></li>
-					<li><a href="#" data-target="dataA02">이용정보</a></li>
-					<li><a href="#" data-target="dataA03">매체정보</a></li>
+					<li class="current"><a data-target="dataA01" href="#">탭메뉴1</a></li>
+					<li><a href="#" data-target="dataA02">탭메뉴2</a></li>
+					<li><a href="#" data-target="dataA03">탭메뉴3</a></li>
 				</ul>
 			</div>
 			<div class="dataA">
 				<div id="dataA01" style="">
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">기록유형</dt> 
-						<dd><?php echo strip_formatting($기록유형); ?></dd> 
+				<dl class="flex text-neutral-500 mb-4">
+						<dt class="font-bold text-neutral-500 w-[150px]">식별번호</dt> 
+						<dd>12345</dd> 
 					</dl>
 					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">기록형태</dt> 
-						<dd><?php echo strip_formatting($기록형태); ?></dd> 
+						<dt class="font-bold text-neutral-500 w-[150px]">식별번호</dt> 
+						<dd>12345</dd> 
 					</dl>
 					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">생산날짜</dt> 
-						<dd><?php echo strip_formatting($생산날짜); ?></dd> 
+						<dt class="font-bold text-neutral-500 w-[150px]">식별번호</dt> 
+						<dd>12345</dd> 
 					</dl>
-					<?php 
-							//if($user->role == 'super' || $user->role == 'admin' || $user->role == 'researcher')
-							if ($isLoggedIn) {    //로그인 사용자만 볼 수 있는 메타데이터 정보 출력      
-						?>
 					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">생산자주기</dt> 
-						<dd><?php echo strip_formatting($생산자주기); ?></dd> 
+						<dt class="font-bold text-neutral-500 w-[150px]">식별번호</dt> 
+						<dd>12345</dd> 
 					</dl>
-					<?php 
-							} else {} 
-						?>
 				</div>
 				<div id="dataA02" style="display:none">
-						<!-- 이용정보 탭에 출력될 메타데이터 항목 -->
-						<dl class="flex text-neutral-500 mb-4">
-							<dt class="font-bold text-neutral-500 w-[150px]">목록구분</dt> 
-							<dd><?php echo strip_formatting($목록구분); ?></dd> 
-						</dl>
-						<dl class="flex text-neutral-500 mb-4">
-							<dt class="font-bold text-neutral-500 w-[150px]">생산연대</dt> 
-							<dd><?php echo strip_formatting($생산연대); ?></dd> 
-						</dl>
-						<dl class="flex text-neutral-500 mb-4">
-							<dt class="font-bold text-neutral-500 w-[150px]">언어</dt> 
-							<dd><?php echo strip_formatting($언어); ?></dd> 
-						</dl>
-						<dl class="flex text-neutral-500 mb-4">
-							<dt class="font-bold text-neutral-500 w-[150px]">기록출처</dt> 
-							<dd><?php echo strip_formatting($기록출처); ?></dd> 
-						</dl>
-						<dl class="flex text-neutral-500 mb-4">
-							<dt class="font-bold text-neutral-500 w-[150px]">목록공개</dt> 
-							<dd><?php echo strip_formatting($목록공개); ?></dd> 
-						</dl>
-						<dl class="flex text-neutral-500 mb-4">
-							<dt class="font-bold text-neutral-500 w-[150px]">원문공개</dt> 
-							<dd><?php echo strip_formatting($원문공개); ?></dd> 
-						</dl>
+					data2
 				</div>
-				<div id="dataA03" class="grid grid-cols-2 gap-x-10" style="display:none">
-						<!-- 매체정보 탭에 출력될 메타데이터 항목 -->
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체용도1</dt> 
-						<dd><?php echo strip_formatting($매체용도1); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체1</dt> 
-						<dd><?php echo strip_formatting($매체1); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체상세정보1</dt> 
-						<dd><?php echo strip_formatting($매체상세정보1); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">원문제공1</dt> 
-						<dd><?php echo strip_formatting($원문제공1); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">수량규모1</dt> 
-						<dd><?php echo strip_formatting($수량규모1); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">크기포맷1</dt> 
-						<dd><?php echo strip_formatting($크기포맷1); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체용도2</dt> 
-						<dd><?php echo strip_formatting($매체용도2); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체2</dt> 
-						<dd><?php echo strip_formatting($매체2); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체상세정보2</dt> 
-						<dd><?php echo strip_formatting($매체상세정보2); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">원문제공2</dt> 
-						<dd><?php echo strip_formatting($원문제공2); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">수량규모2</dt> 
-						<dd><?php echo strip_formatting($수량규모2); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">크기포맷2</dt> 
-						<dd><?php echo strip_formatting($크기포맷2); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체용도3</dt> 
-						<dd><?php echo strip_formatting($매체용도3); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체3</dt> 
-						<dd><?php echo strip_formatting($매체3); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체상세정보3</dt> 
-						<dd><?php echo strip_formatting($매체상세정보3); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">원문제공3</dt> 
-						<dd><?php echo strip_formatting($원문제공3); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">수량규모3</dt> 
-						<dd><?php echo strip_formatting($수량규모3); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">크기포맷3</dt> 
-						<dd><?php echo strip_formatting($크기포맷3); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체용도4</dt> 
-						<dd><?php echo strip_formatting($매체용도4); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체4</dt> 
-						<dd><?php echo strip_formatting($매체4); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체상세정보4</dt> 
-						<dd><?php echo strip_formatting($매체상세정보4); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">원문제공4</dt> 
-						<dd><?php echo strip_formatting($원문제공4); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">수량규모4</dt> 
-						<dd><?php echo strip_formatting($수량규모4); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">크기포맷4</dt> 
-						<dd><?php echo strip_formatting($크기포맷4); ?></dd> 
-					</dl>
-
+				<div id="dataA03" style="display:none">
+					data3
 				</div>
 			</div>
 			<div class="absolute bottom-0 right-0 flex justify-end gap-2">
 				<a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="#">오류신고</a>
 				<a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="#">즐겨찾기</a>
 				<a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="#">목록받기</a>
-					<!-- 관심기록 추가하기 버튼 링크 출력 -->
-					<?php echo get_specific_plugin_hook_output('Cart', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
 			</div>
 		</div>
 		<!--//right area -->
 	</div>
 
+	<!-- 관계정보 -->
+	<div class="relation-info-area">
 
+		<div class="bg-gray-300 w-full h-[400px]">관계정보</div>
 
-</div><!--// end of <div class="container pt-14"> -->
+	</div>
+	<!-- //관계정보 -->
+	</div>
+
+<!-- ====== 소장기록 Section Start ========  -->
+<?php if ($목록구분 == '소장기록') { ?>
+
+		<?php //일반 이미지 포맷인 경우 이미지 뷰어 출력. 단, pdf는 제외. ?>	
+		<?php if ($hasImages): ?>
+		  <div class="rounded-md" style="background: #F6F6F6;">      
+			  <div class="imageArea-d">
+				<div class="item">      
+				  <div class="clearfix" style="width: 100%;">		
+					<ul id="image-gallery-d" class="gallery list-unstyled cS-hidden">
+					  <?php foreach ($itemFiles as $itemFile): ?>							
+						<li data-thumb="<?php echo $itemFile->getWebPath('square_thumbnail'); ?>" class="rounded-md"> 
+							<div class="image-box-d">
+								<img class="image-thumbnail-d rounded-md" src="<?php echo $itemFile->getWebPath('fullsize'); ?>" />
+							</div>
+						</li>
+					  <?php endforeach; ?>								
+					</ul>														
+				  </div>
+				</div>
+			  </div>	
+		  </div>
+		<?php endif; ?>	
+
+		<?php //PDF 파일인 경우 pdfjs 뷰어 출력 ?>			
+		<?php if (!$item) $item = get_current_record('item'); 
+			$files = $item->Files; 
+			foreach($files as $file) 
+			if ($file->getExtension() =='pdf')	{
+				echo '<iframe width="100%;" height="650px;" src="/etc/vendor/pdfjs/web/viewer.html?file=/files/original/'.metadata($file,'filename').'"></iframe><div style="height: 10px;"></div>';
+			} 		
+			else if ($file->getExtension() =='PDF')	{
+				echo '<iframe width="100%;" height="650px;" src="/etc/vendor/pdfjs/web/viewer.html?file=/files/original/'.metadata($file,'filename').'"></iframe><div style="height: 10px;"></div>';
+			}
+		?> 
+
+		<!-- 기본정보 탭에 출력될 메타데이터 항목 -->
+		기본정보 탭 출력용<br>
+		<p class="">기록유형: <?php echo strip_formatting($기록유형); ?></p>
+		<p class="">기록형태: <?php echo strip_formatting($기록형태); ?></p>
+		<p class="">생산날짜: <?php echo strip_formatting($생산날짜); ?></p>
+		<?php 
+			//if($user->role == 'super' || $user->role == 'admin' || $user->role == 'researcher')
+			if ($isLoggedIn) {    //로그인 사용자만 볼 수 있는 메타데이터 정보 출력      
+		?>
+		<p class="">생산자주기: <?php echo strip_formatting($생산자주기); ?></p>
+		<?php 
+			} else {} 
+		?>
+		<!-- 이용정보 탭에 출력될 메타데이터 항목 -->
+		이용정보 탭 출력용<br>
+		<p class="">목록구분: <?php echo strip_formatting($목록구분); ?></p>
+		<p class="">생산연대: <?php echo strip_formatting($생산연대); ?></p>
+		<p class="">언어: <?php echo strip_formatting($언어); ?></p>
+		<p class="">기록출처: <?php echo strip_formatting($기록출처); ?></p>
+		<p class="">목록공개: <?php echo strip_formatting($목록공개); ?></p>
+		<p class="">원문공개: <?php echo strip_formatting($원문공개); ?></p>
+
+		<!-- 매체정보 탭에 출력될 메타데이터 항목 -->
+		매체정보 탭 출력용<br>
+		<p class="">매체용도1: <?php echo strip_formatting($매체용도1); ?></p>
+		<p class="">매체1: <?php echo strip_formatting($매체1); ?></p>
+		<p class="">매체상세정보1: <?php echo strip_formatting($매체상세정보1); ?></p>
+		<p class="">원문제공1: <?php echo strip_formatting($원문제공1); ?></p>
+		<p class="">수량/규모1: <?php echo strip_formatting($수량규모1); ?></p>
+		<p class="">크기/포맷1: <?php echo strip_formatting($크기포맷1); ?></p>
+		<p class="">매체용도2: <?php echo strip_formatting($매체용도2); ?></p>
+		<p class="">매체2: <?php echo strip_formatting($매체2); ?></p>
+		<p class="">매체상세정보2: <?php echo strip_formatting($매체상세정보2); ?></p>
+		<p class="">원문제공2: <?php echo strip_formatting($원문제공2); ?></p>
+		<p class="">수량/규모2: <?php echo strip_formatting($수량규모2); ?></p>
+		<p class="">크기/포맷2: <?php echo strip_formatting($크기포맷2); ?></p>
+		<p class="">매체용도3: <?php echo strip_formatting($매체용도3); ?></p>
+		<p class="">매체3: <?php echo strip_formatting($매체3); ?></p>
+		<p class="">매체상세정보3: <?php echo strip_formatting($매체상세정보3); ?></p>
+		<p class="">원문제공3: <?php echo strip_formatting($원문제공3); ?></p>
+		<p class="">수량/규모3: <?php echo strip_formatting($수량규모3); ?></p>
+		<p class="">크기/포맷3: <?php echo strip_formatting($크기포맷3); ?></p>
+		<p class="">매체용도4: <?php echo strip_formatting($매체용도4); ?></p>
+		<p class="">매체4: <?php echo strip_formatting($매체4); ?></p>
+		<p class="">매체상세정보4: <?php echo strip_formatting($매체상세정보4); ?></p>
+		<p class="">원문제공4: <?php echo strip_formatting($원문제공4); ?></p>
+		<p class="">수량/규모4: <?php echo strip_formatting($수량규모4); ?></p>
+		<p class="">크기/포맷4: <?php echo strip_formatting($크기포맷4); ?></p>
 <?php 
 	} else {} 
 ?>
 <!-- ====== 소장기록 Section End ========  -->
-
-
-
-
-
 
 <!-- ====== 아이템세트 Section Start ========  -->
 <?php if ($목록구분 == '아이템세트') { ?>
@@ -539,49 +459,36 @@ echo head(array('title' => $title, 'bodyclass' => 'items show'));
 <!-- ====== 정보사전-연표 Section End ========  -->
 
 
-
-
-<!-- 관계정보 -->
-<div class="relation-info-area">
-
-	<div class="bg-gray-300 w-full h-[400px]">관계정보
-	<!-- 관계 그래프 및 관련 목록 영역 출력 -->
-    <?php echo get_specific_plugin_hook_output('AvantRelationships', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
-    <?php echo get_specific_plugin_hook_output('AvantRelationships', 'show_relationships_visualization', array('view' => $this, 'item' => $item)); ?>
-	</div>
-
-</div>
-<!-- //관계정보 -->
-
-
-
-
-
-
-
-
 <!-- 오메카 태그 정보 출력(요구사항이 있는 경우에만 사용 -->
-<?php //if (metadata($item, 'has tags')): ?>
-	<!-- div id="item-tags" class="element">
+<?php if (metadata($item, 'has tags')): ?>
+	<div id="item-tags" class="element">
 		<h2>Tags</h2>
-		<div class="element-text tags"><?php //echo tag_string('item', 'find'); ?></div>
-	</div -->
-<?php //endif; ?>
+		<div class="element-text tags"><?php echo tag_string('item', 'find'); ?></div>
+	</div>
+<?php endif; ?>
 
-<?php 
-	// If this item has a cover image, that image will appear in the sidebar, so pass it to
-	// admin_items_show to indicate that the image should be excluded from the list of related items.
-	//$excludeItem = $coverImageEnabledOnShowPage ? ItemPreview::getCoverImageItem($item) : null;
-?>
-<?php //echo get_specific_plugin_hook_output('AvantCustom', 'admin_items_show', array('view' => $this, 'item' => $item, 'exclude' => $excludeItem)); ?>
-<!-- 관계 그래프 및 관련 목록 영역 출력 -->
-<?php //echo get_specific_plugin_hook_output('AvantRelationships', 'public_items_show', array('view' => $this, 'item' => $item, 'exclude' => $excludeItem)); ?>
-<?php //echo get_specific_plugin_hook_output('AvantRelationships', 'show_relationships_visualization', array('view' => $this, 'item' => $item)); ?>
-<!-- 지도 영역 출력 -->
-<?php //echo get_specific_plugin_hook_output('Geolocation', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
-<!-- pdf 반출 영역 출력(사용안함) -->
-<?php //echo get_specific_plugin_hook_output('AvantReport', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
 
+<div id="secondary">
+	<!-- 관심기록 추가하기 버튼 링크 출력 -->
+    <?php echo get_specific_plugin_hook_output('Cart', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
+
+    <?php 
+		// If this item has a cover image, that image will appear in the sidebar, so pass it to
+		// admin_items_show to indicate that the image should be excluded from the list of related items.
+		$excludeItem = $coverImageEnabledOnShowPage ? ItemPreview::getCoverImageItem($item) : null;
+	?>
+    <?php echo get_specific_plugin_hook_output('AvantCustom', 'admin_items_show', array('view' => $this, 'item' => $item, 'exclude' => $excludeItem)); ?>
+
+	<!-- 관계 그래프 및 관련 목록 영역 출력 -->
+    <?php echo get_specific_plugin_hook_output('AvantRelationships', 'public_items_show', array('view' => $this, 'item' => $item, 'exclude' => $excludeItem)); ?>
+    <?php echo get_specific_plugin_hook_output('AvantRelationships', 'show_relationships_visualization', array('view' => $this, 'item' => $item)); ?>
+
+	<!-- 지도 영역 출력 -->
+    <?php echo get_specific_plugin_hook_output('Geolocation', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
+
+	<!-- pdf 반출 영역 출력(사용안함) -->
+    <?php echo get_specific_plugin_hook_output('AvantReport', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
+</div>
 
 
 <?php

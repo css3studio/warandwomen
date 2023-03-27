@@ -45,7 +45,7 @@ $(document).ready(function() {
 		device_status = "pc";
 	}
 
-
+    /*
  	//검색창 열기/닫기
     $('header .menu-top .search a').on("click",function(event) {
     	//$('header .search-form').fadeIn();
@@ -60,6 +60,7 @@ $(document).ready(function() {
         $('header').removeClass('open-search');
         event.preventDefault();
     });
+    */
 
     /* 메인페이지 섹션 슬라이딩 */
     $('#fullpage').fullpage({
@@ -94,7 +95,7 @@ $(document).ready(function() {
     });
     */
 
-	//메인 탭메뉴
+	//탭메뉴
     $('.menu-tab01 > li > a').on("click",function(event){
     	event.preventDefault();
         $(this).parent().siblings().removeClass("active");
@@ -151,8 +152,21 @@ $(document).ready(function() {
             $(this).addClass('opened')
         }
     });
+    $('#search-facet-sections .facet-section').each(function(event){
+        $(this).addClass('opened')
+    });
     $('#search-facet-sections .facet-section-applied').each(function(event){
         $(this).addClass('opened')
+    });
+
+    //탭메뉴01
+    $('.menu-tab01 li > a').on("click",function(event){
+        $(".menu-tab01 li").removeClass("current");
+        $(this).parent().addClass("current");
+        var target = "#" + $(this).attr('data-target');
+        $('.dataA > div').hide();
+        $('.dataA > div' + target).show();
+        event.preventDefault();
     });
     
 
