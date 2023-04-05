@@ -1,99 +1,112 @@
+<?php
+	$pageTitle = metadata($item, array('Dublin Core', 'Title'));
+	$title = metadata('item', 'display_title');
+?>
 <?php 
-		//기본정보 메타 출력용
-		$제목 = metadata($item, array('Dublin Core', 'Title'), array('delimiter' => '; '));
-		$관리번호 = metadata($item, array('Dublin Core', 'Identifier'));			
-		$내용 = metadata($item, array('Dublin Core', 'Description'));		  
-		$생산연대 = metadata($item, array('Dublin Core', 'Date'));		
-		$생산자 = metadata($item, array('Dublin Core', 'Creator'));		
-		//$목록유형 = metadata($item, array('Dublin Core', 'Subject'));		
-		//$기록유형 = metadata($item, array('Dublin Core', 'Type'));		
-		//$단위유형 = metadata($item, array('Dublin Core', 'Coverage'));		
-		//$목록구분 = metadata($item, array('Item Type Metadata', 'Classification of catalog'), array('delimiter' => '; '));	        
-		$원제목 = metadata($item, array('Item Type Metadata', 'Original title'), array('delimiter' => '; '));	 
-		$기록유형 = metadata($item, array('Item Type Metadata', 'Type of records'), array('delimiter' => '; '));	 
-		$기록형태 = metadata($item, array('Item Type Metadata', 'Format of records'), array('delimiter' => '; '));	  
-		$기록출처 = metadata($item, array('Item Type Metadata', 'Source of records'), array('delimiter' => '; '));	  
-		$언어 = metadata($item, array('Item Type Metadata', 'Language of records'), array('delimiter' => '; '));	  
-		$생산날짜 = metadata($item, array('Item Type Metadata', 'Dates of creation'), array('delimiter' => '; '));
-		$생산자소속단체 = metadata($item, array('Item Type Metadata', 'Creator note'), array('delimiter' => '; '));		  
-		$생산자주기 = metadata($item, array('Item Type Metadata', 'Creator note'), array('delimiter' => '; '));	/* 비로그인 사용자에게는 비공개 */
-		$키워드= metadata($item, array('Item Type Metadata', 'Keyword'), array('delimiter' => '; '));	  
-		$목록공개 = metadata($item, array('Item Type Metadata', 'Disclosure of catalog'), array('delimiter' => '; '));	  
-		$원문공개 = metadata($item, array('Item Type Metadata', 'Disclosure of original text'), array('delimiter' => '; '));	  
-		$매체용도1 = metadata($item, array('Item Type Metadata', 'Media purpose1'), array('delimiter' => '; '));	  
-		$매체1 = metadata($item, array('Item Type Metadata', 'Media1'), array('delimiter' => '; '));	  
-		$매체상세정보1 = metadata($item, array('Item Type Metadata', 'Media details1'), array('delimiter' => '; '));	  
-		$원문제공1 = metadata($item, array('Item Type Metadata', 'Provision of original text1'), array('delimiter' => '; '));	  
-		$수량규모1 = metadata($item, array('Item Type Metadata', 'Quantity/scale1'), array('delimiter' => '; '));	  
-		$크기포맷1 = metadata($item, array('Item Type Metadata', 'Size/Format1'), array('delimiter' => '; '));	  
-		$매체용도1 = metadata($item, array('Item Type Metadata', 'Media purpose1'), array('delimiter' => '; '));	  
-		$매체1 = metadata($item, array('Item Type Metadata', 'Media1'), array('delimiter' => '; '));	  
-		$매체상세정보1 = metadata($item, array('Item Type Metadata', 'Media details1'), array('delimiter' => '; '));	  
-		$원문제공1 = metadata($item, array('Item Type Metadata', 'Provision of original text1'), array('delimiter' => '; '));	  
-		$수량규모1 = metadata($item, array('Item Type Metadata', 'Quantity/scale1'), array('delimiter' => '; '));	  
-		$크기포맷1 = metadata($item, array('Item Type Metadata', 'Size/Format1'), array('delimiter' => '; '));	  
-		$매체용도2 = metadata($item, array('Item Type Metadata', 'Media purpose2'), array('delimiter' => '; '));	  
-		$매체2 = metadata($item, array('Item Type Metadata', 'Media2'), array('delimiter' => '; '));	  
-		$매체상세정보2 = metadata($item, array('Item Type Metadata', 'Media details2'), array('delimiter' => '; '));	  
-		$원문제공2 = metadata($item, array('Item Type Metadata', 'Provision of original text2'), array('delimiter' => '; '));	  
-		$수량규모2 = metadata($item, array('Item Type Metadata', 'Quantity/scale2'), array('delimiter' => '; '));	  
-		$크기포맷2 = metadata($item, array('Item Type Metadata', 'Size/Format2'), array('delimiter' => '; '));	  
-		$매체용도3 = metadata($item, array('Item Type Metadata', 'Media purpose3'), array('delimiter' => '; '));	  
-		$매체3 = metadata($item, array('Item Type Metadata', 'Media3'), array('delimiter' => '; '));	  
-		$매체상세정보3 = metadata($item, array('Item Type Metadata', 'Media details3'), array('delimiter' => '; '));	  
-		$원문제공3 = metadata($item, array('Item Type Metadata', 'Provision of original text3'), array('delimiter' => '; '));	  
-		$수량규모3 = metadata($item, array('Item Type Metadata', 'Quantity/scale3'), array('delimiter' => '; '));	  
-		$크기포맷3 = metadata($item, array('Item Type Metadata', 'Size/Format3'), array('delimiter' => '; '));	  
-		$매체용도4 = metadata($item, array('Item Type Metadata', 'Media purpose4'), array('delimiter' => '; '));	  
-		$매체4 = metadata($item, array('Item Type Metadata', 'Media4'), array('delimiter' => '; '));	  
-		$매체상세정보4 = metadata($item, array('Item Type Metadata', 'Media details4'), array('delimiter' => '; '));	  
-		$원문제공4 = metadata($item, array('Item Type Metadata', 'Provision of original text4'), array('delimiter' => '; '));	  
-		$수량규모4 = metadata($item, array('Item Type Metadata', 'Quantity/scale4'), array('delimiter' => '; '));	  
-		$크기포맷4 = metadata($item, array('Item Type Metadata', 'Size/Format4'), array('delimiter' => '; '));	   
+	//공통
+	$목록구분 = metadata($item, array('Item Type Metadata', 'Classification of catalog'), array('delimiter' => '; '));	  
+	$정보출처 = metadata($item, array('Item Type Metadata', 'Sources of information'), array('delimiter' => '; '));	
+	$유튜브영상 = metadata($item, array('Item Type Metadata', 'Video source'), array('delimiter' => '; '));	 
 
-		//아이템세트 정보
-		$구성정보 = metadata($item, array('Item Type Metadata', 'Configuration information'), array('delimiter' => '; '));	   
+	//기본정보 메타 출력용
+	$제목 = metadata($item, array('Dublin Core', 'Title'), array('delimiter' => '; '));
+	$관리번호 = metadata($item, array('Dublin Core', 'Identifier'));			
+	$내용 = metadata($item, array('Dublin Core', 'Description'));		  
+	$생산연대 = metadata($item, array('Dublin Core', 'Date'));		
+	$생산자 = metadata($item, array('Dublin Core', 'Creator'));		
+	//$목록유형 = metadata($item, array('Dublin Core', 'Subject'));		
+	//$기록유형 = metadata($item, array('Dublin Core', 'Type'));		
+	$기술계층 = metadata($item, array('Dublin Core', 'Coverage'));		        
+	$원제목 = metadata($item, array('Item Type Metadata', 'Original title'), array('delimiter' => '; '));	 
+	$기록유형 = metadata($item, array('Item Type Metadata', 'Type of records'), array('delimiter' => '; '));	 
+	$기록형태 = metadata($item, array('Item Type Metadata', 'Format of records'), array('delimiter' => '; '));	  
+	$기록출처 = metadata($item, array('Item Type Metadata', 'Source of records'), array('delimiter' => '; '));	  
+	$언어 = metadata($item, array('Item Type Metadata', 'Language of records'), array('delimiter' => '; '));	  
+	$생산일자 = metadata($item, array('Item Type Metadata', 'Dates of creation'), array('delimiter' => '; '));
+	$일자구분 = metadata($item, array('Item Type Metadata', 'Classification of date'), array('delimiter' => '; '));
+	$생산자구분 = metadata($item, array('Item Type Metadata', 'Classification of creator'), array('delimiter' => '; '));
+	$생산자소속단체 = metadata($item, array('Item Type Metadata', 'Creator note'), array('delimiter' => '; '));		  
+	$생산자주기 = metadata($item, array('Item Type Metadata', 'Creator note'), array('delimiter' => '; '));	/* 비로그인 사용자에게는 비공개 */
+	$키워드= metadata($item, array('Item Type Metadata', 'Keyword'), array('delimiter' => '; '));	  
+	$목록공개 = metadata($item, array('Item Type Metadata', 'Disclosure of catalog'), array('delimiter' => '; '));	  
+	$원문공개 = metadata($item, array('Item Type Metadata', 'Disclosure of original text'), array('delimiter' => '; '));	  
+	$공개주기 = metadata($item, array('Item Type Metadata', 'Publication note'), array('delimiter' => '; '));		
+	$매체용도1 = metadata($item, array('Item Type Metadata', 'Media purpose1'), array('delimiter' => '; '));	  
+	$매체1 = metadata($item, array('Item Type Metadata', 'Media1'), array('delimiter' => '; '));	  
+	$매체상세정보1 = metadata($item, array('Item Type Metadata', 'Media details1'), array('delimiter' => '; '));	  
+	$원문제공1 = metadata($item, array('Item Type Metadata', 'Provision of original text1'), array('delimiter' => '; '));	  
+	$수량규모1 = metadata($item, array('Item Type Metadata', 'Quantity/scale1'), array('delimiter' => '; '));	  
+	$크기포맷1 = metadata($item, array('Item Type Metadata', 'Size/Format1'), array('delimiter' => '; '));	  
+	$매체용도1 = metadata($item, array('Item Type Metadata', 'Media purpose1'), array('delimiter' => '; '));	  
+	$매체1 = metadata($item, array('Item Type Metadata', 'Media1'), array('delimiter' => '; '));	  
+	$매체상세정보1 = metadata($item, array('Item Type Metadata', 'Media details1'), array('delimiter' => '; '));	  
+	$원문제공1 = metadata($item, array('Item Type Metadata', 'Provision of original text1'), array('delimiter' => '; '));	  
+	$수량규모1 = metadata($item, array('Item Type Metadata', 'Quantity/scale1'), array('delimiter' => '; '));	  
+	$크기포맷1 = metadata($item, array('Item Type Metadata', 'Size/Format1'), array('delimiter' => '; '));	  
+	$매체용도2 = metadata($item, array('Item Type Metadata', 'Media purpose2'), array('delimiter' => '; '));	  
+	$매체2 = metadata($item, array('Item Type Metadata', 'Media2'), array('delimiter' => '; '));	  
+	$매체상세정보2 = metadata($item, array('Item Type Metadata', 'Media details2'), array('delimiter' => '; '));	  
+	$원문제공2 = metadata($item, array('Item Type Metadata', 'Provision of original text2'), array('delimiter' => '; '));	  
+	$수량규모2 = metadata($item, array('Item Type Metadata', 'Quantity/scale2'), array('delimiter' => '; '));	  
+	$크기포맷2 = metadata($item, array('Item Type Metadata', 'Size/Format2'), array('delimiter' => '; '));	  
+	$매체용도3 = metadata($item, array('Item Type Metadata', 'Media purpose3'), array('delimiter' => '; '));	  
+	$매체3 = metadata($item, array('Item Type Metadata', 'Media3'), array('delimiter' => '; '));	  
+	$매체상세정보3 = metadata($item, array('Item Type Metadata', 'Media details3'), array('delimiter' => '; '));	  
+	$원문제공3 = metadata($item, array('Item Type Metadata', 'Provision of original text3'), array('delimiter' => '; '));	  
+	$수량규모3 = metadata($item, array('Item Type Metadata', 'Quantity/scale3'), array('delimiter' => '; '));	  
+	$크기포맷3 = metadata($item, array('Item Type Metadata', 'Size/Format3'), array('delimiter' => '; '));	  
+	$매체용도4 = metadata($item, array('Item Type Metadata', 'Media purpose4'), array('delimiter' => '; '));	  
+	$매체4 = metadata($item, array('Item Type Metadata', 'Media4'), array('delimiter' => '; '));	  
+	$매체상세정보4 = metadata($item, array('Item Type Metadata', 'Media details4'), array('delimiter' => '; '));	  
+	$원문제공4 = metadata($item, array('Item Type Metadata', 'Provision of original text4'), array('delimiter' => '; '));	  
+	$수량규모4 = metadata($item, array('Item Type Metadata', 'Quantity/scale4'), array('delimiter' => '; '));	  
+	$크기포맷4 = metadata($item, array('Item Type Metadata', 'Size/Format4'), array('delimiter' => '; '));	   
 
-		//인물 정보
-  		$인물명 = metadata($item, array('Item Type Metadata', 'Person Name'), array('delimiter' => '; '));	
-  		$인물성씨 = metadata($item, array('Item Type Metadata', 'Person Last Name'), array('delimiter' => '; '));	
-  		$인물이름 = metadata($item, array('Item Type Metadata', 'Person First Name'), array('delimiter' => '; '));	
-  		$인물외국어명칭 = metadata($item, array('Item Type Metadata', 'Person Foreign Language Name'), array('delimiter' => '; '));	
-  		$인물비대표명칭 = metadata($item, array('Item Type Metadata', 'Person non-representative name'), array('delimiter' => '; '));	
-  		$인물설명 = metadata($item, array('Item Type Metadata', 'Person Description'), array('delimiter' => '; '));	
-  		//$인물상세설명 = metadata($item, array('Item Type Metadata', 'Size/Format4'), array('delimiter' => '; '));	
-  		$국적 = metadata($item, array('Item Type Metadata', 'Nationality'), array('delimiter' => '; '));	
-  		$인물구분 = metadata($item, array('Item Type Metadata', 'Classification of person'), array('delimiter' => '; '));	
-  		$출생일 = metadata($item, array('Item Type Metadata', 'Date of birth'), array('delimiter' => '; '));	
-  		$사망일 = metadata($item, array('Item Type Metadata', 'Date of death'), array('delimiter' => '; '));	
+	$내용전문 = metadata($item, array('Item Type Metadata', 'Disclosure of description text'), array('delimiter' => '; '));	/* 비로그인 사용자에게는 비공개 */   
+	$기술상태 = metadata($item, array('Item Type Metadata', 'Description status'), array('delimiter' => '; '));	/* 비로그인 사용자에게는 비공개 */  
 
-		//단체 정보
-  		$조직명칭 = metadata($item, array('Item Type Metadata', 'Organization Name'), array('delimiter' => '; '));	
-  		$조직외국어명칭 = metadata($item, array('Item Type Metadata', 'Organization Foreign Language Name'), array('delimiter' => '; '));	
-  		$조직비대표명칭 = metadata($item, array('Item Type Metadata', 'Organization non-representative name'), array('delimiter' => '; '));	
-  		$조직설명 = metadata($item, array('Item Type Metadata', 'Organization Description'), array('delimiter' => '; '));	
-  		$활동국가 = metadata($item, array('Item Type Metadata', 'Country of activity'), array('delimiter' => '; '));	
-  		$조직구분 = metadata($item, array('Item Type Metadata', 'Classification of organization'), array('delimiter' => '; '));	
-  		$조직유형 = metadata($item, array('Item Type Metadata', 'Type of organization'), array('delimiter' => '; '));	
-  		$설립일 = metadata($item, array('Item Type Metadata', 'Founding date'), array('delimiter' => '; '));	
-  		$해산일 = metadata($item, array('Item Type Metadata', 'Dissolution date'), array('delimiter' => '; '));	
-		
-		//연표 정보
-  		$연표명칭 = metadata($item, array('Item Type Metadata', 'Chronological Name'), array('delimiter' => '; '));	
-  		$연표연도 = metadata($item, array('Item Type Metadata', 'Chronological year'), array('delimiter' => '; '));	
-  		$연표시작일자 = metadata($item, array('Item Type Metadata', 'Chronological start date'), array('delimiter' => '; '));	
-  		$연표종료일자 = metadata($item, array('Item Type Metadata', 'Chronological end date'), array('delimiter' => '; '));	
-  		$연표설명 = metadata($item, array('Item Type Metadata', 'Chronology Description'), array('delimiter' => '; '));	
-  		$연표구분 = metadata($item, array('Item Type Metadata', 'Classification of Chronology'), array('delimiter' => '; '));	
-  		$관할지역 = metadata($item, array('Item Type Metadata', 'Jurisdiction'), array('delimiter' => '; '));	  
-		
-		//사건 정보
+	//아이템세트 정보
+	$구성정보 = metadata($item, array('Item Type Metadata', 'Configuration information'), array('delimiter' => '; '));	   
 
-		//장소 정보
-		
-		//공통
-		$목록구분 = metadata($item, array('Item Type Metadata', 'Classification of catalog'), array('delimiter' => '; '));	  
-  		$정보출처 = metadata($item, array('Item Type Metadata', 'Sources of information'), array('delimiter' => '; '));	      
+	//인물 정보
+	$인물명 = metadata($item, array('Item Type Metadata', 'Person Name'), array('delimiter' => '; '));	
+	$인물성씨 = metadata($item, array('Item Type Metadata', 'Person Last Name'), array('delimiter' => '; '));	
+	$인물이름 = metadata($item, array('Item Type Metadata', 'Person First Name'), array('delimiter' => '; '));	
+	$인물외국어명칭 = metadata($item, array('Item Type Metadata', 'Person Foreign Language Name'), array('delimiter' => '; '));	
+	$인물비대표명칭 = metadata($item, array('Item Type Metadata', 'Person non-representative name'), array('delimiter' => '; '));	
+	//$인물설명 = metadata($item, array('Item Type Metadata', 'Person Description'), array('delimiter' => '; '));	
+	$인물상세 = metadata($item, array('Item Type Metadata', 'Person Details'), array('delimiter' => '; '));	
+	$국적 = metadata($item, array('Item Type Metadata', 'Nationality'), array('delimiter' => '; '));	
+	$인물구분 = metadata($item, array('Item Type Metadata', 'Classification of person'), array('delimiter' => '; '));	
+	$출생일 = metadata($item, array('Item Type Metadata', 'Date of birth'), array('delimiter' => '; '));	
+	$사망일 = metadata($item, array('Item Type Metadata', 'Date of death'), array('delimiter' => '; '));	
+
+	//단체 정보
+	$조직명칭 = metadata($item, array('Item Type Metadata', 'Organization Name'), array('delimiter' => '; '));	
+	$조직외국어명칭 = metadata($item, array('Item Type Metadata', 'Organization Foreign Language Name'), array('delimiter' => '; '));	
+	$조직비대표명칭 = metadata($item, array('Item Type Metadata', 'Organization non-representative name'), array('delimiter' => '; '));	
+	//$조직설명 = metadata($item, array('Item Type Metadata', 'Organization Description'), array('delimiter' => '; '));	
+	$조직상세 = metadata($item, array('Item Type Metadata', 'Organization Details'), array('delimiter' => '; '));	
+	$활동국가 = metadata($item, array('Item Type Metadata', 'Country of activity'), array('delimiter' => '; '));	
+	$조직구분 = metadata($item, array('Item Type Metadata', 'Classification of organization'), array('delimiter' => '; '));	
+	$조직유형 = metadata($item, array('Item Type Metadata', 'Type of organization'), array('delimiter' => '; '));	
+	$설립일 = metadata($item, array('Item Type Metadata', 'Founding date'), array('delimiter' => '; '));	
+	$해산일 = metadata($item, array('Item Type Metadata', 'Dissolution date'), array('delimiter' => '; '));	
+	
+	//연표 정보
+	$연표명칭 = metadata($item, array('Item Type Metadata', 'Chronological Name'), array('delimiter' => '; '));	
+	$연표연도 = metadata($item, array('Item Type Metadata', 'Chronological year'), array('delimiter' => '; '));	
+	$연표시작일자 = metadata($item, array('Item Type Metadata', 'Chronological start date'), array('delimiter' => '; '));	
+	$연표종료일자 = metadata($item, array('Item Type Metadata', 'Chronological end date'), array('delimiter' => '; '));	
+	//$연표설명 = metadata($item, array('Item Type Metadata', 'Chronology Description'), array('delimiter' => '; '));	
+	//$연표상세 = metadata($item, array('Item Type Metadata', 'Chronology Details'), array('delimiter' => '; '));		
+	$연표구분 = metadata($item, array('Item Type Metadata', 'Classification of Chronology'), array('delimiter' => '; '));	
+	$관할지역 = metadata($item, array('Item Type Metadata', 'Jurisdiction'), array('delimiter' => '; '));	  
+	$관련활동 = metadata($item, array('Item Type Metadata', 'Related Activity'), array('delimiter' => '; '));	  	
+	
+	//사건 정보
+
+	//장소 정보
 ?>	
 
 <?php
@@ -189,40 +202,104 @@ echo head(array('title' => $title, 'bodyclass' => 'items show'));
 	  });
 	});
 </script>
-
-<?php 
-	$user = current_user();
-	$isLoggedIn = !empty($user);     
-?>             
-<div class="breadcrumb container bg-neutral-50 text-xs px-4 py-1 mt-3">
-	<div class="flex gap-[10px] text-neutral-400">
-		<a class="hover:underline" href="/">홈</a>
-		<i class="xi-angle-right text-neutral-200"></i>
-		<a class="hover:underline" href="#">기록</a>
-		<i class="xi-angle-right text-neutral-200"></i>
-		<span class="text-primary">기록찾기</span>
+<style>
+.video-container {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+}	
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.1rem;
+}	
+</style>
+         
+<div class="pt-3">
+	<div class="breadcrumb container bg-neutral-50 text-xs px-4 py-1 rounded-lg">
+		<div class="flex gap-[10px] text-neutral-400">
+			<a class="hover:underline" href="<?php echo html_escape(url('/')); ?>">홈</a>
+		<?php if ($목록구분 == '소장기록') { ?>
+			<i class="xi-angle-right text-neutral-200"></i>
+			<a class="hover:underline" href="<?php echo html_escape(url('find/intro')); ?>">기록</a>
+		<?php } else {} ?>
+		<?php if ($목록구분 == '아이템세트') { ?>
+			<i class="xi-angle-right text-neutral-200"></i>
+			<a class="hover:underline" href="<?php echo html_escape(url('find?query=&site=1&leaf_coverage[]=아이템세트')); ?>">아이템세트</a>
+		<?php } else {} ?>		
+		<?php if ($목록구분 == '정보사전-인물') { ?>
+			<i class="xi-angle-right text-neutral-200"></i>
+			<a class="hover:underline" href="<?php echo html_escape(url('items/person?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-인물')); ?>">정보</a>
+			<i class="xi-angle-right text-neutral-200"></i>
+			<a class="hover:underline" href="<?php echo html_escape(url('items/person?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-인물')); ?>">인물</a>
+		<?php } else {} ?>
+		<?php if ($목록구분 == '정보사전-조직') { ?>
+			<i class="xi-angle-right text-neutral-200"></i>
+			<a class="hover:underline" href="<?php echo html_escape(url('items/person?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-인물')); ?>">정보</a>
+			<i class="xi-angle-right text-neutral-200"></i>
+			<a class="hover:underline" href="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-조직')); ?>">조직</a>
+		<?php } else {} ?>
+		<?php if ($목록구분 == '정보사전-연표') { ?>
+			<i class="xi-angle-right text-neutral-200"></i>
+			<a class="hover:underline" href="<?php echo html_escape(url('items/person?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-인물')); ?>">정보</a>
+			<i class="xi-angle-right text-neutral-200"></i>
+			<a class="hover:underline" href="<?php echo html_escape(url('items/history?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-연표')); ?>">연표</a>
+		<?php } else {} ?>
+			<i class="xi-angle-right text-neutral-200"></i>
+			<span class="text-primary"><?php echo $pageTitle; ?></span>
+		</div>
 	</div>
 </div>
 
-<!-- ====== 소장기록 Section Start ========  -->
-<?php if ($목록구분 == '소장기록') { ?>
+<?php 
+	$userRole = current_user();
+	$isLoggedIn = !empty($userRole);     
+?>   
 
+<?php if ($목록구분 == '소장기록') {  // 해당 아이템이 소장기록에 해당하는 경우에만 섹션 출력 ?>
+<!-- ====== 소장기록 Section Start ========  -->	
 <div class="container pt-14">
-	<h1 class="text-3xl font-bold mb-6">기록 이름</h1>
+	<h1 class="text-3xl font-bold mb-6"><?php echo $pageTitle; ?></h1>
 	<div class="flex gap-8 mb-24">
 		<!--left area -->
-		<div class="w-[48.75%] flex-shrink-0 aspect-[624/397] bg-slate-400">
+		<div class="w-[48.75%] flex-shrink-0 "><!-- aspect-[624/397] -->
+
+				<?php //PDF 파일인 경우 pdfjs 뷰어 출력 ?>			
+				<?php if (!$item) $item = get_current_record('item'); 
+					$files = $item->Files; 
+					foreach($files as $file) 
+					if ($file->getExtension() =='pdf')	{
+						echo '<iframe class="w-full h-[500px]" src="/etc/vendor/pdfjs/web/viewer.html?file=/files/original/'.metadata($file,'filename').'"></iframe>';
+					} 		
+					else if ($file->getExtension() =='PDF')	{
+						echo '<iframe  class="w-full h-[500px]" src="/etc/vendor/pdfjs/web/viewer.html?file=/files/original/'.metadata($file,'filename').'"></iframe>';
+					}
+				?> 
+
+				<?php if ($유튜브영상 = metadata($item, array('Item Type Metadata', 'Video source'))): ?>    
+				<div class="w-full px-4">
+				<?php //유튜브 영상 임베드 스크립트 출력 ?>    
+				<div class="video-container">  
+					<iframe src="<?php echo $유튜브영상; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				</div>
+				<?php endif; ?>	
+
+				<?php if ($유튜브영상 == null) { ?>  							
 				<?php //일반 이미지 포맷인 경우 이미지 뷰어 출력. 단, pdf는 제외. ?>	
 				<?php if ($hasImages): ?>
-				  <div class="rounded-md" style="background: #F6F6F6;">      
+				  <div>      
 					  <div class="imageArea-d">
 						<div class="item">      
 						  <div class="clearfix" style="width: 100%;">		
 							<ul id="image-gallery-d" class="gallery list-unstyled cS-hidden">
 							  <?php foreach ($itemFiles as $itemFile): ?>							
-								<li data-thumb="<?php echo $itemFile->getWebPath('square_thumbnail'); ?>" class="rounded-md"> 
+								<li data-thumb="<?php echo $itemFile->getWebPath('square_thumbnail'); ?>" class=""> 
 									<div class="image-box-d">
-										<img class="image-thumbnail-d rounded-md" src="<?php echo $itemFile->getWebPath('fullsize'); ?>" />
+										<img class="image-thumbnail-d" src="<?php echo $itemFile->getWebPath('fullsize'); ?>" />
 									</div>
 								</li>
 							  <?php endforeach; ?>								
@@ -231,324 +308,776 @@ echo head(array('title' => $title, 'bodyclass' => 'items show'));
 						</div>
 					  </div>	
 				  </div>
-				<?php endif; ?>	
-
-				<?php //PDF 파일인 경우 pdfjs 뷰어 출력 ?>			
-				<?php if (!$item) $item = get_current_record('item'); 
-					$files = $item->Files; 
-					foreach($files as $file) 
-					if ($file->getExtension() =='pdf')	{
-						echo '<iframe width="100%;" height="650px;" src="/etc/vendor/pdfjs/web/viewer.html?file=/files/original/'.metadata($file,'filename').'"></iframe><div style="height: 10px;"></div>';
-					} 		
-					else if ($file->getExtension() =='PDF')	{
-						echo '<iframe width="100%;" height="650px;" src="/etc/vendor/pdfjs/web/viewer.html?file=/files/original/'.metadata($file,'filename').'"></iframe><div style="height: 10px;"></div>';
-					}
-				?> 
+				<?php endif; ?>
+				<?php } else {} ?>			
 		</div>
 		<!--//left area -->
 		<!--right area -->
 		<div class="flex-grow relative">
-			<div class="menu-tab01">
+			<div class="menu-tab01 !mb-0">
 				<ul >
 					<li class="current"><a data-target="dataA01" href="#">기본정보</a></li>
 					<li><a href="#" data-target="dataA02">이용정보</a></li>
 					<li><a href="#" data-target="dataA03">매체정보</a></li>
 				</ul>
 			</div>
-			<div class="dataA">
-				<div id="dataA01" style="">
+			<div class="dataA max-h-[36rem] overflow-y-auto">
+				<div id="dataA01" class="py-10">
+					<?php if ($관리번호!= null && $isLoggedIn) { //로그인 사용자만 열람 ?>
 					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">기록유형</dt> 
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">관리번호</dt> 
+						<dd><?php echo strip_formatting($관리번호); ?></dd> 
+					</dl>
+					<?php } else {} ?>
+					<?php if ($제목!= null) { ?>
+					<dl class="flex text-neutral-500 mb-4">
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">제목</dt> 
+						<dd><?php echo strip_formatting($제목); ?></dd> 
+					</dl>
+					<?php } else {} ?>					
+					<?php if ($내용!= null) { ?>
+					<dl class="flex text-neutral-500 mb-4">
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">내용</dt> 
+						<dd><?php echo strip_formatting($내용); ?></dd> 
+					</dl>
+					<?php } else {} ?>
+					<?php if ($내용전문!= null && $isLoggedIn) { //로그인 사용자만 열람 ?>
+					<dl class="flex text-neutral-500 mb-4">
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">비공개 내용</dt> 
+						<dd><?php echo strip_formatting($내용전문); ?></dd> 
+					</dl>
+					<?php } else {} ?>					
+
+					<?php // 생산자가 추정에 해당하는 경우 생산자에 각 괄호를 삽입해서 출력 ?>					
+					<?php if ($생산자!= null && $생산자구분=='Y') { ?>
+					<dl class="flex text-neutral-500 mb-4">
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">생산자</dt> 
+						<dd>[<?php echo strip_formatting($생산자); ?>]</dd> 
+					</dl>
+					<?php // 생산자가 추정에 해당하지 않는 경우 생산자는 그대로 출력 ?>						
+					<?php } else if ($생산자!= null && $생산자구분=='N') { ?>
+					<dl class="flex text-neutral-500 mb-4">
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">생산자</dt> 
+						<dd><?php echo strip_formatting($생산자); ?></dd> 
+					</dl>					
+					<?php } else {} ?>
+
+					<?php // 생산일자가 추정일자에 해당하는 경우 생산일자에 각 괄호를 삽입해서 출력 ?>					
+					<?php if ($생산일자!= null && $일자구분=='Y') { ?>
+					<dl class="flex text-neutral-500 mb-4">
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">생산일자</dt> 
+						<dd>[<?php echo strip_formatting($생산일자); ?>]</dd> 
+					</dl>
+					<?php // 생산일자가 추정일자에 해당하지 않는 경우 생산일자는 그대로 출력 ?>						
+					<?php } else if ($생산일자!= null && $일자구분=='N') { ?>
+					<dl class="flex text-neutral-500 mb-4">
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">생산일자</dt> 
+						<dd><?php echo strip_formatting($생산일자); ?></dd> 
+					</dl>					
+					<?php } else {} ?>	
+
+					<?php if ($기록유형!= null) { ?>
+					<dl class="flex text-neutral-500 mb-4">
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">기록유형</dt> 
 						<dd><?php echo strip_formatting($기록유형); ?></dd> 
 					</dl>
+					<?php } else {} ?>				
+					<?php if ($기록형태!= null) { ?>
 					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">기록형태</dt> 
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">기록형태</dt> 
 						<dd><?php echo strip_formatting($기록형태); ?></dd> 
 					</dl>
+					<?php } else {} ?>				
+					<?php if ($생산자주기!= null && $isLoggedIn) { ?>
 					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">생산날짜</dt> 
-						<dd><?php echo strip_formatting($생산날짜); ?></dd> 
-					</dl>
-					<?php 
-							//if($user->role == 'super' || $user->role == 'admin' || $user->role == 'researcher')
-							if ($isLoggedIn) {    //로그인 사용자만 볼 수 있는 메타데이터 정보 출력      
-						?>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">생산자주기</dt> 
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">생산자주기</dt> 
 						<dd><?php echo strip_formatting($생산자주기); ?></dd> 
 					</dl>
-					<?php 
-							} else {} 
-						?>
+					<?php } else {} ?>					
+					<?php //if ($키워드!= null) { ?>
+					<!-- dl class="flex text-neutral-500 mb-4">
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">키워드</dt> 
+						<dd><?php //echo strip_formatting($키워드); ?></dd> 
+					</!-->
+					<?php //} else {} ?>
+					<?php if (metadata($item, 'has tags')): ?>
+					<dl class="flex text-neutral-500 mb-4">
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">태그</dt> 
+						<dd><?php echo tag_string('item', 'find'); ?></dd> 
+					</dl>
+					<?php endif; ?>	
 				</div>
-				<div id="dataA02" style="display:none">
-						<!-- 이용정보 탭에 출력될 메타데이터 항목 -->
+				<div id="dataA02" class="py-10" style="display:none">
+					<!-- 이용정보 탭에 출력될 메타데이터 항목 -->
+					<?php if ($목록구분!= null) { ?>						
+					<dl class="flex text-neutral-500 mb-4">
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">목록구분</dt> 
+						<dd><?php echo strip_formatting($목록구분); ?></dd> 
+					</dl>
+					<?php } else {} ?>
+					<?php if ($언어!= null) { ?>					
+					<dl class="flex text-neutral-500 mb-4">
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">언어</dt> 
+						<dd><?php echo strip_formatting($언어); ?></dd> 
+					</dl>
+					<?php } else {} ?>
+					<?php if ($기록출처!= null) { ?>					
+					<dl class="flex text-neutral-500 mb-4">
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">기록출처</dt> 
+						<dd><?php echo strip_formatting($기록출처); ?></dd> 
+					</dl>
+					<?php } else {} ?>
+					<?php if ($목록공개!= null) { ?>					
+					<dl class="flex text-neutral-500 mb-4">
+						<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">목록공개</dt> 
+						<dd><?php echo strip_formatting($목록공개); ?></dd> 
+					</dl>
+					<?php } else {} ?>				
+					<?php if($원문공개!= null) { ?>				
 						<dl class="flex text-neutral-500 mb-4">
-							<dt class="font-bold text-neutral-500 w-[150px]">목록구분</dt> 
-							<dd><?php echo strip_formatting($목록구분); ?></dd> 
-						</dl>
-						<dl class="flex text-neutral-500 mb-4">
-							<dt class="font-bold text-neutral-500 w-[150px]">생산연대</dt> 
-							<dd><?php echo strip_formatting($생산연대); ?></dd> 
-						</dl>
-						<dl class="flex text-neutral-500 mb-4">
-							<dt class="font-bold text-neutral-500 w-[150px]">언어</dt> 
-							<dd><?php echo strip_formatting($언어); ?></dd> 
-						</dl>
-						<dl class="flex text-neutral-500 mb-4">
-							<dt class="font-bold text-neutral-500 w-[150px]">기록출처</dt> 
-							<dd><?php echo strip_formatting($기록출처); ?></dd> 
-						</dl>
-						<dl class="flex text-neutral-500 mb-4">
-							<dt class="font-bold text-neutral-500 w-[150px]">목록공개</dt> 
-							<dd><?php echo strip_formatting($목록공개); ?></dd> 
-						</dl>
-						<dl class="flex text-neutral-500 mb-4">
-							<dt class="font-bold text-neutral-500 w-[150px]">원문공개</dt> 
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">원문공개</dt> 
 							<dd><?php echo strip_formatting($원문공개); ?></dd> 
 						</dl>
+					<?php } else {} ?>	
+					<?php if($userRole) : ?>							
+					<?php if($공개주기!= null && $userRole->role == 'super' || $userRole->role == 'admin') { //관리자 권한 이상만 열람 ?>			
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">공개주기</dt> 
+							<dd><?php echo strip_formatting($공개주기); ?></dd> 
+						</dl>
+					<?php } else {} ?>	
+					<?php endif; ?>	
 				</div>
-				<div id="dataA03" class="grid grid-cols-2 gap-x-10" style="display:none">
-						<!-- 매체정보 탭에 출력될 메타데이터 항목 -->
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체용도1</dt> 
-						<dd><?php echo strip_formatting($매체용도1); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체1</dt> 
-						<dd><?php echo strip_formatting($매체1); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체상세정보1</dt> 
-						<dd><?php echo strip_formatting($매체상세정보1); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">원문제공1</dt> 
-						<dd><?php echo strip_formatting($원문제공1); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">수량규모1</dt> 
-						<dd><?php echo strip_formatting($수량규모1); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">크기포맷1</dt> 
-						<dd><?php echo strip_formatting($크기포맷1); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체용도2</dt> 
-						<dd><?php echo strip_formatting($매체용도2); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체2</dt> 
-						<dd><?php echo strip_formatting($매체2); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체상세정보2</dt> 
-						<dd><?php echo strip_formatting($매체상세정보2); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">원문제공2</dt> 
-						<dd><?php echo strip_formatting($원문제공2); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">수량규모2</dt> 
-						<dd><?php echo strip_formatting($수량규모2); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">크기포맷2</dt> 
-						<dd><?php echo strip_formatting($크기포맷2); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체용도3</dt> 
-						<dd><?php echo strip_formatting($매체용도3); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체3</dt> 
-						<dd><?php echo strip_formatting($매체3); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체상세정보3</dt> 
-						<dd><?php echo strip_formatting($매체상세정보3); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">원문제공3</dt> 
-						<dd><?php echo strip_formatting($원문제공3); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">수량규모3</dt> 
-						<dd><?php echo strip_formatting($수량규모3); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">크기포맷3</dt> 
-						<dd><?php echo strip_formatting($크기포맷3); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체용도4</dt> 
-						<dd><?php echo strip_formatting($매체용도4); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체4</dt> 
-						<dd><?php echo strip_formatting($매체4); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">매체상세정보4</dt> 
-						<dd><?php echo strip_formatting($매체상세정보4); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">원문제공4</dt> 
-						<dd><?php echo strip_formatting($원문제공4); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">수량규모4</dt> 
-						<dd><?php echo strip_formatting($수량규모4); ?></dd> 
-					</dl>
-					<dl class="flex text-neutral-500 mb-4">
-						<dt class="font-bold text-neutral-500 w-[150px]">크기포맷4</dt> 
-						<dd><?php echo strip_formatting($크기포맷4); ?></dd> 
-					</dl>
+				<div id="dataA03" class="py-10" style="display:none">
+					<!-- 매체정보 탭에 출력될 메타데이터 항목 -->
+					<?php if ($매체용도1!= null) { //메체정보1에 해당하는 데이터가 없는 경우 출력 제외 ?>		
+					<h3 class="text-xl mb-4 font-bold">매체정보 1</h3>
+					<div class="grid grid-cols-2 gap-x-10 mb-4">
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">매체용도</dt> 
+							<dd><?php echo strip_formatting($매체용도1); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">매체</dt> 
+							<dd><?php echo strip_formatting($매체1); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">매체상세정보</dt> 
+							<dd><?php echo strip_formatting($매체상세정보1); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">원문제공</dt> 
+							<dd><?php echo strip_formatting($원문제공1); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">수량규모</dt> 
+							<dd><?php echo strip_formatting($수량규모1); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">크기포맷</dt> 
+							<dd><?php echo strip_formatting($크기포맷1); ?></dd> 
+						</dl>
+					</div>
+					<?php } else {} ?>						
+
+					<?php if ($매체용도2!= null) { //메체정보2에 해당하는 데이터가 없는 경우 출력 제외 ?>							
+					<h3 class="text-xl mb-4 font-bold">매체정보 2</h3>
+					<div class="grid grid-cols-2 gap-x-10 mb-4">
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">매체용도</dt> 
+							<dd><?php echo strip_formatting($매체용도2); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">매체</dt> 
+							<dd><?php echo strip_formatting($매체2); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">매체상세정보</dt> 
+							<dd><?php echo strip_formatting($매체상세정보2); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">원문제공</dt> 
+							<dd><?php echo strip_formatting($원문제공2); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">수량규모</dt> 
+							<dd><?php echo strip_formatting($수량규모2); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">크기포맷</dt> 
+							<dd><?php echo strip_formatting($크기포맷2); ?></dd> 
+						</dl>
+					</div>
+					<?php } else {} ?>						
+
+					<?php if ($매체용도3!= null) { //메체정보3에 해당하는 데이터가 없는 경우 출력 제외 ?>						
+					<h3 class="text-xl mb-4 font-bold">매체정보 3</h3>
+					<div class="grid grid-cols-2 gap-x-10 mb-4">
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">매체용도</dt> 
+							<dd><?php echo strip_formatting($매체용도3); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">매체</dt> 
+							<dd><?php echo strip_formatting($매체3); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">매체상세정보</dt> 
+							<dd><?php echo strip_formatting($매체상세정보3); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">원문제공</dt> 
+							<dd><?php echo strip_formatting($원문제공3); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">수량규모</dt> 
+							<dd><?php echo strip_formatting($수량규모3); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">크기포맷</dt> 
+							<dd><?php echo strip_formatting($크기포맷3); ?></dd> 
+						</dl>
+					</div>
+					<?php } else {} ?>						
+
+					<?php if ($매체용도4!= null) { //메체정보4에 해당하는 데이터가 없는 경우 출력 제외 ?>	
+					<h3 class="text-xl mb-4 font-bold">매체정보 4</h3>
+					<div class="grid grid-cols-2 gap-x-10 mb-4">
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">매체용도</dt> 
+							<dd><?php echo strip_formatting($매체용도4); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">매체</dt> 
+							<dd><?php echo strip_formatting($매체4); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">매체상세정보</dt> 
+							<dd><?php echo strip_formatting($매체상세정보4); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">원문제공</dt> 
+							<dd><?php echo strip_formatting($원문제공4); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">수량규모</dt> 
+							<dd><?php echo strip_formatting($수량규모4); ?></dd> 
+						</dl>
+						<dl class="flex text-neutral-500 mb-4">
+							<dt class="font-bold text-neutral-500 w-[150px] flex-shrink-0">크기포맷</dt> 
+							<dd><?php echo strip_formatting($크기포맷4); ?></dd> 
+						</dl>
+					</div>
+					<?php } else {} ?>		
 
 				</div>
 			</div>
-			<div class="absolute bottom-0 right-0 flex justify-end gap-2">
-				<a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="#">오류신고</a>
-				<a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="#">즐겨찾기</a>
-				<a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="#">목록받기</a>
-					<!-- 관심기록 추가하기 버튼 링크 출력 -->
-					<?php echo get_specific_plugin_hook_output('Cart', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
+			<div class="flex justify-end gap-2 pt-[0.625rem]">
+				<a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="<?php echo html_escape(url('/')); ?>corrections/index/add/item_id/<?php echo $id; ?>">오류신고</a>
+				<!-- a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="#">즐겨찾기</!-->
+				<a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="<?php echo html_escape(url('/')); ?>items/show/<?php echo $id; ?>?output=csv">목록받기</a>
+				<?php echo get_specific_plugin_hook_output('Cart', 'public_items_show', array('view' => $this, 'item' => $item)); //내 관심기록 출력 ?>
+				<style>
+					.cart{
+						display:flex;
+						align-items: center;
+						gap:8px;
+					}
+				</style>
 			</div>
 		</div>
 		<!--//right area -->
 	</div>
 
+</div><!--// end of <div class="container pt-14"> -->
+<!-- ====== 소장기록 Section End ========  -->	
+<?php 
+	} else {} 
+?>
 
+
+
+
+
+
+
+<?php if ($목록구분 == '아이템세트') { // 해당 아이템이 아이템세트에 해당하는 경우에만 섹션 출력 ?>
+<!-- ====== 아이템세트 Section Start ========  -->
+<div class="container pt-14">
+	<div class="flex mb-28">
+		<div class="thumb-area flex-shrink-0 w-[20rem] mr-[5rem]">
+			<!-- 썸네일 이미지가 있는 경우 출력 -->
+			<?php if (metadata($item, 'has files')) {  ?>	          
+			<?php echo files_for_item(array('linkToFile' => false, 'imageSize' => 'fullsize', 'imgAttributes' => array('class' => 'w-full acpect-1 object-cover'))); ?>	
+			<?php } else { ?>
+				<img src="<?php echo img('icon/아이템세트.png'); ?>" class="w-full acpect-1 object-cover">	
+			<?php } ?>
+		</div>
+		<div class="info-area relative flex flex-col justify-center flex-grow">
+
+			<h1 class="text-[1.875rem] font-bold mb-8"><?php echo strip_formatting($제목); ?></h1>
+
+			<div class="grid grid-cols-[minmax(240px,_auto)_minmax(240px,_auto)] gap-x-12 gap-y-4">
+				<?php if ($목록구분!= null) { ?>					
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">목록구분</dt>
+					<dd><?php echo strip_formatting($목록구분); ?></dd>
+				</dl>
+				<?php } else {} ?>					
+				<?php if ($구성정보!= null) { ?>								
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">구성정보</dt>
+					<dd><?php echo strip_formatting($구성정보); ?></dd>
+				</dl>
+				<?php } else {} ?>	
+				<?php if ($관리번호!= null && $isLoggedIn) { //로그인 사용자만 열람 ?>						
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">관리번호</dt>
+					<dd><?php echo strip_formatting($관리번호); ?></dd>
+				</dl>
+				<?php } else {} ?>				
+				<?php if ($기술상태!= null && $isLoggedIn) { //로그인 사용자만 열람 ?>
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">기술상태</dt> 
+					<dd><?php echo strip_formatting($기술상태); ?></dd> 
+				</dl>
+				<?php } else {} ?>					
+				<?php if (metadata($item, 'has tags')): ?>
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">태그</dt>
+					<dd><?php echo tag_string('item', 'find'); ?></dd>
+				</dl>
+				<?php endif; ?>						
+			</div>
+			<div class="flex justify-end gap-2 absolute right-0 bottom-0">
+				<a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="<?php echo html_escape(url('/')); ?>corrections/index/add/item_id/<?php echo $id; ?>">오류신고</a>
+				<!-- a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="#">즐겨찾기</!-->
+				<a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="<?php echo html_escape(url('/')); ?>items/show/<?php echo $id; ?>?output=csv">목록받기</a>
+				<?php echo get_specific_plugin_hook_output('Cart', 'public_items_show', array('view' => $this, 'item' => $item)); //내 관심기록 출력 ?>
+				<style>
+					.cart{
+						display:flex;
+						align-items: center;
+						gap:8px;
+					}
+				</style>
+			</div>
+
+		</div>
+	</div>
+</div><!--// end of <div class="container pt-14"> -->
+<!-- ====== 아이템세트 Section End ========  -->	
+<?php 
+	} else {} 
+?>
+
+
+
+
+
+<?php if ($목록구분 == '정보사전-인물') { // 해당 아이템이 정보사전의 인물에 해당하는 경우에만 섹션 출력 ?>
+<!-- ====== 정보사전-인물 Section Start ========  -->
+<div class="container pt-14">
+	<div class="flex mb-28">
+		<div class="thumb-area flex-shrink-0 w-[20rem] mr-[5rem]">
+			<!-- 썸네일 이미지가 있는 경우 출력 -->
+			<?php if (metadata($item, 'has files')) {  ?>	          
+			<?php echo files_for_item(array('linkToFile' => false, 'imageSize' => 'fullsize', 'imgAttributes' => array('class' => 'w-full acpect-1 object-cover rounded-full'))); ?>	
+			<?php } else { ?>
+			<img src="<?php echo img('icon/정보-인물.png'); ?>" class="w-full acpect-1 object-cover rounded-full">	
+			<?php } ?>
+		</div>
+		<div class="info-area relative flex flex-col justify-center flex-grow">
+			<?php if ($인물명!= null) { ?>	
+			<h1 class="text-[1.875rem] font-bold mb-8"><?php echo strip_formatting($인물명); ?></h1>
+			<?php } else { //인물명이 null이면 DC title 출력 ?>
+			<h1 class="text-[1.875rem] font-bold mb-8"><?php echo strip_formatting($제목); ?></h1>
+			<?php } ?>
+			<div class="grid grid-cols-[minmax(240px,_auto)_minmax(240px,_auto)] gap-x-12 gap-y-4 mb-8">
+				<?php if ($목록구분!= null) { ?>							
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">목록구분</dt>
+					<dd><?php echo strip_formatting($목록구분); ?></dd>
+				</dl>
+				<?php } else {} ?>	
+				<?php if ($관리번호!= null && $isLoggedIn) { //로그인 사용자만 열람 ?>							
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">관리번호</dt>
+					<dd><?php echo strip_formatting($관리번호); ?></dd>
+				</dl>
+				<?php } else {} ?>	
+				<?php if ($인물구분!= null) { ?>							
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">인물구분</dt>
+					<dd><?php echo strip_formatting($인물구분); ?></dd>
+				</dl>
+				<?php } else {} ?>		
+				<?php if ($국적!= null) { ?>							
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">국적</dt>
+					<dd><?php echo strip_formatting($국적); ?></dd>
+				</dl>
+				<?php } else {} ?>							
+				<?php if($userRole) : ?>							
+				<?php if($인물성씨!= null && $userRole->role == 'super' || $userRole->role == 'admin') { //관리자 권한 이상만 열람 ?>		
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">이름성씨</dt>
+					<dd><?php echo strip_formatting($인물성씨); ?></dd>
+				</dl>				
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">이름</dt>
+					<dd><?php echo strip_formatting($인물이름); ?></dd>
+				</dl>
+				<?php } else {} ?>	
+				<?php endif; ?>					
+				<?php if ($인물외국어명칭!= null) { ?>						
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">외국어명칭</dt>
+					<dd><?php echo strip_formatting($인물외국어명칭); ?></dd>
+				</dl>
+				<?php } else {} ?>				
+				<?php if ($인물비대표명칭!= null) { ?>							
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">비대표명칭</dt>
+					<dd><?php echo strip_formatting($인물비대표명칭); ?></dd>
+				</dl>
+				<?php } else {} ?>
+				<?php if ($출생일!= null) { ?>							
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">출생일</dt>
+					<dd><?php echo strip_formatting($출생일); ?></dd>
+				</dl>
+				<?php } else {} ?>				
+				<?php if ($사망일!= null) { ?>							
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">사망일</dt>
+					<dd><?php echo strip_formatting($사망일); ?></dd>
+				</dl>
+				<?php } else {} ?>	
+		
+				<?php if ($정보출처!= null) { ?>							
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">정보출처</dt>
+					<dd><?php echo strip_formatting($정보출처); ?></dd>
+				</dl>
+				<?php } else {} ?>					
+				<?php if ($기술상태!= null && $isLoggedIn ) { //로그인 사용자만 열람 ?>
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">기술상태</dt> 
+					<dd><?php echo strip_formatting($기술상태); ?></dd> 
+				</dl>
+				<?php } else {} ?>				
+				<?php if (metadata($item, 'has tags')): ?>
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">태그</dt>
+					<dd><?php echo tag_string('item', 'find'); ?></dd>
+				</dl>
+				<?php endif; ?>	
+				<?php //if ($인물설명!= null) { ?>							
+				<!--dl class="flex text-neutral-500 col-span-2">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">설명</dt>
+					<dd><?php //echo strip_formatting($인물설명); ?></dd>		
+				</--dl -->
+				<?php //} else {} ?>						
+				<?php if ($내용!= null || $인물상세!= null) { ?>							
+				<dl class="flex text-neutral-500 col-span-2">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">설명</dt>
+					<dd><?php echo strip_formatting($인물상세); ?><br><?php echo strip_formatting($내용); ?></dd>
+				</dl>
+				<?php } else {} ?>				
+
+			</div>
+			<div class="flex justify-end gap-2">
+				<a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="<?php echo html_escape(url('/')); ?>corrections/index/add/item_id/<?php echo $id; ?>">오류신고</a>
+				<!-- a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="#">즐겨찾기</!-->
+				<a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="<?php echo html_escape(url('/')); ?>items/show/<?php echo $id; ?>?output=csv">목록받기</a>
+				<?php echo get_specific_plugin_hook_output('Cart', 'public_items_show', array('view' => $this, 'item' => $item)); //내 관심기록 출력 ?>
+				<style>
+					.cart{
+						display:flex;
+						align-items: center;
+						gap:8px;
+					}
+				</style>
+			</div>
+
+		</div>
+	</div>
 
 </div><!--// end of <div class="container pt-14"> -->
-<?php 
-	} else {} 
-?>
-<!-- ====== 소장기록 Section End ========  -->
-
-
-
-
-
-
-<!-- ====== 아이템세트 Section Start ========  -->
-<?php if ($목록구분 == '아이템세트') { ?>
-
-		<!-- 썸네일 이미지가 있는 경우 출력 -->
-		<?php if (metadata($item, 'has files')) {  ?>	          
-		<div class="mb-3 w-full max-w-[520px] sm:mb-0">
-		<?php echo files_for_item(array('linkToFile' => false, 'imageSize' => 'fullsize', 'imgAttributes' => array('class' => 'rounded-md h-full w-full object-cover object-center block'))); ?>	
-		</div>        
-		<?php } else { ?>
-		<img src="/etc/images/global/no-image-global-square-v2.jpg" class="rounded-md h-full w-full object-cover object-center">	
-		<?php } ?>
-
-		<p class="">구성정보: <?php echo strip_formatting($구성정보); ?></p>
-<?php 
-	} else {} 
-?>
-<!-- ====== 아이템세트 Section End ========  -->
-
-<!-- ====== 정보사전-인물 Section Start ========  -->
-<?php if ($목록구분 == '정보사전-인물') { ?>
-
-		<!-- 썸네일 이미지가 있는 경우 출력 -->
-		<?php if (metadata($item, 'has files')) {  ?>	          
-		<div class="mb-3 w-full max-w-[520px] sm:mb-0">
-		<?php echo files_for_item(array('linkToFile' => false, 'imageSize' => 'fullsize', 'imgAttributes' => array('class' => 'rounded-md h-full w-full object-cover object-center block'))); ?>	
-		</div>        
-		<?php } else { ?>
-		<img src="/etc/images/global/no-image-global-square-v2.jpg" class="rounded-md h-full w-full object-cover object-center">	
-		<?php } ?>
-
-		<p class="">인물명칭: <?php echo strip_formatting($인물명칭); ?></p>
-<?php 
-	//if($user->role == 'super' || $user->role == 'admin' || $user->role == 'researcher')
-	if ($isLoggedIn) {    //로그인 사용자만 볼 수 있는 메타데이터 정보 출력      
-?>
-		<p class="">이름성씨: <?php echo strip_formatting($인물성씨); ?></p>
-		<p class="">이름: <?php echo strip_formatting($인물이름); ?></p>
-<?php 
-	} else {} 
-?>
-		<p class="">외국어명칭: <?php echo strip_formatting($인물외국어명칭); ?></p>
-		<p class="">비대표명칭: <?php echo strip_formatting($인물비대표명칭); ?></p>
-		<p class="">설명: <?php echo strip_formatting($인물설명); ?></p>
-		<p class="">국적: <?php echo strip_formatting($국적); ?></p>
-		<p class="">인물구분: <?php echo strip_formatting($인물구분); ?></p>
-		<p class="">출생일: <?php echo strip_formatting($출생일); ?></p>
-		<p class="">사망일: <?php echo strip_formatting($사망일); ?></p>
-		<p class="">정보출처: <?php echo strip_formatting($정보출처); ?></p>
-<?php 
-	} else {} 
-?>
 <!-- ====== 정보사전-인물 Section End ========  -->
-
-<!-- ====== 정보사전-조직 Section Start ========  -->
-<?php if ($목록구분 == '정보사전-조직') { ?>
-
-		<!-- 썸네일 이미지가 있는 경우 출력 -->
-		<?php if (metadata($item, 'has files')) {  ?>	          
-		<div class="mb-3 w-full max-w-[520px] sm:mb-0">
-		<?php echo files_for_item(array('linkToFile' => false, 'imageSize' => 'fullsize', 'imgAttributes' => array('class' => 'rounded-md h-full w-full object-cover object-center block'))); ?>	
-		</div>        
-		<?php } else { ?>
-		<img src="/etc/images/global/no-image-global-square-v2.jpg" class="rounded-md h-full w-full object-cover object-center">	
-		<?php } ?>
-
-		<p class="">조직명칭: <?php echo strip_formatting($조직명칭); ?></p>
-		<p class="">조직외국어명칭: <?php echo strip_formatting($조직외국어명칭); ?></p>
-		<p class="">조직비대표명칭: <?php echo strip_formatting($조직비대표명칭); ?></p>
-		<p class="">설명: <?php echo strip_formatting($조직설명); ?></p>
-		<p class="">활동국가: <?php echo strip_formatting($활동국가); ?></p>
-		<p class="">조직구분: <?php echo strip_formatting($조직구분); ?></p>
-		<p class="">조직유형: <?php echo strip_formatting($조직유형); ?></p>
-		<p class="">설립일: <?php echo strip_formatting($설립일); ?></p>
-		<p class="">해산일: <?php echo strip_formatting($해산일); ?></p>
-		<p class="">정보출처: <?php echo strip_formatting($정보출처); ?></p>
 <?php 
 	} else {} 
 ?>
-<!-- ====== 정보사전-조직 Section End ========  -->
 
+
+
+
+
+
+<?php if ($목록구분 == '정보사전-조직') { // 해당 아이템이 정보사전의 조직에 해당하는 경우에만 섹션 출력 ?>
+<!-- ====== 정보사전-조직 Section Start ========  -->	
+<div class="container pt-14">
+	<div class="flex mb-28">
+		<div class="thumb-area flex-shrink-0 w-[20rem] mr-[5rem]">
+			<!-- 썸네일 이미지가 있는 경우 출력 -->
+			<?php if (metadata($item, 'has files')) { ?>	          
+			<?php echo files_for_item(array('linkToFile' => false, 'imageSize' => 'fullsize', 'imgAttributes' => array('class' => 'w-full acpect-1 object-cover'))); ?>	
+			<?php } else { ?>
+				<img src="<?php echo img('icon/정보-조직.png'); ?>" class="w-full acpect-1 object-cover">		
+			<?php } ?>
+		</div>
+		<div class="info-area relative flex flex-col justify-center flex-grow">
+			<?php if ($조직명칭!= null) { ?>	
+			<h1 class="text-[1.875rem] font-bold mb-8"><?php echo strip_formatting($조직명칭); ?></h1>
+			<?php } else { //조직명이 null이면 DC title 출력 ?>
+			<h1 class="text-[1.875rem] font-bold mb-8"><?php echo strip_formatting($제목); ?></h1>
+			<?php } ?>
+			<div class="grid grid-cols-[minmax(240px,_auto)_minmax(240px,_auto)] gap-x-12 gap-y-4 mb-8">
+				<?php if ($목록구분!= null) { ?>							
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">목록구분</dt>
+					<dd><?php echo strip_formatting($목록구분); ?></dd>
+				</dl>
+				<?php } else {} ?>	
+				<?php if ($관리번호!= null && $isLoggedIn) { //로그인 사용자만 열람 ?>							
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">관리번호</dt>
+					<dd><?php echo strip_formatting($관리번호); ?></dd>
+				</dl>
+				<?php } else {} ?>				
+				<?php if ($조직구분!= null) { ?>						
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">조직구분</dt>
+					<dd><?php echo strip_formatting($조직구분); ?></dd>
+				</dl>
+				<?php } else {} ?>			
+				<?php if ($조직유형!= null) { ?>						
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">조직유형</dt>
+					<dd><?php echo strip_formatting($조직유형); ?></dd>
+				</dl>
+				<?php } else {} ?>	
+				<?php if ($설립일!= null) { ?>						
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">설립일</dt>
+					<dd><?php echo strip_formatting($설립일); ?></dd>
+				</dl>
+				<?php } else {} ?>		
+				<?php if ($해산일!= null) { ?>						
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">해산일</dt>
+					<dd><?php echo strip_formatting($해산일); ?></dd>
+				</dl>
+				<?php } else {} ?>					
+				<?php if ($조직외국어명칭!= null) { ?>					
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">외국어명칭</dt>
+					<dd><?php echo strip_formatting($조직외국어명칭); ?></dd>
+				</dl>
+				<?php } else {} ?>		
+				<?php if ($조직비대표명칭!= null) { ?>								
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">비대표명칭</dt>
+					<dd><?php echo strip_formatting($조직비대표명칭); ?></dd>
+				</dl>
+				<?php } else {} ?>	
+				<?php if ($활동국가!= null) { ?>						
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">활동국가</dt>
+					<dd><?php echo strip_formatting($활동국가); ?></dd>
+				</dl>
+				<?php } else {} ?>	
+				<?php if ($정보출처!= null) { ?>						
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">정보출처</dt>
+					<dd><?php echo strip_formatting($정보출처); ?></dd>
+				</dl>
+				<?php } else {} ?>													
+				<?php if ($기술상태!= null && $isLoggedIn ) { //로그인 사용자만 열람 ?>
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">기술상태</dt> 
+					<dd><?php echo strip_formatting($기술상태); ?></dd> 
+				</dl>
+				<?php } else {} ?>
+				<?php if (metadata($item, 'has tags')): ?>
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">태그</dt>
+					<dd><?php echo tag_string('item', 'find'); ?></dd>
+				</dl>
+				<?php endif; ?>		
+				<?php //if ($조직설명!= null) { ?>						
+				<!-- dl class="flex text-neutral-500 col-span-2">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">설명</dt>
+					<dd><?php //echo strip_formatting($조직설명); ?></dd>
+				</!-->
+				<?php //} else {} ?>	
+				<?php if ($내용!= null || $조직상세!= null) { ?>							
+				<dl class="flex text-neutral-500 col-span-2">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">설명</dt>
+					<dd><?php echo strip_formatting($조직상세); ?><br><?php echo strip_formatting($내용); ?></dd>	
+				</dl>
+				<?php } else {} ?>	
+
+
+			</div>
+			<div class="flex justify-end gap-2">
+				<a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="<?php echo html_escape(url('/')); ?>corrections/index/add/item_id/<?php echo $id; ?>">오류신고</a>
+				<!-- a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="#">즐겨찾기</!-->
+				<a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="<?php echo html_escape(url('/')); ?>items/show/<?php echo $id; ?>?output=csv">목록받기</a>
+				<?php echo get_specific_plugin_hook_output('Cart', 'public_items_show', array('view' => $this, 'item' => $item)); //내 관심기록 출력 ?>
+				<style>
+					.cart{
+						display:flex;
+						align-items: center;
+						gap:8px;
+					}
+				</style>
+			</div>
+
+		</div>
+	</div>
+</div><!--// end of <div class="container pt-14"> -->
+<!-- ====== 정보사전-조직 Section End ========  -->	
+<?php 
+	} else {} 
+?>
+
+
+
+
+
+<?php if ($목록구분 == '정보사전-연표') { // 해당 아이템이 정보사전의 연표에 해당하는 경우에만 섹션 출력 ?>
 <!-- ====== 정보사전-연표 Section Start ========  -->
-<?php if ($목록구분 == '정보사전-연표') { ?>
+<div class="container pt-14">
+	<div class="flex mb-28">
+		<div class="thumb-area flex-shrink-0 w-[20rem] mr-[5rem]">
+			<!-- 썸네일 이미지가 있는 경우 출력 -->
+			<?php if (metadata($item, 'has files')) {  ?>	          
+			<?php echo files_for_item(array('linkToFile' => false, 'imageSize' => 'fullsize', 'imgAttributes' => array('class' => 'w-full acpect-1 object-cover'))); ?>	
+			<?php } else { ?>
+				<img src="<?php echo img('icon/정보-연표.png'); ?>" class="w-full acpect-1 object-cover">	
+			<?php } ?>
+		</div>
+		<div class="info-area relative flex flex-col justify-center flex-grow">
+			<?php if ($연표명칭!= null) { ?>	
+			<h1 class="text-[1.875rem] font-bold mb-8"><?php echo strip_formatting($연표명칭); ?></h1>
+			<?php } else { //연표명이 null이면 DC title 출력 ?>
+			<h1 class="text-[1.875rem] font-bold mb-8"><?php echo strip_formatting($제목); ?></h1>
+			<?php } ?>
+			<div class="inline-grid grid-cols-[minmax(240px,_auto)_minmax(240px,_auto)] gap-x-12 gap-y-4 mb-8">
+				<?php if ($목록구분!= null) { ?>							
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">목록구분</dt>
+					<dd><?php echo strip_formatting($목록구분); ?></dd>
+				</dl>
+				<?php } else {} ?>	
+				<?php if ($관리번호!= null && $isLoggedIn) { //로그인 사용자만 열람 ?>							
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">관리번호</dt>
+					<dd><?php echo strip_formatting($관리번호); ?></dd>
+				</dl>
+				<?php } else {} ?>					
+				<?php if ($연표구분!= null) { ?>					
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">연표구분</dt>
+					<dd><?php echo strip_formatting($연표구분); ?></dd>
+				</dl>
+				<?php } else {} ?>					
+				<?php if ($연표연도!= null) { ?>						
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">연도</dt>
+					<dd><?php echo strip_formatting($연표연도); ?></dd>
+				</dl>
+				<?php } else {} ?>						
+				<?php if ($연표시작일자!= null) { ?>					
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">시작일자</dt>
+					<dd><?php echo strip_formatting($연표시작일자); ?></dd>
+				</dl>
+				<?php } else {} ?>		
+				<?php if ($연표종료일자!= null) { ?>					
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">종료일자</dt>
+					<dd><?php echo strip_formatting($연표종료일자); ?></dd>
+				</dl>
+				<?php } else {} ?>		
+				<?php if ($관할지역!= null) { ?>					
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">관할지역</dt>
+					<dd><?php echo strip_formatting($관할지역); ?></dd>
+				</dl>
+				<?php } else {} ?>				
+				<?php if ($관련활동!= null) { ?>						
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">관련활동</dt>
+					<dd><?php echo strip_formatting($관련활동); ?></dd>
+				</dl>
+				<?php } else {} ?>						
+				<?php if ($정보출처!= null) { ?>					
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">정보출처</dt>
+					<dd><?php echo strip_formatting($정보출처); ?></dd>
+				</dl>
+				<?php } else {} ?>
+				<?php if (metadata($item, 'has tags')): ?>
+				<dl class="flex text-neutral-500">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">태그</dt>
+					<dd><?php echo tag_string('item', 'find'); ?></dd>
+				</dl>
+				<?php endif; ?>		
+				<?php if ($내용!= null) { ?>					
+				<dl class="flex text-neutral-500 col-span-2">
+					<dt class="w-[7.5rem] flex-shrink-0 font-bold">설명</dt>
+					<dd><?php echo strip_formatting($내용); ?></dd>
+				</dl>
+				<?php } else {} ?>	
 
-		<!-- 썸네일 이미지가 있는 경우 출력 -->
-		<?php if (metadata($item, 'has files')) {  ?>	          
-		<div class="mb-3 w-full max-w-[520px] sm:mb-0">
-		<?php echo files_for_item(array('linkToFile' => false, 'imageSize' => 'fullsize', 'imgAttributes' => array('class' => 'rounded-md h-full w-full object-cover object-center block'))); ?>	
-		</div>        
-		<?php } else { ?>
-		<img src="/etc/images/global/no-image-global-square-v2.jpg" class="rounded-md h-full w-full object-cover object-center">	
-		<?php } ?>
+			</div>
+			<div class="flex justify-end gap-2">
+				<a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="<?php echo html_escape(url('/')); ?>corrections/index/add/item_id/<?php echo $id; ?>">오류신고</a>
+				<!-- a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="#">즐겨찾기</!-->
+				<a class="border border-gray-200 text-sm py-1.5 px-3 hover:text-primary" href="<?php echo html_escape(url('/')); ?>items/show/<?php echo $id; ?>?output=csv">목록받기</a>
+				<?php echo get_specific_plugin_hook_output('Cart', 'public_items_show', array('view' => $this, 'item' => $item)); //내 관심기록 출력 ?>
+				<style>
+					.cart{
+						display:flex;
+						align-items: center;
+						gap:8px;
+					}
+				</style>
+			</div>
 
-		<p class="">연표명칭: <?php echo strip_formatting($연표명칭); ?></p>
-		<p class="">연표연도: <?php echo strip_formatting($연표연도); ?></p>
-		<p class="">연표시작일자: <?php echo strip_formatting($연표시작일자); ?></p>
-		<p class="">연표종료일자: <?php echo strip_formatting($연표종료일자); ?></p>
-		<p class="">연표설명: <?php echo strip_formatting($연표설명); ?></p>
-		<p class="">연표구분: <?php echo strip_formatting($연표구분); ?></p>
-		<p class="">관할지역: <?php echo strip_formatting($관할지역); ?></p>
-		<p class="">정보출처: <?php echo strip_formatting($정보출처); ?></p>
+		</div>
+	</div>
+</div><!--// end of <div class="container pt-14"> -->
+<!-- ====== 정보사전-연표 Section End ========  -->	
 <?php 
 	} else {} 
 ?>
-<!-- ====== 정보사전-연표 Section End ========  -->
+
 
 
 
 
 <!-- 관계정보 -->
-<div class="relation-info-area">
+<div class="container pb-28">
+	<div class="relation-info-area">
 
-	<div class="bg-gray-300 w-full h-[400px]">관계정보
-	<!-- 관계 그래프 및 관련 목록 영역 출력 -->
-    <?php echo get_specific_plugin_hook_output('AvantRelationships', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
-    <?php echo get_specific_plugin_hook_output('AvantRelationships', 'show_relationships_visualization', array('view' => $this, 'item' => $item)); ?>
+		<div class="w-full">
+			<!-- 관계 그래프 및 관련 목록 영역 출력 -->
+			<?php echo get_specific_plugin_hook_output('AvantRelationships', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
+			<?php //echo get_specific_plugin_hook_output('AvantRelationships', 'show_relationships_visualization', array('view' => $this, 'item' => $item)); ?>
+		</div>
+
 	</div>
+	<style>
+		#related-items-graph h2{
+			font-size:24px;
+			font-weight:bold;
+			margin-bottom:32px;
+		}
+	</style>
 
 </div>
 <!-- //관계정보 -->
@@ -558,15 +1087,6 @@ echo head(array('title' => $title, 'bodyclass' => 'items show'));
 
 
 
-
-
-<!-- 오메카 태그 정보 출력(요구사항이 있는 경우에만 사용 -->
-<?php //if (metadata($item, 'has tags')): ?>
-	<!-- div id="item-tags" class="element">
-		<h2>Tags</h2>
-		<div class="element-text tags"><?php //echo tag_string('item', 'find'); ?></div>
-	</div -->
-<?php //endif; ?>
 
 <?php 
 	// If this item has a cover image, that image will appear in the sidebar, so pass it to
@@ -580,7 +1100,7 @@ echo head(array('title' => $title, 'bodyclass' => 'items show'));
 <!-- 지도 영역 출력 -->
 <?php //echo get_specific_plugin_hook_output('Geolocation', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
 <!-- pdf 반출 영역 출력(사용안함) -->
-<?php //echo get_specific_plugin_hook_output('AvantReport', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
+<?php echo get_specific_plugin_hook_output('AvantReport', 'public_items_show', array('view' => $this, 'item' => $item)); ?>
 
 
 

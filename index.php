@@ -32,153 +32,76 @@
     <div id="wrap">
 
         <header id="header" role="banner" class="fixed w-full lg:pt-10 pt-[34px] bg-white z-20">
-            <div class="container lg:h-14 h-11 flex justify-between items-center relative z-10">
-                <a class="brand" href="<?php echo html_escape(url('/')); ?>">
-                    <img class="black lg:h-14 h-10 max-w-none" src="<?php echo img('logo.png'); ?>" alt="전쟁과여성인권 아카이브">
-                    <img class="white lg:h-14 h-10 max-w-none" src="<?php echo img('logo-white.png'); ?>" alt="전쟁과여성인권 아카이브">
-                </a>
-                <a href="#" class="btn-menu-mobile  w-7 h-7 lg:hidden text-2xl flex items-center justify-center" title="모바일메뉴 열기/닫기">
-                    <i class="xi-bars"></i>
-                    <i class="xi-close"></i>
-                </a>
-                <nav id="top-nav" role="navigation" class="flex lg:items-center lg:flex-row flex-col lg:static absolute">
-                    <ul class="navigation">
-                        <li class="active">
-                            <a href="<?php echo html_escape(url('find/intro')); ?>">기록</a>
-                            <ul>
-                                <li>
-                                    <a href="<?php echo html_escape(url('find/intro')); ?>">기록찾기</a>
-                                </li>
-                                <li class="active">
-                                    <a href="<?php echo html_escape(url('find?query=&amp;site=1')); ?>">일반검색</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo html_escape(url('find/advanced')); ?>">상세검색</a>
-                                </li>
-                                <li>
-                                   <a href="<?php echo html_escape(url('find/websearch#gsc.tab=0&gsc.q=일본군%20성노예%20피해자&gsc.sort=')); ?>">웹검색</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="<?php echo html_escape(url('items/person?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-인물')); ?>">정보</a>
-                            <ul>
-                                <li>
-                                    <a href="<?php echo html_escape(url('items/person?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-인물')); ?>">인물정보</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-조직')); ?>">단체정보</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo html_escape(url('items/history?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-연표')); ?>">연표정보</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="<?php echo html_escape(url('collections/browse')); ?>">컬렉션</a>
-                            <ul>
-                                <li>
-                                    <a href="<?php echo html_escape(url('collections/browse')); ?>">전체보기</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="<?php echo html_escape(url('exhibits/browse')); ?>">콘텐츠</a>
-                            <ul>
-                                <li>
-                                    <a href="<?php echo html_escape(url('exhibits/browse')); ?>">전체보기</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="<?php echo html_escape(url('contribute')); ?>">참여</a>
-                            <ul>
-                                <li>
-                                    <a href="<?php echo html_escape(url('contribute')); ?>">기록기증</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo html_escape(url('event')); ?>">이벤트</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo html_escape(url('donate')); ?>">후원</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="<?php echo html_escape(url('about-01')); ?>">소개</a>
-							<!--
-                            <ul>
-                                <li>
-                                    <a href="/about-01">소개</a>
-                                </li>
-                                <li>
-                                    <a href="/about-02">구축과정</a>
-                                </li>
-                                <li>
-                                    <a href="/guide-01">이용방법</a>
-                                </li>
-                                <li>
-                                    <a href="/guide-02">FAQ</a>
-                                </li>
-                                <li>
-                                    <a href="/contact">문의하기</a>
-                                </li>
-                                <li>
-                                    <a href="/notice">공지사항</a>
-                                </li>
-                                <li>
-                                    <a href="/stat-01">소장정보</a>
-                                </li>
-                                <li>
-                                    <a href="/stat-02">이용현황</a>
-                                </li>
-                            </ul>
-							//-->
-                            <ul>
-                                <li>
-                                    <a href="<?php echo html_escape(url('about-01')); ?>">소개</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo html_escape(url('guide-01')); ?>">이용안내</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo html_escape(url('stat-01')); ?>">현황</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="functions lg:ml-[12.5rem] flex gap-2 mt-4 lg:mt-0">
-                        <li class="w-1/2 lg:w-auto">
-                            <a href="<?php echo html_escape(url('find?query=&amp;site=1')); ?>" class="lg:h-12 lg:w-12 h-10 flex justify-center items-center border border-white lg:border-0 hover:text-primary" title="검색">
-                                <span class="lg:hidden inline text-white">검색</span>
-                                <i class="xi-search text-2xl !hidden lg:!inline"></i>
-                            </a>
-                        </li>
-                        <li class="w-1/2 lg:w-auto">
-                            <a href="<?php echo html_escape(url('guest-user/user/me')); ?>" class="lg:h-12 lg:w-12 h-10 flex justify-center items-center border border-white lg:border-0 hover:text-primary"  title="마아페이지">
-                                <span class="lg:hidden inline text-white">마아페이지</span>
-                                <i class="xi-user-o text-2xl !hidden lg:!inline"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="bg-menu"></div>
+            <div class="inner">
+                <div class="container lg:h-14 h-11 flex justify-between items-center relative z-10">
+                    <a class="brand" href="<?php echo html_escape(url('/')); ?>">
+                        <img class="black lg:h-[46px] h-10 max-w-none" src="<?php echo img('logo.png'); ?>" alt="전쟁과여성인권 아카이브">
+                        <img class="white lg:h-[46px] h-10 max-w-none" src="<?php echo img('logo-white.png'); ?>" alt="전쟁과여성인권 아카이브">
+                    </a>
+                    <a href="#" class="btn-menu-mobile  w-7 h-7 lg:hidden text-2xl flex items-center justify-center" title="모바일메뉴 열기/닫기">
+                        <i class="xi-bars"></i>
+                        <i class="xi-close"></i>
+                    </a>
+                    <nav id="top-nav" role="navigation" class="flex lg:items-center lg:flex-row flex-col lg:static absolute">
+                        <?php echo public_nav_main(); ?>
+                        <ul class="functions lg:ml-[12.5rem] flex gap-2 mt-4 lg:mt-0">
+                            <li class="w-1/2 lg:w-auto">
+                                <a href="<?php echo html_escape(url('find?query=&site=1')); ?>" class="lg:h-12 lg:w-12 h-10 flex justify-center items-center border border-white lg:border-0 hover:text-primary" title="검색">
+                                    <span class="lg:hidden inline text-white">검색</span>
+                                    <i class="xi-search text-2xl !hidden lg:!inline"></i>
+                                </a>
+                            </li>
+                            <li class="w-1/2 lg:w-auto relative">
+                                <a href="<?php echo html_escape(url('guest-user/user/update-account')); ?>" class="menu-my lg:h-12 lg:w-12 h-10 flex justify-center items-center border border-white lg:border-0 hover:text-primary"  title="마아페이지">
+                                    <span class="lg:hidden inline text-white">마아페이지</span>
+                                    <i class="xi-user-o text-2xl !hidden lg:!inline"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="bg-menu"></div>
+                <div class="absolute left-0 top-[104px] w-full hidden" id="menu-my-2depth">
+                    <div class="container relative">
+                        <ul class="absolute right-0 top-0 rounded-lg bg-neutral-50 overflow-hidden z-50">
+							<?php 
+								$user = current_user();
+								$isLoggedIn = !empty($user);     
+							?>      
+							<?php 
+								//if($user->role == 'super' || $user->role == 'admin' || $user->role == 'researcher')
+								if ($isLoggedIn) {    
+							?>
+                            <li><a class="block text-neutral-900 text-sm py-2 px-3 hover:bg-neutral-200 break-keep" href="<?php echo html_escape(url('guest-user/user/update-account')); ?>">마이페이지</a></li>
+                            <li><a class="block text-neutral-900 text-sm py-2 px-3 hover:bg-neutral-200 break-keep" href="<?php echo html_escape(url('users/logout')); ?>">로그아웃</a></li>
+							<?php 
+								} else {
+							?>
+                            <li><a class="block text-neutral-900 text-sm py-2 px-3 hover:bg-neutral-200 break-keep" href="<?php echo html_escape(url('users/login')); ?>">로그인</a></li>
+                            <li><a class="block text-neutral-900 text-sm py-2 px-3 hover:bg-neutral-200 break-keep" href="<?php echo html_escape(url('guest-user/user/register')); ?>">회원가입</a></li>
+							<?php 
+								} 
+							?>
+                        </ul>
+                    </div>
 
+                </div>
+
+            </div>
         </header>
 
         <article id="content" role="main" tabindex="-1" class="pt-0">
 
             <div id="fullpage">
                 <!--아카이브 섹션-->
-                <div class="section relative bg-[url('<?php echo img('banner-main01.png'); ?>')] bg-cover" style="background-image: url(<?php echo img('banner-main01.png'); ?>); background-repeat: no-repeat; background-size: cover;">
+                <div class="section relative bg-[url('<?php echo img('banner-main01.png'); ?>')] bg-cover" style="background-image: url(<?php echo img('banner-main01.jpg'); ?>); background-repeat: no-repeat; background-size: cover;">
                     <div class="container text-white">
                         <h2 class="lg:text-6xl text-4xl font-bold lg:mb-6 mb-4">정의기억연대아카이브</h2>
                         <p class="lg:text-xl text-base lg:mb-11 mb-10">일본군 성노예제 문제해결을 위한 기억투쟁</p>
                         <ul class="flex lg:gap-12 gap-7 lg:text-3xl text-xl font-bold">
-                            <li><a href="<?php echo html_escape(url('find/intro')); ?>" class="flex hover:text-primary">기록<i class="xi-angle-right-min ml-1 lg:text-[2.2rem] text-2xl relative lg:-top-0.5"></i></a></li>
-                            <li><a href="<?php echo html_escape(url('items/history?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-연표')); ?>" class="flex hover:text-primary">시간<i class="xi-angle-right-min ml-1 lg:text-[2.2rem] text-2xl relative lg:-top-0.5"></i></a></li>
-                            <li><a href="<?php echo html_escape(url('exhibits/browse')); ?>" class="flex hover:text-primary">이야기<i class="xi-angle-right-min ml-1 lg:text-[2.2rem] text-2xl relative lg:-top-0.5"></i></a></li>
+                            <li><a href="<?php echo html_escape(url('find/intro')); ?>" class="flex hover:text-primary">기록<i class="xi-angle-right-min ml-1 lg:text-[2.2rem] text-2xl"></i></a></li>
+                            <li><a href="<?php echo html_escape(url('items/history?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-연표')); ?>" class="flex hover:text-primary">시간<i class="xi-angle-right-min ml-1 lg:text-[2.2rem] text-2xl"></i></a></li>
+                            <li><a href="<?php echo html_escape(url('exhibits/browse')); ?>" class="flex hover:text-primary">이야기<i class="xi-angle-right-min ml-1 lg:text-[2.2rem] text-2xl"></i></a></li>
                         </ul>
                     </div>
                     <div class="absolute left-1/2 -translate-x-1/2 lg:bottom-7 bottom-0 text-lg text-center text-white">
@@ -235,7 +158,7 @@
                                 <li class="relative mr-4 lg:mr-0 overflow-hidden">
                                     <img class="lg:h-full h-[499px] object-cover" src="<?php echo img('bg-collection-main02.png'); ?>" alt="">
                                     <a href="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-조직')); ?>" class="absolute bottom-0 left-0 lg:py-8 lg:px-6 py-6 px-4 w-full flex justify-between">
-                                        <span class="lg:text-4xl text-2xl font-bold">단체정보</span>
+                                        <span class="lg:text-4xl text-2xl font-bold">조직정보</span>
                                         <i class="xi-angle-right-min ml-1 lg:text-[2.2rem] text-2xl relative lg:-top-0.5"></i>
                                     </a>
                                 </li>
@@ -312,15 +235,15 @@
 											<li>
 												<a href="<?php echo html_escape(url('find/intro')); ?>">기록찾기</a>
 											</li>
-											<li class="active">
-												<a href="<?php echo html_escape(url('find?query=&amp;site=1')); ?>">일반검색</a>
+											<!-- li class="active">
+												<a href="<?php //echo html_escape(url('find?query=&amp;site=1')); ?>">일반검색</a>
 											</li>
 											<li>
-												<a href="<?php echo html_escape(url('find/advanced')); ?>">상세검색</a>
+												<a href="<?php //echo html_escape(url('find/advanced')); ?>">상세검색</a>
 											</li>
 											<li>
-											   <a href="<?php echo html_escape(url('find/websearch#gsc.tab=0&gsc.q=일본군%20성노예%20피해자&gsc.sort=')); ?>">웹검색</a>
-											</li>
+											   <a href="<?php //echo html_escape(url('find/websearch#gsc.tab=0&gsc.q=일본군%20성노예%20피해자&gsc.sort=')); ?>">웹검색</a>
+											</li -->
 										</ul>
 									</li>
 									<li>
@@ -330,7 +253,7 @@
 												<a href="<?php echo html_escape(url('items/person?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-인물')); ?>">인물정보</a>
 											</li>
 											<li>
-												<a href="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-조직')); ?>">단체정보</a>
+												<a href="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-조직')); ?>">조직정보</a>
 											</li>
 											<li>
 												<a href="<?php echo html_escape(url('items/history?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-연표')); ?>">연표정보</a>

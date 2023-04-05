@@ -19,15 +19,15 @@
                                 <li>
                                     <a href="<?php echo html_escape(url('find/intro')); ?>">기록찾기</a>
                                 </li>
-                                <li class="active">
-                                    <a href="<?php echo html_escape(url('find?query=&amp;site=1')); ?>">일반검색</a>
+                                <!-- li class="active">
+                                    <a href="<?php //echo html_escape(url('find?query=&amp;site=1')); ?>">일반검색</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo html_escape(url('find/advanced')); ?>">상세검색</a>
+                                    <a href="<?php //echo html_escape(url('find/advanced')); ?>">상세검색</a>
                                 </li>
                                 <li>
-                                   <a href="<?php echo html_escape(url('find/websearch#gsc.tab=0&gsc.q=일본군%20성노예%20피해자&gsc.sort=')); ?>">웹검색</a>
-                                </li>
+                                   <a href="<?php //echo html_escape(url('find/websearch#gsc.tab=0&gsc.q=일본군%20성노예%20피해자&gsc.sort=')); ?>">웹검색</a>
+                                </li -->
                             </ul>
                         </li>
                         <li>
@@ -37,7 +37,7 @@
                                     <a href="<?php echo html_escape(url('items/person?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-인물')); ?>">인물정보</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-조직')); ?>">단체정보</a>
+                                    <a href="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-조직')); ?>">조직정보</a>
                                 </li>
                                 <li>
                                     <a href="<?php echo html_escape(url('items/history?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-연표')); ?>">연표정보</a>

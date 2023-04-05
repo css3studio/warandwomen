@@ -1,27 +1,80 @@
 <?php
-$pageTitle = __('단체/조직');
+$pageTitle = __('조직');
 echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse'));
 ?>
 
-<div class="breadcrumb container bg-neutral-50 text-xs px-4 py-1 mt-3">
-    <div class="flex gap-[10px] text-neutral-400">
-        <a class="hover:underline" href="<?php echo html_escape(url('/')); ?>">홈</a>
-        <i class="xi-angle-right text-neutral-200"></i>
-        <a class="hover:underline" href="<?php echo html_escape(url('items/person?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-인물')); ?>">정보</a>
-        <i class="xi-angle-right text-neutral-200"></i>
-        <span class="text-primary"><?php echo $pageTitle; ?></span>
-    </div>
+<div class="bg-neutral-100 pt-3">
+	<div class="breadcrumb container bg-white text-xs px-4 py-1 rounded-lg">
+		<div class="flex gap-[10px] text-neutral-400">
+			<a class="hover:underline" href="<?php echo html_escape(url('/')); ?>">홈</a>
+			<i class="xi-angle-right text-neutral-200"></i>
+			<a class="hover:underline" href="<?php echo html_escape(url('items/person?search=&advanced[0][joiner]=and&advanced[0][element_id]=74&advanced[0][type]=is+exactly&advanced[0][terms]=정보사전-인물')); ?>">정보</a>
+			<i class="xi-angle-right text-neutral-200"></i>
+			<span class="text-primary"><?php echo $pageTitle; ?></span>
+		</div>
+	</div>
+	<div class="container pt-14">
+		<h1 class="text-3xl font-bold mb-14">조직정보</h1>
+		<div class="menu-tab01 menu-tab01-01">
+			<ul >
+				<li><a href="<?php echo html_escape(url('items/groupt1')); ?>">개요</a></li>
+				<li class="current"><a href="javascript:void(0);">검색</a></li>
+				<li><a href="<?php echo html_escape(url('items/groupt3')); ?>">관계</a></li>
+			</ul>
+		</div>
+	</div>
 </div>
 
-<h1><?php echo $pageTitle;?> <?php echo __('(%s total)', $total_results); ?></h1>
+<!-- 본문영역 -->
+<div class="container pt-8 pb-28">
 
-<nav class="items-nav navigation secondary-nav">
-    <?php //echo public_nav_items(); ?>
-</nav>
+	<?php //echo item_search_filters(); ?>
 
-<?php //echo item_search_filters(); ?>
+	<div class="mb-8 flex gap-2">
+		<!-- 셀렉트 옵션 -->
+		<select onchange="if(this.value) location.href=(this.value);">
+			<option value="" selected>조직구분</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=152&advanced[0][type]=contains&advanced[0][terms]=시민단체')); ?>">시민단체</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=152&advanced[0][type]=contains&advanced[0][terms]=종교단체')); ?>">종교단체</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=152&advanced[0][type]=contains&advanced[0][terms]=예술단체')); ?>">예술단체</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=152&advanced[0][type]=contains&advanced[0][terms]=국제기구')); ?>">국제기구</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=152&advanced[0][type]=contains&advanced[0][terms]=연구기관')); ?>">연구기관</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=152&advanced[0][type]=contains&advanced[0][terms]=사기업')); ?>">사기업</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=152&advanced[0][type]=contains&advanced[0][terms]=정당')); ?>">정당</option>
+		</select>
+		<select onchange="if(this.value) location.href=(this.value);">
+			<option value="" selected>조직유형</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=153&advanced[0][type]=contains&advanced[0][terms]=연대체')); ?>">연대체</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=153&advanced[0][type]=contains&advanced[0][terms]=상설체')); ?>">상설체</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=153&advanced[0][type]=contains&advanced[0][terms]=임시체')); ?>">임시체</option>
+		</select>
+		<select onchange="if(this.value) location.href=(this.value);">
+			<option value="" selected>활동국가</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=한국')); ?>">한국</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=일본')); ?>">일본</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=중국')); ?>">중국</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=미국')); ?>">미국</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=대만')); ?>">대만</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=인도네시아')); ?>">인도네시아</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=말레이시아')); ?>">말레이시아</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=필리핀')); ?>">필리핀</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=홍콩')); ?>">홍콩</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=캐나다')); ?>">캐나다</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=호주')); ?>">호주</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=독일')); ?>">독일</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=프랑스')); ?>">프랑스</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=이탈리아')); ?>">이탈리아</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=벨기에')); ?>">벨기에</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=네덜란드')); ?>">네덜란드</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=스위스')); ?>">스위스</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=노르웨이')); ?>">노르웨이</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=동티모르')); ?>">동티모르</option>
+			<option value="<?php echo html_escape(url('items/group?search=&advanced[0][joiner]=and&advanced[0][element_id]=151&advanced[0][type]=contains&advanced[0][terms]=북한')); ?>">북한</option>
+		</select>
+	</div>
 
-	<div>
+	<!-- 검색폼 -->
+	<div class="mb-14">
 		<form name="search-group" action="<?php echo html_escape(url('items/group')); ?>" method="get" role="search">
 		  <div style="display: none;">
 			<select name="advanced[0][joiner]" id="" title="Search Joiner" class="advanced-search-joiner">
@@ -45,89 +98,78 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'items browse'));
 			  <option value="contains" selected="selected">contains</option>
 			</select>
 		  </div>
-		  <input type="text" name="advanced[1][terms]" id="" value="" size="50" title="Search Terms" placeholder="조직명을 입력하세요" class="w-full rounded-lg border border-stroke bg-white py-3 pl-5 pr-12 text-body-color outline-none focus:border-primary focus:bg-white">                  
-  
-		  <span class="absolute top-4 right-5 -translate-y-1/2" onclick="document.forms['search-group'].submit();" style="cursor:pointer;">
-			<svg
-				width="20"
-				height="20"
-				viewBox="0 0 20 20"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-				>
-				<path
-				  fill-rule="evenodd"
-				  clip-rule="evenodd"
-				  d="M9.16667 3.33268C5.94501 3.33268 3.33334 5.94435 3.33334 9.16602C3.33334 12.3877 5.94501 14.9993 9.16667 14.9993C12.3883 14.9993 15 12.3877 15 9.16602C15 5.94435 12.3883 3.33268 9.16667 3.33268ZM1.66667 9.16602C1.66667 5.02388 5.02454 1.66602 9.16667 1.66602C13.3088 1.66602 16.6667 5.02388 16.6667 9.16602C16.6667 13.3082 13.3088 16.666 9.16667 16.666C5.02454 16.666 1.66667 13.3082 1.66667 9.16602Z"
-				  fill="#637381"
-				  />
-				<path
-				  fill-rule="evenodd"
-				  clip-rule="evenodd"
-				  d="M13.2857 13.2851C13.6112 12.9597 14.1388 12.9597 14.4643 13.2851L18.0893 16.9101C18.4147 17.2355 18.4147 17.7632 18.0893 18.0886C17.7638 18.414 17.2362 18.414 16.9108 18.0886L13.2857 14.4636C12.9603 14.1382 12.9603 13.6105 13.2857 13.2851Z"
-				  fill="#637381"
-				  />
-			</svg>
-			<input type="submit" class="submit big green button" name="submit_search" id="test" value="">
-		  </span>
-		  </form>
-		  <script type="text/javascript" src="/application/views/scripts/javascripts/items-search.js?v=3.0.3" charset="utf-8"></script>
-		  <script type="text/javascript">
-			  jQuery(document).ready(function () {
-				  Omeka.Search.activateSearchButtons();
-			  });
-		  </script>     
+		  <div class='search-form flex gap-2 max-w-[800px]'>
+				<input id='query' type='text' name="advanced[1][terms]" value='' class='w-full h-[52px] bg-gray-100 border-0' autofocus placeholder="'조직'을 검색해 보세요">
+				<button id='submit_search' type='submit' value='Search' onclick="document.forms['search-group'].submit();" class="flex-shrink-0 bg-primary text-white w-[84px] h-[52px] leading-[52px] hover:bg-black cursor-pointer">검색</button>
+			</div>
+
+		</form>
+		<script type="text/javascript" src="/application/views/scripts/javascripts/items-search.js?v=3.0.3" charset="utf-8"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function () {
+				Omeka.Search.activateSearchButtons();
+			});
+		</script>     
+	</div>
+	<!-- //검색폼 -->
+
+	<h2>
+		검색결과: <?php echo __('%s', $total_results); ?> 건
+	</h2> 
+
+	<?php // echo pagination_links(); ?>
+
+	<!-- 리스트 -->
+	<ul class="mb-28">
+
+	<?php foreach (loop('items') as $item): ?>
+	<?php 
+		//기본정보 메타 출력용
+		$제목 = metadata($item, array('Dublin Core', 'Title'), array('delimiter' => '; '));
+		$내용 = metadata($item, array('Dublin Core', 'Description'), array('delimiter' => '; ', 'snippet' => 200));	  
+		$목록구분 = metadata($item, array('Item Type Metadata', 'Classification of catalog'), array('delimiter' => '; '));	                   
+		//조직 정보
+		$조직명칭 = metadata($item, array('Item Type Metadata', 'Organization Name'), array('delimiter' => '; '));	  
+		$조직외국어명칭 = metadata($item, array('Item Type Metadata', 'Organization Foreign Language Name'), array('delimiter' => '; '));	
+		$조직비대표명칭 = metadata($item, array('Item Type Metadata', 'Organization non-representative name'), array('delimiter' => '; '));	
+		$활동국가 = metadata($item, array('Item Type Metadata', 'Country of activity'), array('delimiter' => '; '));	
+		$조직구분 = metadata($item, array('Item Type Metadata', 'Classification of organization'), array('delimiter' => '; '));	
+		$조직유형 = metadata($item, array('Item Type Metadata', 'Type of organization'), array('delimiter' => '; '));       
+		$설립일 = metadata($item, array('Item Type Metadata', 'Founding date'), array('delimiter' => '; '));   
+		$해산일 = metadata($item, array('Item Type Metadata', 'Dissolution date'), array('delimiter' => '; '));   
+		//$조직설명 = metadata($item, array('Item Type Metadata', 'Organization Description'), array('delimiter' => '; ', 'snippet' => 500));	 
+		$조직상세 = metadata($item, array('Item Type Metadata', 'Organization Details'), array('delimiter' => '; ', 'snippet' => 200));			           
+		$정보출처 = metadata($item, array('Item Type Metadata', 'Sources of information'), array('delimiter' => '; '));           
+	?>	
+		<li class="p-4 flex items-center border-b border-neutral-200">
+			<div class="w-[64%] flex items-center gap-4">
+				<?php if (metadata($item, 'has files')) {  ?>		
+					<?php echo link_to_item(item_image('square_thumbnail', array('class' => 'w-[5rem] aspect-1 object-cover'))); ?>		
+				<?php } else {} ?>	
+				<div>
+					<?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'block font-bold text-lg hover:text-primary mb-2')); ?>
+					<ul class="text-sm text-neutral-700 flex gap-8">
+					<?php if ($설립일!= null) { ?><li>설립일 : <?php echo strip_formatting($설립일); ?></li><?php } else {} ?>
+					<!-- <?php //if ($해산일!= null) { ?><li>해산일 : <?php //echo strip_formatting($해산일); ?></li><?php //} else {} ?> -->
+					<?php if ($조직구분!= null) { ?><li>구분 : <?php echo strip_formatting($조직구분); ?></li><?php } else {} ?>
+					<?php if ($조직유형!= null) { ?><li>유형 : <?php echo strip_formatting($조직유형); ?></li><?php } else {} ?>
+					<?php if ($활동국가!= null) { ?><li>활동국가 : <?php echo strip_formatting($활동국가); ?></li><?php } else {} ?>
+					</ul>		
+				</div>
+			</div>
+			<p class="w-[36%] line-clamp-3 text-sm text-neutral-700"><?php if ($내용!= null || 조직상세!= null) { ?><?php echo strip_formatting($조직상세); ?><br><?php echo strip_formatting($내용); ?><?php } else {} ?></p>			
+		</li>		
+	<?php endforeach; ?>
+
+	</ul>
+	<!-- //리스트 -->
+
+	<div id="search-pagination-bottom">
+		<?php echo pagination_links(); ?>
 	</div>
 
-<?php echo pagination_links(); ?>
-
-<?php if ($total_results > 0): ?>
-<?php
-$sortLinks[__('Title')] = 'Dublin Core,Title';
-$sortLinks[__('Creator')] = 'Dublin Core,Creator';
-$sortLinks[__('Date Added')] = 'added';
-?>
-<div id="sort-links">
-    <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
 </div>
-<?php endif; ?>
-
-
-
-<?php foreach (loop('items') as $item): ?>
-<?php 
-	//기본정보 메타 출력용
-	$제목 = metadata($item, array('Dublin Core', 'Title'), array('delimiter' => '; '));
-	$목록구분 = metadata($item, array('Item Type Metadata', 'Classification of catalog'), array('delimiter' => '; '));	                   
-	//조직 정보
-	$조직명칭 = metadata($item, array('Item Type Metadata', 'Organization Name'), array('delimiter' => '; '));	  
-	$조직외국어명칭 = metadata($item, array('Item Type Metadata', 'Organization Foreign Language Name'), array('delimiter' => '; '));	
-	$조직비대표명칭 = metadata($item, array('Item Type Metadata', 'Organization non-representative name'), array('delimiter' => '; '));	
-	$활동국가 = metadata($item, array('Item Type Metadata', 'Country of activity'), array('delimiter' => '; '));	
-	$조직구분 = metadata($item, array('Item Type Metadata', 'Classification of organization'), array('delimiter' => '; '));	
-	$조직유형 = metadata($item, array('Item Type Metadata', 'Type of organization'), array('delimiter' => '; '));       
-	$설립일 = metadata($item, array('Item Type Metadata', 'Founding date'), array('delimiter' => '; '));   
-	$해산일 = metadata($item, array('Item Type Metadata', 'Dissolution date'), array('delimiter' => '; '));   
-	$조직설명 = metadata($item, array('Item Type Metadata', 'Organization Description'), array('delimiter' => '; ', 'snippet' => 50));	            
-	$정보출처 = metadata($item, array('Item Type Metadata', 'Sources of information'), array('delimiter' => '; '));           
-?>	
-	<div class="item hentry">
-		<?php if (metadata($item, 'has files')) {  ?>		
-			<?php echo link_to_item(item_image('square_thumbnail', array('class' => 'w-full'))); ?>		
-		<?php } else { ?>	
-			<?php echo link_to_item('<img src="/etc/images/person/no-image-global-square-v2.jpg" class="w-full">'); ?>		
-		<?php }	?> 
-
-		<?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?>
-        <p><?php if ($조직설명!= null) { ?><?php echo strip_formatting($조직설명); ?><?php } else {} ?></p>
-        <p><?php if ($설립일!= null) { ?><?php echo strip_formatting($설립일); ?><?php } else {} ?> </p>
-		<p><?php if ($해산일!= null) { ?><?php echo strip_formatting($해산일); ?><?php } else {} ?></p>
-		<?php //fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' => $item)); ?>
-	</div><!-- end class="item hentry" -->
-<?php endforeach; ?>
-
-<?php echo pagination_links(); ?>
-
+<!-- //본문영역 -->
 
 
 <?php fire_plugin_hook('public_items_browse', array('items' => $items, 'view' => $this)); ?>
